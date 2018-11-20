@@ -328,7 +328,7 @@ var GiphySearch = {
         if(_hostname === "www.facebook.com") {
             dt.effectAllowed = "linkMove";
             dt.dropEffect = "linkMove";
-            // FB pukes on our short link. use full url for better user experience
+            // FB pukes on our short link. use full url for better users experience
             dt.setData("text/html", "http://giphy.com/gifs/" + gif_obj.id  );
             dt.setData("text", "http://giphy.com/gifs/" + gif_obj.id  );            
         }
@@ -375,7 +375,7 @@ var GiphySearch = {
         if(_hostname === "www.facebook.com") {
             dt.effectAllowed = "linkMove";
             dt.dropEffect = "linkMove";
-            // FB pukes on our short link. use full url for better user experience
+            // FB pukes on our short link. use full url for better users experience
             dt.setData("text/html", "http://giphy.com/gifs/" + gif_obj.id  );
             dt.setData("text", "http://giphy.com/gifs/" + gif_obj.id  );            
         }
@@ -425,7 +425,7 @@ var GiphySearch = {
         if(_hostname === "www.facebook.com") {
             dt.effectAllowed = "linkMove";
             dt.dropEffect = "linkMove";
-            // FB pukes on our short link. use full url for better user experience
+            // FB pukes on our short link. use full url for better users experience
             dt.setData("text/html", "http://giphy.com/gifs/" + gif_obj.id  );
             dt.setData("text", "http://giphy.com/gifs/" + gif_obj.id  );            
         }

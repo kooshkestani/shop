@@ -6,13 +6,13 @@ return [
     | User config
     |--------------------------------------------------------------------------
     |
-    | Here you can specify voyager user configs
+    | Here you can specify voyager users configs
     |
     */
 
-    'user' => [
+    'users' => [
         'add_default_role_on_register' => true,
-        'default_role'                 => 'user',
+        'default_role'                 => 'users',
         'namespace'                    => null,
         'default_avatar'               => 'users/default.png',
         'redirect'                     => '/admin',
