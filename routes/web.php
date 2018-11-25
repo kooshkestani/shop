@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/aaa', function () {
+    return view('front-end.home.index');
+});
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
