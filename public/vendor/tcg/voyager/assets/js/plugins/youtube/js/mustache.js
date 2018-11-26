@@ -476,7 +476,7 @@
 
   mustache.parse = parseTemplate;
 
-  // Export the escaping function so that the user may override it.
+  // Export the escaping function so that the users may override it.
   // See https://github.com/janl/mustache.js/issues/244
   mustache.escape = escapeHtml;
 

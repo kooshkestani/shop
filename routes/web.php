@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['namespace' => 'Voyager'],function(){
+    route::get('/test', 'testController@frontIndex');
+});
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
