@@ -13,12 +13,18 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('shop', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('slug');
+            $table->string('details')->nullable();
+            $table->integer('price');
+
             $table->string('description');
-            $table->string('file_name');
-            $table->string('file_size');
+            $table->boolean('featured')->default(false);
+            $table->string('image')->nullable();
+            $table->text('images')->nullable();
+
             $table->timestamps();
         });
     }
@@ -30,6 +36,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('shop');
     }
 }

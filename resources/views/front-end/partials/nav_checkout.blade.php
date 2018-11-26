@@ -3,8 +3,8 @@
     <div class="container">
 
         <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-            <strong class="blue-text">MDB</strong>
+        <a class="navbar-brand waves-effect" href="{{route('home')}}" target="_blank">
+            <strong class="blue-text">Shop</strong>
         </a>
 
         <!-- Collapse -->
@@ -19,18 +19,18 @@
             <!-- Left -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link waves-effect" href="#">Home
+                    <a class="nav-link waves-effect" href="{{route('home')}}">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About MDB</a>
+                    <a class="nav-link waves-effect" href="{{route('shop.index')}}" target="_blank">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank">Free download</a>
+                    <a class="nav-link waves-effect" href="{{route('home')}}" target="_blank">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free tutorials</a>
+                    <a class="nav-link waves-effect" href="{{route('home')}}" target="_blank">About Us</a>
                 </li>
             </ul>
 
