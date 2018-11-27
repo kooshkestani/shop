@@ -17,7 +17,7 @@
     <!-- Material Design Bootstrap -->
     <link href="/css/mdb2.min.css" rel="stylesheet">
     <style type="text/css">
-        .multiple-select-dropdown li [type=checkbox]+label {
+        .multiple-select-dropdown li [type=checkbox] + label {
             height: 1rem;
         }
     </style>
@@ -38,7 +38,8 @@
         <a class="font-weight-bold white-text mr-4" href="#">Categories</a>
 
         <!-- Collapse button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+                aria-controls="navbarSupportedContent1"
                 aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
         <!-- Collapsible content -->
@@ -48,8 +49,10 @@
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item dropdown mega-dropdown active">
-                    <a class="nav-link dropdown-toggle  no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Laptop</a>
-                    <div class="dropdown-menu mega-menu v-2 row z-depth-1 white" aria-labelledby="navbarDropdownMenuLink1">
+                    <a class="nav-link dropdown-toggle  no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Laptop</a>
+                    <div class="dropdown-menu mega-menu v-2 row z-depth-1 white"
+                         aria-labelledby="navbarDropdownMenuLink1">
                         <div class="row mx-md-4 mx-1">
                             <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-5 mb-4">
                                 <h6 class="sub-title text-uppercase font-weight-bold blue-text">Brand</h6>
@@ -95,14 +98,17 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown mega-dropdown">
-                    <a class="nav-link dropdown-toggle no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cameras</a>
-                    <div class="dropdown-menu mega-menu v-2 row z-depth-1 white" aria-labelledby="navbarDropdownMenuLink1">
+                    <a class="nav-link dropdown-toggle no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Cameras</a>
+                    <div class="dropdown-menu mega-menu v-2 row z-depth-1 white"
+                         aria-labelledby="navbarDropdownMenuLink1">
                         <div class="row mx-md-4 mx-1">
                             <div class="col-md-12 col-lg-4 sub-menu my-lg-5 mt-5 mb-4">
                                 <h6 class="sub-title text-uppercase font-weight-bold blue-text">Featured</h6>
                                 <!--Featured image-->
                                 <div class="view overlay mb-3 z-depth-1">
-                                    <img src="/storage/Photos/Horizontal/E-commerce/Products/9.jpg" class="img-fluid" alt="First sample image">
+                                    <img src="/storage/Photos/Horizontal/E-commerce/Products/9.jpg" class="img-fluid"
+                                         alt="First sample image">
                                     <div class="mask flex-center rgba-white-slight">
                                         <p></p>
                                     </div>
@@ -133,8 +139,10 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown mega-dropdown">
-                    <a class="nav-link dropdown-toggle no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accesories</a>
-                    <div class="dropdown-menu mega-menu v-2 row z-depth-1 white" aria-labelledby="navbarDropdownMenuLink1">
+                    <a class="nav-link dropdown-toggle no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Accesories</a>
+                    <div class="dropdown-menu mega-menu v-2 row z-depth-1 white"
+                         aria-labelledby="navbarDropdownMenuLink1">
                         <div class="row mx-md-4 mx-1">
                             <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-5 mb-4">
                                 <h6 class="sub-title text-uppercase font-weight-bold blue-text">Featured</h6>
@@ -150,27 +158,34 @@
                                 <h6 class="sub-title text-uppercase font-weight-bold blue-text">Related</h6>
                                 <!--Featured image-->
                                 <div class="view overlay mb-3 z-depth-1">
-                                    <img src="/storage/Photos/Horizontal/Work/6-col/img%20(43).jpg" class="img-fluid" alt="First sample image">
+                                    <img src="/storage/Photos/Horizontal/Work/6-col/img%20(43).jpg" class="img-fluid"
+                                         alt="First sample image">
                                     <div class="mask flex-center rgba-white-slight">
                                         <p></p>
                                     </div>
                                 </div>
                                 <h4 class="mb-2"><a class="news-title-2 pl-0" href="#">Lorem ipsum dolor sit</a></h4>
-                                <p class="font-small text-uppercase dark-grey-text"><i class="fa fa-clock-o pr-2" aria-hidden="true"></i>July 17, 2017 / <i class="fa fa-comments-o px-1"
-                                                                                                                                                            aria-hidden="true"></i> 20</p>
+                                <p class="font-small text-uppercase dark-grey-text"><i class="fa fa-clock-o pr-2"
+                                                                                       aria-hidden="true"></i>July 17,
+                                    2017 / <i class="fa fa-comments-o px-1"
+                                              aria-hidden="true"></i> 20</p>
                             </div>
                             <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-4">
                                 <h6 class="sub-title text-uppercase font-weight-bold blue-text">Bestseller</h6>
                                 <!--Featured image-->
                                 <div class="view overlay mb-3 z-depth-1">
-                                    <img src="/storage/Photos/Horizontal/E-commerce/Products/6.jpg" class="img-fluid" alt="First sample image">
+                                    <img src="/storage/Photos/Horizontal/E-commerce/Products/6.jpg" class="img-fluid"
+                                         alt="First sample image">
                                     <div class="mask flex-center rgba-white-slight">
                                         <p></p>
                                     </div>
                                 </div>
-                                <h4 class="mb-2"><a class="news-title-2 pl-0" href="#">Ut labore et dolore magna</a></h4>
-                                <p class="font-small text-uppercase dark-grey-text"><i class="fa fa-clock-o pr-2" aria-hidden="true"></i>July 16, 2017 / <i class="fa fa-comments-o px-1"
-                                                                                                                                                            aria-hidden="true"></i> 25</p>
+                                <h4 class="mb-2"><a class="news-title-2 pl-0" href="#">Ut labore et dolore magna</a>
+                                </h4>
+                                <p class="font-small text-uppercase dark-grey-text"><i class="fa fa-clock-o pr-2"
+                                                                                       aria-hidden="true"></i>July 16,
+                                    2017 / <i class="fa fa-comments-o px-1"
+                                              aria-hidden="true"></i> 25</p>
                             </div>
                             <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-5">
                                 <h6 class="sub-title text-uppercase font-weight-bold blue-text">
@@ -229,8 +244,10 @@
                 <div class="col-8 col-md-8 text-right">
 
                     <!-- View Switcher -->
-                    <a class="btn btn-blue-grey btn-sm"><i class="fa fa-th mr-2" aria-hidden="true"></i><strong> Grid</strong></a>
-                    <a class="btn btn-blue-grey btn-sm"><i class="fa fa-th-list mr-2" aria-hidden="true"></i><strong> List</strong></a>
+                    <a class="btn btn-blue-grey btn-sm"><i class="fa fa-th mr-2" aria-hidden="true"></i><strong>
+                            Grid</strong></a>
+                    <a class="btn btn-blue-grey btn-sm"><i class="fa fa-th-list mr-2" aria-hidden="true"></i><strong>
+                            List</strong></a>
                     <!-- /.View Switcher -->
 
                 </div>
@@ -244,451 +261,59 @@
 
                 <!-- Grid row -->
                 <div class="row">
+                @foreach($product as $product)
 
                     <!--Grid column-->
                     <div class="col-lg-4 col-md-12 mb-4">
-
                         <!--Card-->
-                        <div class="card card-ecommerce">
+                            <div class="card card-ecommerce">
 
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="/storage/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
+                                <!--Card image-->
+                                <div class="view overlay">
+                                    <img src="/storage/{{$product->image}}" class="img-fluid"
+                                         alt="">
+                                    <a>
+                                        <div class="mask rgba-white-slight"></div>
+                                    </a>
+                                </div>
+                                <!--Card image-->
 
-                            <!--Card content-->
-                            <div class="card-body">
-                                <!--Category & Title-->
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Category & Title-->
 
-                                <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">iPhone</a></strong></h5><span class="badge badge-danger mb-2">bestseller</span>
-                                <!-- Rating -->
-                                <ul class="rating">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                </ul>
+                                    <h5 class="card-title mb-1"><strong><a href="{{route('shop.show',$product->slug)}}"
+                                                                           class="dark-grey-text">{{$product->name}}</a></strong>
+                                    </h5><span class="badge badge-danger mb-2">bestseller</span>
+                                    <!-- Rating -->
+                                    <ul class="rating">
+                                        <li><i class="fa fa-star blue-text"></i></li>
+                                        <li><i class="fa fa-star blue-text"></i></li>
+                                        <li><i class="fa fa-star blue-text"></i></li>
+                                        <li><i class="fa fa-star blue-text"></i></li>
+                                        <li><i class="fa fa-star blue-text"></i></li>
+                                    </ul>
 
-                                <!--Card footer-->
-                                <div class="card-footer pb-0">
-                                    <div class="row mb-0">
-                                        <span class="float-left"><strong>1439$</strong></span>
-                                        <span class="float-right">
+                                    <!--Card footer-->
+                                    <div class="card-footer pb-0">
+                                        <div class="row mb-0">
+                                            <span class="float-left"><strong>{{$product->price}}$</strong></span>
+                                            <span class="float-right">
 
-                                        <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
+                                        <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i
+                                                    class="fa fa-shopping-cart ml-3"></i></a>
                                         </span>
+                                        </div>
                                     </div>
+
                                 </div>
+                                <!--Card content-->
 
                             </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
+                            <!--Card-->
                     </div>
                     <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <!--Card-->
-                        <div class="card card-ecommerce">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="/storage/Photos/Horizontal/E-commerce/Products/10.jpg" class="img-fluid" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body">
-                                <!--Category & Title-->
-
-                                <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">Headphones</a></strong></h5><span class="badge badge-info mb-2">new</span>
-                                <!-- Rating -->
-                                <ul class="rating">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                </ul>
-
-                                <!--Card footer-->
-                                <div class="card-footer pb-0">
-                                    <div class="row mb-0">
-                                        <span class="float-left"><strong>1439$</strong></span>
-                                        <span class="float-right">
-
-                                                <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                                </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-
-                        <!--Card-->
-                        <div class="card card-ecommerce">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="/storage/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body">
-                                <!--Category & Title-->
-
-                                <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">Sony TV-675i</a></strong></h5><span class="badge badge-danger mb-2">bestseller</span>
-                                <!-- Rating -->
-                                <ul class="rating">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star grey-text"></i></li>
-                                </ul>
-
-                                <!--Card footer-->
-                                <div class="card-footer pb-0">
-                                    <div class="row mb-0">
-                                        <span class="float-left"><strong>1439$</strong></span>
-                                        <span class="float-right">
-
-                                            <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                            </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-                <!-- Grid row -->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
-
-                        <!--Card-->
-                        <div class="card card-ecommerce">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="/storage/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body">
-                                <!--Category & Title-->
-
-                                <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">Asus CT-567</a></strong></h5><span class="badge grey mb-2">best rated</span>
-                                <!-- Rating -->
-                                <ul class="rating">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                </ul>
-
-                                <!--Card footer-->
-                                <div class="card-footer pb-0">
-                                    <div class="row mb-0">
-                                        <span class="float-left"><strong>1439$</strong></span>
-                                        <span class="float-right">
-                                            <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                            </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <!--Card-->
-                        <div class="card card-ecommerce">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="/storage/Photos/Horizontal/E-commerce/Products/1.jpg" class="img-fluid" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body">
-                                <!--Category & Title-->
-
-                                <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">iPad PRO</a></strong></h5><span class="badge badge-danger mb-2">bestseller</span>
-                                <!-- Rating -->
-                                <ul class="rating">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star grey-text"></i></li>
-                                </ul>
-
-                                <!--Card footer-->
-                                <div class="card-footer pb-0">
-                                    <div class="row mb-0">
-                                        <span class="float-left"><strong>1439$</strong></span>
-                                        <span class="float-right">
-                                            <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                            </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-
-                        <!--Card-->
-                        <div class="card card-ecommerce">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="/storage/Photos/Horizontal/E-commerce/Products/5.jpg" class="img-fluid" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body">
-                                <!--Category & Title-->
-
-                                <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">Dell V-964i</a></strong></h5><span class="badge badge-info mb-2">new</span>
-                                <!-- Rating -->
-                                <ul class="rating">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                </ul>
-
-                                <!--Card footer-->
-                                <div class="card-footer pb-0">
-                                    <div class="row mb-0">
-                                        <span class="float-left"><strong>1439$</strong></span>
-                                        <span class="float-right">
-
-                                            <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                            </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-                <!-- Grid row -->
-                <div class="row mb-3">
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
-
-                        <!--Card-->
-                        <div class="card card-ecommerce">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="/storage/Photos/Horizontal/E-commerce/Products/8.jpg" class="img-fluid" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body">
-                                <!--Category & Title-->
-
-                                <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">Samsung V54</a></strong></h5><span class="badge grey mb-2">best rated</span>
-                                <!-- Rating -->
-                                <ul class="rating">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                </ul>
-
-                                <!--Card footer-->
-                                <div class="card-footer pb-0">
-                                    <div class="row mb-0">
-                                        <span class="float-left"><strong>1439$</strong></span>
-                                        <span class="float-right">
-                                            <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                            </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <!--Card-->
-                        <div class="card card-ecommerce">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="/storage/Photos/Horizontal/E-commerce/Products/7.jpg" class="img-fluid" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body">
-                                <!--Category & Title-->
-
-                                <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">Dell 786i</a></strong></h5><span class="badge badge-info mb-2">new</span>
-                                <!-- Rating -->
-                                <ul class="rating">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star grey-text"></i></li>
-                                </ul>
-
-                                <!--Card footer-->
-                                <div class="card-footer pb-0">
-                                    <div class="row mb-0">
-                                        <span class="float-left"><strong>1439$</strong></span>
-                                        <span class="float-right">
-                                            <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                            </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-
-                        <!--Card-->
-                        <div class="card card-ecommerce">
-
-                            <!--Card image-->
-                            <div class="view overlay">
-                                <img src="/storage/Photos/Horizontal/E-commerce/Products/9.jpg" class="img-fluid" alt="">
-                                <a>
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                            <!--Card image-->
-
-                            <!--Card content-->
-                            <div class="card-body">
-                                <!--Category & Title-->
-
-                                <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">Canon 675-D</a></strong></h5><span class="badge badge-info mb-2">new</span>
-                                <!-- Rating -->
-                                <ul class="rating">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                </ul>
-
-                                <!--Card footer-->
-                                <div class="card-footer pb-0">
-                                    <div class="row mb-0">
-                                        <span class="float-left"><strong>1439$</strong></span>
-                                        <span class="float-right">
-                                            <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                            </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!--Card content-->
-
-                        </div>
-                        <!--Card-->
-
-                    </div>
-                    <!--Grid column-->
+                    @endforeach
 
                 </div>
                 <!--Grid row-->
@@ -701,7 +326,8 @@
                         <ul class="pagination pagination-circle pg-blue mb-0">
 
                             <!--First-->
-                            <li class="page-item disabled clearfix d-none d-md-block"><a class="page-link waves-effect waves-effect">First</a></li>
+                            <li class="page-item disabled clearfix d-none d-md-block"><a
+                                        class="page-link waves-effect waves-effect">First</a></li>
 
                             <!--Arrow left-->
                             <li class="page-item disabled">
@@ -727,7 +353,8 @@
                             </li>
 
                             <!--First-->
-                            <li class="page-item clearfix d-none d-md-block"><a class="page-link waves-effect waves-effect">Last</a></li>
+                            <li class="page-item clearfix d-none d-md-block"><a
+                                        class="page-link waves-effect waves-effect">Last</a></li>
 
                         </ul>
                     </nav>
@@ -750,46 +377,46 @@
                     <div class="col-md-6 col-lg-12 mb-5">
                         <!-- Panel -->
                         <h3 class="font-weight-bold dark-grey-text"><strong>Order By</strong></h3>
-                            <div class="divider"></div>
+                        <div class="divider"></div>
 
-                            <p class="blue-text"><a>Default</a></p>
-                            <p class="dark-grey-text"><a>Popularity</a></p>
-                            <p class="dark-grey-text"><a>Average rating</a></p>
-                            <p class="dark-grey-text"><a>Price: low to high</a></p>
-                            <p class="dark-grey-text"><a>Price: high to low</a></p>
+                        <p class="blue-text"><a>Default</a></p>
+                        <p class="dark-grey-text"><a>Popularity</a></p>
+                        <p class="dark-grey-text"><a>Average rating</a></p>
+                        <p class="dark-grey-text"><a>Price: low to high</a></p>
+                        <p class="dark-grey-text"><a>Price: high to low</a></p>
                     </div>
 
                     <!-- Filter by category-->
                     <div class="col-md-6 col-lg-12 mb-5">
                         <h3 class="font-weight-bold dark-grey-text"><strong>Category</strong></h3>
-                            <div class="divider"></div>
+                        <div class="divider"></div>
 
-                            <!--Radio group-->
-                            <div class="form-group ">
-                                <input class="form-check-input" name="group100" type="radio" id="radio100">
-                                <label for="radio100" class="form-check-label dark-grey-text">All</label>
-                            </div>
+                        <!--Radio group-->
+                        <div class="form-group ">
+                            <input class="form-check-input" name="group100" type="radio" id="radio100">
+                            <label for="radio100" class="form-check-label dark-grey-text">All</label>
+                        </div>
 
-                            <div class="form-group">
-                                <input class="form-check-input" name="group100" type="radio" id="radio101" checked>
-                                <label for="radio101" class="form-check-label dark-grey-text">Laptop</label>
-                            </div>
+                        <div class="form-group">
+                            <input class="form-check-input" name="group100" type="radio" id="radio101" checked>
+                            <label for="radio101" class="form-check-label dark-grey-text">Laptop</label>
+                        </div>
 
-                            <div class="form-group">
-                                <input class="form-check-input" name="group100" type="radio" id="radio102">
-                                <label for="radio102" class="form-check-label dark-grey-text">Smartphone</label>
-                            </div>
+                        <div class="form-group">
+                            <input class="form-check-input" name="group100" type="radio" id="radio102">
+                            <label for="radio102" class="form-check-label dark-grey-text">Smartphone</label>
+                        </div>
 
-                            <div class="form-group">
-                                <input class="form-check-input" name="group100" type="radio" id="radio103">
-                                <label for="radio103" class="form-check-label dark-grey-text">Tablet</label>
-                            </div>
+                        <div class="form-group">
+                            <input class="form-check-input" name="group100" type="radio" id="radio103">
+                            <label for="radio103" class="form-check-label dark-grey-text">Tablet</label>
+                        </div>
 
-                            <div class="form-group">
-                                <input class="form-check-input" name="group100" type="radio" id="radio104">
-                                <label for="radio104" class="form-check-label dark-grey-text">Headphones</label>
-                            </div>
-                            <!--Radio group-->
+                        <div class="form-group">
+                            <input class="form-check-input" name="group100" type="radio" id="radio104">
+                            <label for="radio104" class="form-check-label dark-grey-text">Headphones</label>
+                        </div>
+                        <!--Radio group-->
                     </div>
                     <!-- /Filter by category-->
                 </div>
@@ -800,28 +427,28 @@
                     <!-- Filter by price  -->
                     <div class="col-md-6 col-lg-12 mb-5">
                         <h3 class="font-weight-bold dark-grey-text"><strong>Price</strong></h3>
-                            <div class="divider"></div>
+                        <div class="divider"></div>
 
-                            <form class="range-field mt-3">
-                                <input id="calculatorSlider" class="no-border" type="range" value="0" min="0" max="30" />
-                            </form>
+                        <form class="range-field mt-3">
+                            <input id="calculatorSlider" class="no-border" type="range" value="0" min="0" max="30"/>
+                        </form>
 
-                            <!-- Grid row -->
-                            <div class="row justify-content-center">
+                        <!-- Grid row -->
+                        <div class="row justify-content-center">
 
-                                <!-- Grid column -->
-                                <div class="col-md-6 text-left">
-                                    <p class="dark-grey-text"><strong id="resellerEarnings">0$</strong></p>
-                                </div>
-                                <!-- Grid column -->
-
-                                <!-- Grid column -->
-                                <div class="col-md-6 text-right">
-                                    <p class="dark-grey-text"><strong id="clientPrice">319$</strong></p>
-                                </div>
-                                <!-- Grid column -->
+                            <!-- Grid column -->
+                            <div class="col-md-6 text-left">
+                                <p class="dark-grey-text"><strong id="resellerEarnings">0$</strong></p>
                             </div>
-                            <!-- Grid row -->
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-6 text-right">
+                                <p class="dark-grey-text"><strong id="clientPrice">319$</strong></p>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
 
                     </div>
                     <!-- /Filter by price -->
@@ -829,51 +456,51 @@
                     <!-- Filter by rating -->
                     <div class="col-md-6 col-lg-12 mb-5">
                         <h3 class="font-weight-bold dark-grey-text"><strong>Rating</strong></h3>
-                            <div class="divider"></div>
-                            <div class="row ml-1">
-                                <!-- Rating -->
-                                <ul class="rating mb-0">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li>
-                                        <p class="ml-3 dark-grey-text"><a>4 and more</a></p>
-                                    </li>
-                                </ul>
+                        <div class="divider"></div>
+                        <div class="row ml-1">
+                            <!-- Rating -->
+                            <ul class="rating mb-0">
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li>
+                                    <p class="ml-3 dark-grey-text"><a>4 and more</a></p>
+                                </li>
+                            </ul>
 
-                            </div>
+                        </div>
 
-                            <div class="row ml-1">
-                                <!-- Rating -->
-                                <ul class="rating mb-0">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star grey-text"></i></li>
-                                    <li>
-                                        <p class="ml-3 dark-grey-text"><a>3 - 3,99</a></p>
-                                    </li>
-                                </ul>
+                        <div class="row ml-1">
+                            <!-- Rating -->
+                            <ul class="rating mb-0">
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li><i class="fa fa-star grey-text"></i></li>
+                                <li>
+                                    <p class="ml-3 dark-grey-text"><a>3 - 3,99</a></p>
+                                </li>
+                            </ul>
 
-                            </div>
+                        </div>
 
-                            <div class="row ml-1">
-                                <!-- Rating -->
-                                <ul class="rating">
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star blue-text"></i></li>
-                                    <li><i class="fa fa-star grey-text"></i></li>
-                                    <li><i class="fa fa-star grey-text"></i></li>
-                                    <li>
-                                        <p class="ml-3 dark-grey-text"><a>3.00 and less</a></p>
-                                    </li>
-                                </ul>
+                        <div class="row ml-1">
+                            <!-- Rating -->
+                            <ul class="rating">
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li><i class="fa fa-star blue-text"></i></li>
+                                <li><i class="fa fa-star grey-text"></i></li>
+                                <li><i class="fa fa-star grey-text"></i></li>
+                                <li>
+                                    <p class="ml-3 dark-grey-text"><a>3.00 and less</a></p>
+                                </li>
+                            </ul>
 
-                            </div>
+                        </div>
                     </div>
                     <!-- Filter by rating -->
                 </div>
@@ -951,6 +578,7 @@
         client.text(price + '$');
         reseller.text((Math.round((percentageBonus / 100 * price))) + '$');
     }
+
     developerBtn.on('click', function (e) {
         license.dev.active = true;
         license.corpo.active = false;

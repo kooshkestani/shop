@@ -14,8 +14,8 @@ class shopController extends Controller
      */
     public function index()
     {
-        $product=Product::InRandomOrder()->take(12)->get();
-        return view('front-end.shop.index')->with('product',$product);
+        $product=Product::InRandomOrder()->take(9)->get();
+        return view('Theme2.category.category-v2')->with('product',$product);
     }
 
     /**
@@ -42,14 +42,14 @@ class shopController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
     public function show($slug)
     {
         $product=Product::where('slug',$slug)->firstOrFail();
         $mightAlsoLike=Product::where('slug','!=',$slug)->inRandomOrder()->take(3)->get();
-        return view('front-end.product-page.index')->with([
+        return view('Theme2.product.product')->with([
             'product'=>$product,
             'mightAlsoLike'=>$mightAlsoLike,
 
