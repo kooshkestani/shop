@@ -14,9 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::group(['namespace' => 'Voyager'],function(){
-    route::get('/test', 'testController@frontIndex');
 Route::get('/aaa', function () {
     return view('front-end.home.index');
 });
