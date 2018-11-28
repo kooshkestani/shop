@@ -169,12 +169,13 @@
                                                             <li><i class="fa fa-star blue-text"></i></li>
                                                             <li><i class="fa fa-star blue-text"></i></li>
                                                         </ul>
-
                                                         <!--Card footer-->
                                                         <div class="card-footer pb-0">
                                                             <div class="row mb-0">
-                                                                <span class="float-left"><strong>{{$product->price}}
-                                                                        $</strong></span>
+                                                                <strong> تومان </strong>
+                                                                <span class="float-right" style="margin-left:5px;">
+                                                                    <strong> {{$product->price}} </strong>
+                                                                </span>
                                                                 <span class="float-right">
                                                         <a class="" data-toggle="tooltip" data-placement="top"
                                                            title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
