@@ -466,8 +466,8 @@
             <!--Slides-->
             <div class="carousel-inner" role="listbox">
                 <!--First slide-->
-                    <div class="carousel-item active">
-                        @foreach($mightAlsoLike as $mightAlsoLike)
+                <div class="carousel-item active">
+                    @foreach($mightAlsoLike as $mightAlsoLike)
 
                         <div class="col-md-4 mb-4">
 
@@ -490,7 +490,8 @@
 
                                     <h5 class="card-title mb-1">
                                         <strong>
-                                            <a href="{{route('shop.show',$mightAlsoLike->slug)}}" class="dark-grey-text">{{$mightAlsoLike->name}}</a>
+                                            <a href="{{route('shop.show',$mightAlsoLike->slug)}}"
+                                               class="dark-grey-text">{{$mightAlsoLike->name}}</a>
                                         </strong>
                                     </h5>
                                     <span class="badge badge-danger mb-2">bestseller</span>
@@ -520,11 +521,18 @@
                                                 <strong>{{$mightAlsoLike->price}}$</strong>
                                             </span>
                                             <span class="float-right">
+                                            <form action="{{route('cart.store')}}" method="post">
 
-                                                <a class="" data-toggle="tooltip" data-placement="top"
+                                            {{csrf_field()}}
+                                                <input type="hidden" name="id" value="{{$product->id }}">
+                                                <input type="hidden" name="name" value="{{$product->name }}">
+                                                <input type="hidden" name="price" value="{{$product->price }}">
+
+                                                <a class="" type="submit" data-toggle="tooltip" data-placement="top"
                                                    title="Add to Cart">
                                                     <i class="fa fa-shopping-cart ml-3"></i>
                                                 </a>
+                                                </form>
                                             </span>
                                         </div>
                                     </div>
@@ -537,11 +545,11 @@
 
                         </div>
 
-                        @endforeach
+                    @endforeach
 
-                    </div>
-                    <!--First slide-->
-            <!--Second slide-->
+                </div>
+                <!--First slide-->
+                <!--Second slide-->
                 <div class="carousel-item">
 
                     <div class="col-md-4 mb-4">

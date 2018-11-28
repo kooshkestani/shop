@@ -13,7 +13,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="/css/mdb2min.css" rel="stylesheet">
+    <link href="/css/mdb2.min.css" rel="stylesheet">
 
     <!-- Custom style cart-v1-->
 
