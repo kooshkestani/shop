@@ -24,7 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $product=Product::InRandomOrder()->take(8)->get();
-        return view('front-end.home.index')->with('product',$product);
+        $product=Product::InRandomOrder()->take(6)->get();
+        $topseller=Product::orderBy('price', 'desc')->take(3)->get();
+        $newproduct=Product::orderBy('created_at', 'desc')->take(3)->get();
+        $randomproduct=Product::InRandomOrder()->take(3)->get();
+        return view('Theme2.homepage.homepage')->with([
+            'product'=>$product,
+            'topseller'=>$topseller,
+            'newproduct'=>$newproduct,
+            'randomproduct'=>$randomproduct,
+
+        ]);
     }
 }
