@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers\Voyager;
 
+use App\Models\Product;
+use App\Models\Order;
+use App\Models\Category;
+use App\Models\Image;
+use App\Models\Address;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Database\Schema\SchemaManager;

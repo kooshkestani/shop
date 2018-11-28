@@ -16,6 +16,14 @@
 
                     You are logged in!
                 </div>
+
+
+                <div class="card-body">
+                    @foreach($product as $item)
+                    <p>{{$item->name}}</p>
+                    @endforeach
+                </div>
+
             </div>
         </div>
     </div>

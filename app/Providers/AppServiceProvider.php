@@ -3,6 +3,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Events\Dispatcher;
+use TCG\Voyager\Facades\Voyager;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,5 +25,10 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+
+       // Voyager::useModel('product', \App\Models\Product::class);
+        if ($this->app->environment() !== 'production') {
+            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+        }
     }
 }

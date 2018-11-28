@@ -10,7 +10,7 @@
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
 
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
+                    <img src="{{$product->image}}" class="img-fluid" alt="">
 
                 </div>
                 <!--Grid column-->
@@ -37,17 +37,20 @@
               <span class="mr-1">
                 <del>$200</del>
               </span>
-                            <span>$100</span>
+                            <span>{{$product->price}}</span>
                         </p>
 
-                        <p class="lead font-weight-bold">Description</p>
+                        <p class="lead font-weight-bold">details</p>
 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa sint voluptatibus!
-                            Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
+                        <p>{{$product->details}}</p>
 
-                        <form class="d-flex justify-content-left">
+                        <form class="d-flex justify-content-left"action="{{route('cart.store')}}"method="post">
+                            {{csrf_field()}}
                             <!-- Default input -->
-                            <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+                                <input type="hidden" name="id" value="{{$product->id }}">
+                                <input type="hidden" name="name" value="{{$product->name }}">
+                                <input type="hidden" name="price" value="{{$product->price }}">
+                            <input type="number" value="" aria-label="Search" class="form-control" style="width: 100px">
                             <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
                                 <i class="fa fa-shopping-cart ml-1"></i>
                             </button>
@@ -71,10 +74,9 @@
                 <!--Grid column-->
                 <div class="col-md-6 text-center">
 
-                    <h4 class="my-4 h4">Additional information</h4>
+                    <h4 class="my-4 h4">description</h4>
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit voluptates,
-                        quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+                    <p>{{$product->description}}</p>
 
                 </div>
                 <!--Grid column-->
@@ -84,30 +86,15 @@
 
             <!--Grid row-->
             <div class="row wow fadeIn">
-
+@foreach($mightAlsoLike as $product)
                 <!--Grid column-->
                 <div class="col-lg-4 col-md-12 mb-4">
 
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
+                    <img src="{{$product->image}}" class="img-fluid" alt="{{$product->slug}}">
 
                 </div>
                 <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4">
-
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
-
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4">
-
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
-
-                </div>
-                <!--Grid column-->
+@endforeach
 
             </div>
             <!--Grid row-->

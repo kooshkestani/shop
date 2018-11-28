@@ -6,6 +6,21 @@
 
             <!-- Heading -->
             <h2 class="my-5 h2 text-center">Checkout form</h2>
+            @if (session()->has('success_message'))
+                <div class="alert alert-success">
+                    {{ session()->get('success_message') }}
+                </div>
+            @endif
+
+            @if(count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+        @endif
 
             <!--Grid row-->
             <div class="row">
@@ -196,46 +211,54 @@
 
                 <!--Grid column-->
                 <div class="col-md-4 mb-4">
+                @if(Cart::count()>0)
 
                     <!-- Heading -->
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-muted">Your cart</span>
-                        <span class="badge badge-secondary badge-pill">3</span>
+                        <span class="badge badge-secondary badge-pill">{{Cart::count()}}</span>
                     </h4>
 
                     <!-- Cart -->
                     <ul class="list-group mb-3 z-depth-1">
+                        @foreach(Cart::content() as $item)
                         <li class="list-group-item d-flex justify-content-between lh-condensed">
                             <div>
-                                <h6 class="my-0">Product name</h6>
-                                <small class="text-muted">Brief description</small>
+                                <h6 class="my-0">{{$item->model->name}}</h6>
+                                <small class="text-muted">{{$item->model->details}}</small>
                             </div>
-                            <span class="text-muted">$12</span>
+                            <span class="text-muted">{{$item->model->price}}</span>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
-                                <h6 class="my-0">Second product</h6>
-                                <small class="text-muted">Brief description</small>
-                            </div>
-                            <span class="text-muted">$8</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
-                                <h6 class="my-0">Third item</h6>
-                                <small class="text-muted">Brief description</small>
-                            </div>
-                            <span class="text-muted">$5</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between bg-light">
-                            <div class="text-success">
-                                <h6 class="my-0">Promo code</h6>
-                                <small>EXAMPLECODE</small>
-                            </div>
-                            <span class="text-success">-$5</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
+                        {{--<li class="list-group-item d-flex justify-content-between lh-condensed">--}}
+                            {{--<div>--}}
+                                {{--<h6 class="my-0">Second product</h6>--}}
+                                {{--<small class="text-muted">Brief description</small>--}}
+                            {{--</div>--}}
+                            {{--<span class="text-muted">$8</span>--}}
+                        {{--</li>--}}
+                        {{--<li class="list-group-item d-flex justify-content-between lh-condensed">--}}
+                            {{--<div>--}}
+                                {{--<h6 class="my-0">Third item</h6>--}}
+                                {{--<small class="text-muted">Brief description</small>--}}
+                            {{--</div>--}}
+                            {{--<span class="text-muted">$5</span>--}}
+                        {{--</li>--}}
+                        {{--<li class="list-group-item d-flex justify-content-between bg-light">--}}
+                            {{--<div class="text-success">--}}
+                                {{--<h6 class="my-0">Promo code</h6>--}}
+                                {{--<small>EXAMPLECODE</small>--}}
+                            {{--</div>--}}
+                            {{--<span class="text-success">-$5</span>--}}
+                        {{--</li>--}}
+                        {{--<li class="list-group-item d-flex justify-content-between">--}}
+                            @endforeach
+
+                            <span>Sub Total (USD)</span>
+                            <strong>{{Cart::subtotal()}}</strong>
+                            <span>TAX  (9%)</span>
+                            <strong>{{Cart::tax()}}</strong>
                             <span>Total (USD)</span>
-                            <strong>$20</strong>
+                            <strong>{{Cart::total()}}</strong>
                         </li>
                     </ul>
                     <!-- Cart -->
@@ -250,7 +273,9 @@
                         </div>
                     </form>
                     <!-- Promo code -->
-
+                @else
+                    <h3>NO item in Cart</h3>
+                    @endif
                 </div>
                 <!--Grid column-->
 
