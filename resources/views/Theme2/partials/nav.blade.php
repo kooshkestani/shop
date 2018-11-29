@@ -19,9 +19,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item ">
-                        <a class="nav-link dark-grey-text font-weight-bold" href="#" data-toggle="modal" data-target="#cart-modal-ex">
-                            <span class="badge danger-color">4</span>
-                            <i class="fa fa-shopping-cart blue-text" aria-hidden="true"></i>
+                        <a class="nav-link dark-grey-text font-weight-bold" href="{{route('cart.index')}}" data-toggle="modal" data-target="#cart-modal-ex">
+                            @if(Cart::instance('default')->count()>0)
+                            <span class="badge danger-color">{{Cart::instance('default')->count()}}</span>
+                            @endif
+                                <i class="fa fa-shopping-cart blue-text" aria-hidden="true"></i>
                             <span class="clearfix d-none d-sm-inline-block">Cart</span>
                         </a>
                     </li>
@@ -35,6 +37,7 @@
                             <i class="fa fa-user blue-text"></i> Profile </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
                             <a class="dropdown-item waves-effect waves-light" href="#">My account</a>
+                            <a class="dropdown-item waves-effect waves-light" href="#">Sign in/Sign up</a>
                             <a class="dropdown-item waves-effect waves-light" href="#">Log out</a>
                         </div>
                     </li>

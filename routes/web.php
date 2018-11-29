@@ -43,12 +43,31 @@ Auth::routes();
 //});
 
 //TODO themeplate 2 routing
+//TODO route basic
 Route::get('/', 'HomeController@index')->name('home');
+//TODO route shop and product
 Route::get('/shop', 'shopController@index')->name('shop.index');
 Route::get('/shop/{product}', 'shopController@show')->name('shop.show');
+
+//TODO route cart
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
-Route::post('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
+//Route::post('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
+Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
+Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
+
+//TODO route checkout
+
+Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+
+
+//TODO route checkout
+
+Route::get('/thankyou', 'ConfirmController@index')->name('Confirm.index');
+
+
+
 Route::get('empty', function () {
     Cart::destroy();
 

@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use App\Models\Product;
-use Gloudemans\Shoppingcart\Facades\Cart;
 
-class CartController extends Controller
+class ConfirmController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +13,11 @@ class CartController extends Controller
      */
     public function index()
     {
-    return view('Theme2.cart.cart-v2');
+        if (!session()->has('success_message')){
+            return redirect('/');
+        }
+
+        return view('thankyou');
     }
 
     /**
@@ -36,21 +38,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $requestid=str_replace(",","",$request->price);
-        $duplicate=Cart::search(function ($cartItem,$rowId)use($request){
-            return $cartItem->id===$request->id;
-        });
-        if ($duplicate->isNotEmpty()){
-            return redirect()->route('cart.index')->with('sucess message','Item is Added Cart');
-        }
-        Cart::add($request->id, $request->name,1,$requestid)->associate('App\Models\Product');
-        return redirect()->route('cart.index')->with('sucess message','Item Add to Cart');
-
-    }
-
-    public function empty()
-    {
-        Cart::destroy();
+        //
     }
 
     /**
@@ -84,10 +72,7 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //dd($id);
-        //return $request->all();
-        Cart::update($id, $request->qty);
-        //return response()->json(['success'=>true]);
+        //
     }
 
     /**
@@ -98,7 +83,6 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        Cart::remove($id);
-        return back()->with('sucess_message','item has been removed');
+        //
     }
 }

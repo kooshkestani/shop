@@ -180,9 +180,18 @@
 
                             <div class="row mt-3 mb-4">
                                 <div class="col-md-12 text-center text-md-left text-md-right">
-                                    <button class="btn btn-primary btn-rounded">
-                                        <i class="fa fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart
-                                    </button>
+                                    <form action="{{route('cart.store')}}" method="post">
+
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="id" value="{{$product->id }}">
+                                        <input type="hidden" name="name" value="{{$product->name }}">
+                                        <input type="hidden" name="price" value="{{$product->price }}">
+                                        <input type="hidden" name="image" value="{{$product->image }}">
+
+                                        <button class="btn btn-primary btn-rounded" type="submit">
+                                            <i class="fa fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -521,18 +530,12 @@
                                                 <strong>{{$mightAlsoLike->price}}$</strong>
                                             </span>
                                             <span class="float-right">
-                                            <form action="{{route('cart.store')}}" method="post">
-
-                                            {{csrf_field()}}
-                                                <input type="hidden" name="id" value="{{$product->id }}">
-                                                <input type="hidden" name="name" value="{{$product->name }}">
-                                                <input type="hidden" name="price" value="{{$product->price }}">
 
                                                 <a class="" type="submit" data-toggle="tooltip" data-placement="top"
                                                    title="Add to Cart">
                                                     <i class="fa fa-shopping-cart ml-3"></i>
                                                 </a>
-                                                </form>
+
                                             </span>
                                         </div>
                                     </div>
