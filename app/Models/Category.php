@@ -30,4 +30,7 @@ class Category extends Model
     {
         return $this->belongsTo(self::class);
     }
+    public function products(){
+        return $this->belongsToMany('App\Models\Product');
+    }
 }

@@ -236,7 +236,7 @@
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>
                     </select>
-                    <label>Example label</label>
+                    <label>{{$categoryname}}</label>
                     <button class="btn-save btn btn-primary btn-sm">Save</button>
                     <!-- /.Sort by -->
 
@@ -261,11 +261,11 @@
 
                 <!-- Grid row -->
                 <div class="row">
-                @foreach($product as $product)
+                @foreach($products as $product)
 
                     <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
-                        <!--Card-->
+                        <div class="col-lg-4 col-md-12 mb-4">
+                            <!--Card-->
                             <div class="card card-ecommerce">
 
                                 <!--Card image-->
@@ -311,8 +311,8 @@
 
                             </div>
                             <!--Card-->
-                    </div>
-                    <!--Grid column-->
+                        </div>
+                        <!--Grid column-->
                     @endforeach
 
                 </div>
@@ -330,27 +330,30 @@
                                         class="page-link waves-effect waves-effect">First</a></li>
 
                             <!--Arrow left-->
-                            <li class="page-item disabled">
-                                <a class="page-link waves-effect waves-effect" aria-label="Previous">
-                                    <span aria-hidden="true">«</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
+                            {{--<li class="page-item disabled">--}}
+                                {{--<a class="page-link waves-effect waves-effect" aria-label="Previous">--}}
+                                    {{--<span aria-hidden="true">«</span>--}}
+                                    {{--<span class="sr-only">Previous</span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
 
                             <!--Numbers-->
-                            <li class="page-item active"><a class="page-link waves-effect waves-effect">1</a></li>
-                            <li class="page-item"><a class="page-link waves-effect waves-effect">2</a></li>
-                            <li class="page-item"><a class="page-link waves-effect waves-effect">3</a></li>
-                            <li class="page-item"><a class="page-link waves-effect waves-effect">4</a></li>
-                            <li class="page-item"><a class="page-link waves-effect waves-effect">5</a></li>
+
+
+                            {{ $products->appends(request()->input())->links() }}
+                            {{--<li class="page-item active"><a class="page-link waves-effect waves-effect">1</a></li>--}}
+                            {{--<li class="page-item"><a class="page-link waves-effect waves-effect">2</a></li>--}}
+                            {{--<li class="page-item"><a class="page-link waves-effect waves-effect">3</a></li>--}}
+                            {{--<li class="page-item"><a class="page-link waves-effect waves-effect">4</a></li>--}}
+                            {{--<li class="page-item"><a class="page-link waves-effect waves-effect">5</a></li>--}}
 
                             <!--Arrow right-->
-                            <li class="page-item">
-                                <a class="page-link waves-effect waves-effect" aria-label="Next">
-                                    <span aria-hidden="true">»</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
+                            {{--<li class="page-item">--}}
+                                {{--<a class="page-link waves-effect waves-effect" aria-label="Next">--}}
+                                    {{--<span aria-hidden="true">»</span>--}}
+                                    {{--<span class="sr-only">Next</span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
 
                             <!--First-->
                             <li class="page-item clearfix d-none d-md-block"><a
@@ -379,11 +382,11 @@
                         <h3 class="font-weight-bold dark-grey-text"><strong>Order By</strong></h3>
                         <div class="divider"></div>
 
-                        <p class="blue-text"><a>Default</a></p>
-                        <p class="dark-grey-text"><a>Popularity</a></p>
-                        <p class="dark-grey-text"><a>Average rating</a></p>
-                        <p class="dark-grey-text"><a>Price: low to high</a></p>
-                        <p class="dark-grey-text"><a>Price: high to low</a></p>
+                        <p class="blue-text"><a href="{{route('shop.index',['category'=>request()->category,'sort'=>'low_high'])}}">Default</a></p>
+                        <p class="dark-grey-text"><a href="{{route('shop.index',['category'=>request()->category,'sort'=>'popularity'])}}">Popularity</a></p>
+                        <p class="dark-grey-text"><a href="{{route('shop.index',['category'=>request()->category,'sort'=>'avg'])}}">Average rating</a></p>
+                        <p class="dark-grey-text"><a href="{{route('shop.index',['category'=>request()->category,'sort'=>'low_high'])}}">Price: low to high</a></p>
+                        <p class="dark-grey-text"><a href="{{route('shop.index',['category'=>request()->category,'sort'=>'high_low'])}}">Price: high to low</a></p>
                     </div>
 
                     <!-- Filter by category-->
@@ -392,30 +395,14 @@
                         <div class="divider"></div>
 
                         <!--Radio group-->
-                        <div class="form-group ">
-                            <input class="form-check-input" name="group100" type="radio" id="radio100">
-                            <label for="radio100" class="form-check-label dark-grey-text">All</label>
-                        </div>
+                        @foreach($categories as $category)
+                            <div class="form-group ">
+                                <input class="form-check-input" name="group100" type="radio" id="radio100">
+                                <label for="radio100" class="form-check-label dark-grey-text"><a href="{{route('shop.index',['category'=>$category->slug])}}">{{$category->name}}</a></label>
+                            </div>
+                        @endforeach
 
-                        <div class="form-group">
-                            <input class="form-check-input" name="group100" type="radio" id="radio101" checked>
-                            <label for="radio101" class="form-check-label dark-grey-text">Laptop</label>
-                        </div>
 
-                        <div class="form-group">
-                            <input class="form-check-input" name="group100" type="radio" id="radio102">
-                            <label for="radio102" class="form-check-label dark-grey-text">Smartphone</label>
-                        </div>
-
-                        <div class="form-group">
-                            <input class="form-check-input" name="group100" type="radio" id="radio103">
-                            <label for="radio103" class="form-check-label dark-grey-text">Tablet</label>
-                        </div>
-
-                        <div class="form-group">
-                            <input class="form-check-input" name="group100" type="radio" id="radio104">
-                            <label for="radio104" class="form-check-label dark-grey-text">Headphones</label>
-                        </div>
                         <!--Radio group-->
                     </div>
                     <!-- /Filter by category-->
@@ -534,7 +521,7 @@
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="/js/mdb.min.js"></script>
+<script type="text/javascript" src="/js/mdb2.min.js"></script>
 
 <script type="text/javascript">
     /* WOW.js init */
@@ -607,16 +594,7 @@
         }
     })
 </script>
-<script>
-    // Material Select Initialization
-    $(document).ready(function () {
-        $('.mdb-select').material_select();
-    });
-</script>
-<script>
-    // SideNav Initialization
-    $(".button-collapse").sideNav();
-</script>
+
 </body>
 
 

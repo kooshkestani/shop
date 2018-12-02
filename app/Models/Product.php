@@ -12,5 +12,9 @@ class Product extends Model
     public function getPriceAttribute($value){
         return number_format($value / 10 , 0, "", ","); 
     }
+
+    public function categories(){
+        return $this->belongsToMany('App\Models\Category');
+    }
    
 }
