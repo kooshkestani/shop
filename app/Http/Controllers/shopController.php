@@ -29,7 +29,7 @@ class shopController extends Controller
         if (request()->sort == 'low_high') {
             $products = $products->orderBy('price')->paginate(9);
         } elseif (request()->sort == 'high_low') {
-            $products = $products->orderBy('price','desc')->paginate(9);
+            $products = $products->orderBy('price', 'desc')->paginate(9);
 
         } elseif (request()->sort == 'avg') {
             $products = $products->sortBy('price');
@@ -37,7 +37,7 @@ class shopController extends Controller
         } elseif (request()->sort == 'popularity') {
             $products = $products->sortBy('price');
 
-        }else{
+        } else {
             $products = $products->paginate(9);
 
         }
@@ -120,5 +120,23 @@ class shopController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+        $request->validate([
+            'query' => 'required|min:3',
+        ]);
+        $query = $request->input('query');
+        $products = Product::where('name', 'like', "%$query%")
+            ->orwhere('details', 'like', "%$query%")
+            ->orwhere('description', 'like', "%$query%")
+            ->paginate(15);
+        return view('Theme2.search-result.search-result')->with('products', $products);
+    }
+
+    public function searchAlgolia(Request $request)
+    {
+        return view('Theme2.search-result.search-algolia');
     }
 }

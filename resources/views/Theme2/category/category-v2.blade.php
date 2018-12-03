@@ -16,6 +16,8 @@
 
     <!-- Material Design Bootstrap -->
     <link href="/css/mdb2.min.css" rel="stylesheet">
+    <link href="/css/algolia.css" rel="stylesheet">
+
     <style type="text/css">
         .multiple-select-dropdown li [type=checkbox] + label {
             height: 1rem;
@@ -510,6 +512,11 @@
 
 
 <!-- SCRIPTS -->
+<!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script type="text/javascript" src="/js/algolia.js"></script>
+<!-- Initialize autocomplete menu -->
 
 <!-- JQuery -->
 <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>

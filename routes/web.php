@@ -66,6 +66,9 @@ Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 
 Route::get('/thankyou', 'ConfirmController@index')->name('Confirm.index');
 
+//TODO route search
+Route::get('/search', 'shopController@search')->name('search');
+Route::get('/search-algolia', 'shopController@searchAlgolia')->name('search-algolia');
 
 
 Route::get('empty', function () {
