@@ -59,11 +59,7 @@
                                 @endif
                                 <input type="password" class="form-control" id="password" name="password" value="" autocomplete="new-password">
                             </div>
-                            <div class="form-group">
-                                <label for="name">{{ __('voyager::generic.wallet') }}</label>
-                                <input type="text" class="form-control" id="wallet" name="wallet" placeholder="{{ __('voyager::generic.wallet') }}"
-                                       value="@if(isset($dataTypeContent->wallet)){{ $dataTypeContent->wallet }}@endif">
-                            </div>
+    
                             @can('editRoles', $dataTypeContent)
                                 <div class="form-group">
                                     <label for="default_role">{{ __('voyager::profile.role_default') }}</label>

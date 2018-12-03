@@ -30,7 +30,7 @@ Auth::routes();
 
 
 //TODO themeplate 1 routing
-//Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/', 'HomeController@index')->name('home');
 //Route::get('/shop', 'shopController@index')->name('shop.index');
 //Route::get('/shop/{product}', 'shopController@show')->name('shop.show');
