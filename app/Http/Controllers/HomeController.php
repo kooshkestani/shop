@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+         $this->middleware('auth');
         //dlkjdlkjslkjslk
     }
 
@@ -25,16 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $product=Product::InRandomOrder()->take(6)->get();
-        $topseller=Product::orderBy('price', 'desc')->take(3)->get();
-        $newproduct=Product::orderBy('created_at', 'desc')->take(3)->get();
-        $randomproduct=Product::InRandomOrder()->take(3)->get();
-        return view('Theme2.homepage.homepage')->with([
-            'product'=>$product,
-            'topseller'=>$topseller,
-            'newproduct'=>$newproduct,
-            'randomproduct'=>$randomproduct,
+        return view('home');
 
-        ]);
     }
 }
