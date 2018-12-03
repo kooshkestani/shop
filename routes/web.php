@@ -12,9 +12,9 @@
 */
 use Gloudemans\Shoppingcart\Facades\Cart;
 
-Route::get('/aaa', function () {
-    return view('Theme2.homepage.homepage');
-});
+//Route::get('/aaa', function () {
+//    return view('Theme2.homepage.homepage');
+//});
 
 //Route::group(['namespace' => 'Voyager'],function() {
 //    route::get('/test', 'testController@frontIndex');
@@ -43,6 +43,7 @@ Auth::routes();
 //});
 
 //TODO themeplate 2 routing
+
 //TODO route basic
 Route::get('/', 'HomeController@index')->name('home');
 //TODO route shop and product
@@ -66,6 +67,9 @@ Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 
 Route::get('/thankyou', 'ConfirmController@index')->name('Confirm.index');
 
+//TODO route search
+Route::get('/search', 'shopController@search')->name('search');
+Route::get('/search-algolia', 'shopController@searchAlgolia')->name('search-algolia');
 
 
 Route::get('empty', function () {

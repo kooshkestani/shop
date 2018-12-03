@@ -9,7 +9,7 @@
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
-            <a class="navbar-brand font-weight-bold" href="#">
+            <a class="navbar-brand font-weight-bold" href="{{route('home')}}">
                 <strong>SHOP</strong>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
