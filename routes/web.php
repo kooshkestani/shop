@@ -41,11 +41,12 @@ Auth::routes();
 //    Cart::destroy();
 //
 //});
+Route::get('/home', 'HomeController@index')->name('home');
 
 //TODO themeplate 2 routing
 
 //TODO route basic
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'LandingPageController@index')->name('landing-page');
 //TODO route shop and product
 Route::get('/shop', 'shopController@index')->name('shop.index');
 Route::get('/shop/{product}', 'shopController@show')->name('shop.show');
