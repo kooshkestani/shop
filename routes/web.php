@@ -62,7 +62,8 @@ Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
 
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
-
+//TODO quest Checkout
+Route::get('/guestCheckout', 'CheckoutController@index')->name('guestCheckout.index');
 
 //TODO route checkout
 

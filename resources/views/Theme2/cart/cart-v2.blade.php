@@ -84,7 +84,7 @@
                                         <td></td>
                                         <td>{{$item->model->price}}</td>
                                         <td class="text-center text-md-left">
-                                            <span class="qty"  id="number" data-id="{{$item->rowId}}">{{Cart::content()->count('id')}}</span>
+                                            <span class="qty"  id="number"  data-id="{{$item->rowId}}">{{Cart::content()->count('id')}}</span>
                                             {{--<input type="number" id="number" value="0" />--}}
                                             <div class="btn-group radio-group ml-2" data-toggle="buttons">
                                                 <label class="btn btn-sm btn-primary btn-rounded" id="decrease" onclick="decreaseValue()" value="Decrease Value">
