@@ -1,19 +1,24 @@
-
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>E-Commerce - MDBootstrap</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
     <link href="/css/mdb2.min.css" rel="stylesheet">
+    <link href="/css/compiled-4.5.15.min.css" rel="stylesheet">
 
     <!-- Custom style cart-v1-->
 
