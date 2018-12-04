@@ -84,6 +84,7 @@ class shopController extends Controller
         return view('Theme2.product.product')->with([
             'product' => $product,
             'mightAlsoLike' => $mightAlsoLike,
+            'title' =>$slug
 
         ]);
     }

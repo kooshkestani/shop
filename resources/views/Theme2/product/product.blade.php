@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php 
+// $ImagesGallery = trim($product->images,"][");
 
+// $img = (explode(",",$ImagesGallery));
+// $path = str_replace("\\","/",$img);
+// for($i = 0 ;$i<count($img);$i++){
+//     $path[$i] = trim($path[$i],"\"");
+// }
+// dd($img);
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>E-Commerce - MDBootstrap</title>
+    <title>{{$title}}</title>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('font-awesome/4.7.0/css/font-awesome.min.css')}}">
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="/css/mdb2.min.css" rel="stylesheet">
+    <link href="{{asset('css/mdb2.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -36,36 +45,34 @@
                 <div class="col-lg-6">
                     <div class="row mx-2">
                         <!--Carousel Wrapper-->
-                        <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails mb-5 pb-4"
-                             data-ride="carousel">
+                        <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails"
+                             data-ride="carousel" style="margin-bottom:0">
 
                             <!--Slides-->
                             <div class="carousel-inner text-center text-md-left" role="listbox">
                                 <div class="carousel-item active">
-                                    <img src="/storage/Photos/Horizontal/E-commerce/Products/1.jpg" alt="First slide"
+                                    <img src="/storage/{{$product->image}}" alt="First slide"
                                          class="img-fluid">
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="/storage/Photos/Horizontal/E-commerce/Products/2.jpg" alt="Second slide"
+                                @foreach (json_decode($product->images) as $image)
+                                    <div class="carousel-item">
+                                    <img src="\storage\{{$image}}" alt="slide<?Php $count=1;$count++;?>"
                                          class="img-fluid">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/storage/Photos/Horizontal/E-commerce/Products/20.jpg" alt="Third slide"
-                                         class="img-fluid">
-                                </div>
+                                    </div>
+                                @endforeach
                             </div>
                             <!--/.Slides-->
 
-                            <!--Thumbnails-->
-                            <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                            <!--/.Thumbnails-->
+                                <!--Thumbnails-->
+                                <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                <!--/.Thumbnails-->
 
                         </div>
                         <!--/.Carousel Wrapper-->
@@ -73,45 +80,16 @@
 
                     <!--Grid row-->
                     <div class="row mb-4">
-
                         <div class="col-md-12">
-
-                            <div id="mdb-lightbox-ui"></div>
-
-                            <div class="mdb-lightbox no-margin">
-
+                            <div class="mdb-lightbox">
                                 <!--Grid column-->
-                                <figure class="col-md-4">
-                                    <!--Large image-->
-                                    <a href="/storage/{{$product->image}}" data-size="1600x1067">
-                                        <!-- Thumbnail-->
-                                        <img src="/storage/{{$product->image}}" class="img-fluid">
-                                    </a>
-                                </figure>
-                                <!--Grid column-->
-
-                                <!--Grid column-->
-                                <figure class="col-md-4">
-                                    <!--Large image-->
-                                    <a href="/storage/Photos/Horizontal/E-commerce/Products/2.jpg"
-                                       data-size="1600x1067">
-                                        <!-- Thumbnail-->
-                                        <img src="/storage/Photos/Horizontal/E-commerce/Products/2.jpg"
-                                             class="img-fluid">
-                                    </a>
-                                </figure>
-                                <!--Grid column-->
-
-                                <!--Grid column-->
-                                <figure class="col-md-4">
-                                    <!--Large image-->
-                                    <a href="/storage/Photos/Horizontal/E-commerce/Products/20.jpg"
-                                       data-size="1600x1067">
-                                        <!-- Thumbnail-->
-                                        <img src="/storage/Photos/Horizontal/E-commerce/Products/20.jpg"
-                                             class="img-fluid">
-                                    </a>
-                                </figure>
+                                @foreach (json_decode($product->images , true) as $image)
+                                    <figure class="col-md-4">
+                                        <a href="\storage\{{$image}}">
+                                            <img src="\storage\{{$image}}" alt="PIC" class="img-fluid img-thumbnail">
+                                        </a>
+                                    </figure>
+                                @endforeach
                                 <!--Grid column-->
                             </div>
                         </div>
@@ -137,7 +115,8 @@
                             </span>
                     </h3>
 
-                    <p class="ml-xl-0 ml-4">{{$product->details}}
+                    <p class="ml-xl-0 ml-4">
+                        {{$product->details}}
                     </p>
                     <p class="ml-xl-0 ml-4">
                         <strong>Storage: </strong>64GB</p>
@@ -997,7 +976,7 @@
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="/js/mdb.min.js"></script>
+<script type="text/javascript" src="{{asset('/js/mdb.min.js')}}"></script>
 
 <script type="text/javascript">
     /* WOW.js init */
