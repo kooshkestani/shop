@@ -40,17 +40,17 @@
                             <i class="fa fa-user blue-text"></i> Profile </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-cyan"
                              aria-labelledby="navbarDropdownMenuLink-4">
-                            <a class="dropdown-item waves-effect waves-light" href="#">My account</a>
-                            @guest
-
-                                <a class="dropdown-item waves-effect waves-light"
-                                   href="{{ route('login') }}">{{ __('Login') }}</a>
-
-                                @if (Route::has('register'))
-                                    <a class="dropdown-item waves-effect waves-light"
-                                       href="{{ route('register') }}">{{ __('register') }}</a>
-                                @endif
-                            @else
+                             @guest
+                             
+                             <a class="dropdown-item waves-effect waves-light"
+                             href="{{ route('login') }}">{{ __('Login') }}</a>
+                             
+                             @if (Route::has('register'))
+                             <a class="dropdown-item waves-effect waves-light"
+                             href="{{ route('register') }}">{{ __('Register') }}</a>
+                             @endif
+                             @else
+                                <a class="dropdown-item waves-effect waves-light" href="#">My account</a>
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>

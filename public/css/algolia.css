@@ -5,15 +5,16 @@
 .aa-input-search {
     width: 300px;
     padding: 12px 28px 12px 12px;
-    border: 2px solid #e4e4e4;
+    border: 1px solid #e4e4e4;
     border-radius: 4px;
     -webkit-transition: .2s;
     transition: .2s;
     font-family: "Montserrat", sans-serif;
-    box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
-    font-size: 11px;
+    box-shadow: 2px 2px 0 rgba(241, 241, 241, 0.35);
+    background-color:transparent;
+    font-size: 13px;
     box-sizing: border-box;
-    color: #333;
+    color: #fff;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none; }
@@ -21,7 +22,7 @@
     display: none; }
 .aa-input-search:focus {
     outline: 0;
-    border-color: #3a96cf;
+    /* border-color: #3a96cf; */
     box-shadow: 4px 4px 0 rgba(58, 150, 207, 0.1); }
 .aa-input-icon {
     height: 16px;

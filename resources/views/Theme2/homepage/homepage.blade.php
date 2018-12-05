@@ -10,14 +10,14 @@
     <title>E-Commerce - MDBootstrap</title>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('font-awesome/4.7.0/css/font-awesome.min.css')}}">
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="/css/mdb2.min.css" rel="stylesheet">
-    <link href="/css/algolia.css" rel="stylesheet">
+    <link href="{{asset('css/mdb2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/algolia.css')}}" rel="stylesheet">
 
     <style>
     </style>
@@ -801,21 +801,21 @@
 <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-<script type="text/javascript" src="/js/algolia.js"></script>
+<script type="text/javascript" src="{{asset('js/algolia.js')}}"></script>
 
 <!-- Initialize autocomplete menu -->
 
 <!-- JQuery -->
-<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 
 <!-- Bootstrap tooltips -->
-<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
 
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="/js/mdb.min.js"></script>
+<script type="text/javascript" src="{{asset('js/mdb.min.js')}}"></script>
 
 <script type="text/javascript">
     /* WOW.js init */

@@ -9,16 +9,15 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <link rel="stylesheet" href="/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="{{asset('font-awesome/4.7.0/css/font-awesome.min.css')}}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
-    <link href="/css/compiled-4.5.15.min.css" rel="stylesheet">
-    <link href="/css/mdb2.min.css" rel="stylesheet">
+    <link href="{{asset('css/compiled-4.5.15.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/mdb2.min.css')}}" rel="stylesheet">
 
     <!-- Styles -->
     {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
@@ -32,4 +31,6 @@
     </div>
 @include('Theme2.partials.cart-modal')
 </body>
+<!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
 </html>
