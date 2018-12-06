@@ -79,7 +79,7 @@
             <a href="" class="list-group-item active waves-effect">
                 <i class="fa fa-chart-pie mr-3"></i>Dashboard
             </a>
-            <a href="" class="list-group-item list-group-item-action waves-effect">
+            <a href="{{route('users.profile')}}" class="list-group-item list-group-item-action waves-effect">
                 <i class="fa fa-user mr-3"></i>Profile</a>
 
             <a href="" class="list-group-item list-group-item-action waves-effect">

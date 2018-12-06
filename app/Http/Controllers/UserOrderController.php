@@ -13,8 +13,8 @@ class UserOrderController extends Controller
      */
     public function index()
     {
-//        $orders=auth()->user()->orders;
-        return view('Theme2.my-profile.content.order');
+        $orders=auth()->user()->orders;
+        return view('Theme2.my-profile.content.order')->with('orders',$orders);
     }
 
     /**

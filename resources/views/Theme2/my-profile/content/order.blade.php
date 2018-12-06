@@ -40,16 +40,106 @@
                     <!--Card content-->
                     <div class="card-body">
 
-                        {{--@foreach($orders as $order)--}}
-                            {{--<div>{{$order->id}}</div>--}}
-                            {{--<div>{{$order->total}}</div>--}}
+                        <!-- Editable table -->
+                        <div class="card">
+                            <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Order User</h3>
+                            <div class="card-body">
+                                <div id="table" class="table-editable">
+                                    <table class="table table-bordered table-responsive-md table-striped text-center">
+                                        <tr>
+                                            <th class="text-center">Order</th>
+                                            <th class="text-center">Total</th>
+                                            <th class="text-center">Date & Time</th>
+                                            <th class="text-center">delivered</th>
+                                            <th class="text-center">Sort</th>
+                                            <th class="text-center">Details</th>
+                                        </tr>
 
-                            {{--@foreach($order->products as $product)--}}
-                                {{--<div>{{$product->name}}</div>--}}
-                                {{--<div>{{$product->image}}</div>--}}
-                                {{--<div></div>--}}
-                            {{--@endforeach--}}
-                        {{--@endforeach--}}
+                                            {{--@foreach($order->products as $product)--}}
+                                                {{--<div>{{$product->name}}</div>--}}
+                                                {{--<div>{{$product->image}}</div>--}}
+                                                {{--<div></div>--}}
+                                            {{--@endforeach--}}
+                                        <script>
+                                            var $TABLE = $('#table');
+                                            var $BTN = $('#export-btn');
+                                            var $EXPORT = $('#export');
+
+                                            $('.table-add').click(function () {
+                                                var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');
+                                                $TABLE.find('table').append($clone);
+                                            });
+
+                                            $('.table-remove').click(function () {
+                                                $(this).parents('tr').detach();
+                                            });
+
+                                            $('.table-up').click(function () {
+                                                var $row = $(this).parents('tr');
+                                                if ($row.index() === 1) return; // Don't go above the header
+                                                $row.prev().before($row.get(0));
+                                            });
+
+                                            $('.table-down').click(function () {
+                                                var $row = $(this).parents('tr');
+                                                $row.next().after($row.get(0));
+                                            });
+
+                                            // A few jQuery helpers for exporting only
+                                            jQuery.fn.pop = [].pop;
+                                            jQuery.fn.shift = [].shift;
+
+                                            $BTN.click(function () {
+                                                var $rows = $TABLE.find('tr:not(:hidden)');
+                                                var headers = [];
+                                                var data = [];
+
+// Get the headers (add special header logic here)
+                                                $($rows.shift()).find('th:not(:empty)').each(function () {
+                                                    headers.push($(this).text().toLowerCase());
+                                                });
+
+// Turn all existing rows into a loopable array
+                                                $rows.each(function () {
+                                                    var $td = $(this).find('td');
+                                                    var h = {};
+
+// Use the headers from earlier to name our hash keys
+                                                    headers.forEach(function (header, i) {
+                                                        h[header] = $td.eq(i).text();
+                                                    });
+
+                                                    data.push(h);
+                                                });
+
+// Output the result
+                                                $EXPORT.text(JSON.stringify(data));
+                                            });
+                                        </script>
+                                        @foreach($orders as $order)
+
+                                        <tr>
+                                            <td class="pt-3-half" contenteditable="true">{{$order->id}}</td>
+                                            <td class="pt-3-half" contenteditable="true">{{$order->total}}</td>
+                                            <td class="pt-3-half" contenteditable="true">{{$order->created_at}}</td>
+                                            <td class="pt-3-half" contenteditable="true">{{$order->delivered}}</td>
+                                            <td class="pt-3-half">
+                                                <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-long-arrow-alt-up" aria-hidden="true"></i></a></span>
+                                                <span class="table-down"><a href="#!" class="indigo-text"><i class="fa fa-long-arrow-alt-down"
+                                                                                                             aria-hidden="true"></i></a></span>
+                                            </td>
+                                            <td>
+                                                <span class="table-remove"><button style="border-radius:1.125rem;" type="button" class="btn btn-danger btn-rounded btn-sm my-0">View Details</button></span>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Editable table -->
+
                     </div>
 
                 </div>

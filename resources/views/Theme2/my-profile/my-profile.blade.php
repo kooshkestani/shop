@@ -13,10 +13,15 @@
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="{{asset('css/mdb.min.css')}}" rel="stylesheet">
+    {{--<link href="{{asset('css/compiled-4.5.15.min.css')}}" rel="stylesheet">--}}
     <!-- Your custom styles (optional) -->
     <link href="{{asset('css/style2.min.css')}}" rel="stylesheet">
 </head>
-
+<style>
+    .pt-3-half {
+        padding-top: 1.4rem;
+    }
+</style>
 <body class="grey lighten-3">
 
 @include('Theme2.my-profile.partials.nav')
