@@ -82,7 +82,7 @@
             <a href="{{route('users.profile')}}" class="list-group-item list-group-item-action waves-effect">
                 <i class="fa fa-user mr-3"></i>Profile</a>
 
-            <a href="" class="list-group-item list-group-item-action waves-effect">
+            <a href="{{route('order.index')}}" class="list-group-item list-group-item-action waves-effect">
                 <i class="fa fa-box-open mr-3"></i>Orders</a>
             <a href="" class="list-group-item list-group-item-action waves-effect">
                 <i class="fa fa-tags mr-3"></i>Coupons</a>
