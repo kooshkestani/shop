@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class UserOrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+//        $orders=auth()->user()->orders;
+        return view('Theme2.my-profile.content.order');
     }
 
     /**
@@ -29,7 +30,7 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -40,7 +41,7 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -51,43 +52,30 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('Theme2.my-profile.content.profile')->with('users', auth()->user());
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . auth()->id()],
-            'password' => ['sometimes', 'nullable', 'string', 'min:6', 'confirmed'],
-        ]);
-        $user=auth()->user();
-        $input=$request->except('password','password_confirmation');
-        if (!$request->filled('password')) {
-            $user->fill($input)->save();
-            return back()->with('success_message','Profile updated');
-        }
-        $user->password=bcrypt($request->password);
-        $user->fill($input)->save();
-        return back()->with('success_message','Profile and password updated');
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

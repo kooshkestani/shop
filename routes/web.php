@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 //Route::get('/aaa', function () {
@@ -19,7 +20,6 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 //Route::group(['namespace' => 'Voyager'],function() {
 //    route::get('/test', 'testController@frontIndex');
 //});
-
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -72,6 +72,18 @@ Route::get('/thankyou', 'ConfirmController@index')->name('Confirm.index');
 //TODO route search
 Route::get('/search', 'shopController@search')->name('search');
 Route::get('/search-algolia', 'shopController@searchAlgolia')->name('search-algolia');
+
+//TODO route my-profile
+Route::middleware('auth')->group(function () {
+    Route::prefix('my-profile')->group(function () {
+        Route::get('/profile', 'UsersController@edit')->name('users.profile');
+        Route::patch('/profile', 'UsersController@update')->name('users.update');
+
+        Route::get('/my-order', 'UserOrderController@index')->name('order.index');
+
+
+    });
+});
 
 
 Route::get('empty', function () {

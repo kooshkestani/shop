@@ -7,18 +7,18 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Shop') }}</title>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('font-awesome/4.7.0/css/font-awesome.min.css')}}">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="/css/mdb2.min.css" rel="stylesheet">
-    <link href="/css/compiled-4.5.15.min.css" rel="stylesheet">
+    <link href="{{asset('css/mdb2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/compiled-4.5.15.min.css')}}" rel="stylesheet">
 
     <!-- Custom style cart-v1-->
 

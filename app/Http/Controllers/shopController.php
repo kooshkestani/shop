@@ -96,6 +96,8 @@ class shopController extends Controller
             'product' => $product,
             'mightAlsoLike' => $mightAlsoLike,
             'stocklevel'=>$stocklevel,
+            'title' =>$slug
+
 
         ]);
     }
