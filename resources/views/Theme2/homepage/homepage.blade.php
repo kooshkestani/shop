@@ -144,7 +144,7 @@
                                                     <!--Card image-->
                                                     <div class="view overlay">
                                                         <img src="/storage/{{$product->image}}"
-                                                             class="img-fluid" alt="">
+                                                             class="img-fluid" alt="PIC">
                                                         <a>
                                                             <div class="mask rgba-white-slight"></div>
                                                         </a>
