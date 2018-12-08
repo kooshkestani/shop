@@ -10,6 +10,7 @@ use Gerardojbaez\Money\Currency;
 class Product extends Model
 {
     use Searchable;
+    protected $fillable = ['quantity'];
 
     public function getPriceAttribute($value){
         return number_format($value / 10 , 0, "", ","); 

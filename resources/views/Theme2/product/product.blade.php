@@ -125,7 +125,7 @@
                     <p class="ml-xl-0 ml-4">
                         <strong>Resolution: </strong>2048 x 1536</p>
                     <p class="ml-xl-0 ml-4">
-                        <strong>Availability: </strong>In stock</p>
+                        <strong>Availability: </strong>{!!$stocklevel!!}</p>
 
                     <!-- Add to Cart -->
                     <section class="color">
@@ -159,18 +159,20 @@
 
                             <div class="row mt-3 mb-4">
                                 <div class="col-md-12 text-center text-md-left text-md-right">
-                                    <form action="{{route('cart.store')}}" method="post">
+                                    @if($product->quantity>0)
+                                        <form action="{{route('cart.store')}}" method="post">
 
-                                        {{csrf_field()}}
-                                        <input type="hidden" name="id" value="{{$product->id }}">
-                                        <input type="hidden" name="name" value="{{$product->name }}">
-                                        <input type="hidden" name="price" value="{{$product->price }}">
-                                        <input type="hidden" name="image" value="{{$product->image }}">
+                                            {{csrf_field()}}
+                                            <input type="hidden" name="id" value="{{$product->id }}">
+                                            <input type="hidden" name="name" value="{{$product->name }}">
+                                            <input type="hidden" name="price" value="{{$product->price }}">
+                                            <input type="hidden" name="image" value="{{$product->image }}">
 
-                                        <button class="btn btn-primary btn-rounded" type="submit">
-                                            <i class="fa fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart
-                                        </button>
-                                    </form>
+                                            <button class="btn btn-primary btn-rounded" type="submit">
+                                                <i class="fa fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart
+                                            </button>
+                                        </form>
+                                    @endif
                                 </div>
                             </div>
                         </div>

@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Gloudemans\Shoppingcart\Facades\Cart;
 
-
-class CheckoutController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +13,7 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-
-        return view('Theme2.checkout.checkout-page');
+        //
     }
 
     /**
@@ -32,18 +29,18 @@ class CheckoutController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-dd('Api IdPay.ir coming soon');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -54,30 +51,43 @@ dd('Api IdPay.ir coming soon');
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('Theme2.my-profile.content.profile')->with('users', auth()->user());
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . auth()->id()],
+            'password' => ['sometimes', 'nullable', 'string', 'min:6', 'confirmed'],
+        ]);
+        $user=auth()->user();
+        $input=$request->except('password','password_confirmation');
+        if (!$request->filled('password')) {
+            $user->fill($input)->save();
+            return back()->with('success_message','Profile updated');
+        }
+        $user->password=bcrypt($request->password);
+        $user->fill($input)->save();
+        return back()->with('success_message','Profile and password updated');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

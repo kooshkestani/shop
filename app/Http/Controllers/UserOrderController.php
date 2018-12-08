@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Gloudemans\Shoppingcart\Facades\Cart;
 
-
-class CheckoutController extends Controller
+class UserOrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +13,8 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-
-        return view('Theme2.checkout.checkout-page');
+        $orders=auth()->user()->orders;
+        return view('Theme2.my-profile.content.order')->with('orders',$orders);
     }
 
     /**
@@ -37,7 +35,7 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-dd('Api IdPay.ir coming soon');
+        //
     }
 
     /**
