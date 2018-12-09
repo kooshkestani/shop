@@ -90,7 +90,7 @@
                 <i class="fa fa-map-marked-alt mr-3"></i>Addresses</a>
             <a href="" class="list-group-item list-group-item-action waves-effect">
                 <i class="fa fa-comments mr-3"></i>Comment</a>
-            <a href="" class="list-group-item list-group-item-action waves-effect">
+            <a href="{{ route('logout') }}" class="list-group-item list-group-item-action waves-effect">
                 <i class="fa fa-sign-out-alt mr-3"></i>Exit</a>
         </div>
 
