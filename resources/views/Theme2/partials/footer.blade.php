@@ -51,7 +51,7 @@
             <!--First column-->
             <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
                 <h6 class="text-uppercase font-weight-bold">
-                    <strong>Company name</strong>
+                    <strong>Online Shopping</strong>
                 </h6>
                 <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet,
@@ -67,22 +67,22 @@
                 </h6>
                 <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <a href="#!">MDBootstrap</a>
+                    <a href="#!">Laptops</a>
                 </p>
                 <p>
-                    <a href="#!">MDWordPress</a>
+                    <a href="#!">Desktops</a>
                 </p>
                 <p>
-                    <a href="#!">BrandFlow</a>
+                    <a href="#!">Mobile Phones</a>
                 </p>
                 <p>
-                    <a href="#!">Bootstrap Angular</a>
+                    <a href="#!">Tablets</a>
                 </p>
             </div>
             <!--/.Second column-->
 
             <!--Third column-->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            {{-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 class="text-uppercase font-weight-bold">
                     <strong>Useful links</strong>
                 </h6>
@@ -99,7 +99,7 @@
                 <p>
                     <a href="#!">Help</a>
                 </p>
-            </div>
+            </div> --}}
             <!--/.Third column-->
 
             <!--Fourth column-->
@@ -126,7 +126,7 @@
     <!-- Copyright-->
     <div class="footer-copyright py-3 text-center">
         <div class="container-fluid">
-            © 2018 Copyright: <a href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank"> MDBootstrap.com </a>
+            © 2018 Copyright: <a href="https://github.com/kooshkestani/shop" target="_blank"> Online Store Site With Laravel & Vue.js  </a>
         </div>
     </div>
     <!--/.Copyright -->
