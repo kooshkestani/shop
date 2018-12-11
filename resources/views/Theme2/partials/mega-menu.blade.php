@@ -5,7 +5,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark primary-color mt-5">
 
         <!-- Navbar brand -->
-        <a class="font-weight-bold white-text mr-4" href="#">Categories</a>
+        {{-- <a class="font-weight-bold white-text mr-4" href="#">Categories</a> --}}
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1"
@@ -16,32 +16,48 @@
 
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
-
+                @foreach ($allCategories as $category)
                 <li class="nav-item dropdown mega-dropdown active">
-                    <a class="nav-link dropdown-toggle  no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Laptop</a>
+                    <a 
+                    class="nav-link dropdown-toggle no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    style="background-color:transparent;padding-right:1.2rem;padding-left:0rem;">
+                        {{$category->name}}
+                    </a>
                     <div class="dropdown-menu mega-menu v-2 row z-depth-1 white" aria-labelledby="navbarDropdownMenuLink1">
                         <div class="row mx-md-4 mx-1">
-                            <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-5 mb-4">
-                                <h6 class="sub-title text-uppercase font-weight-bold blue-text">Brand</h6>
-                                <ul class="caret-style pl-0">
-                                    <li class=""><a class="menu-item mb-0" href="#">Sony</a></li>
-                                    <li class=""><a class="menu-item" href="#">Lenovo</a></li>
-                                    <li class=""><a class="menu-item" href="#">Apple</a></li>
-                                    <li class=""><a class="menu-item" href="#">Dell</a></li>
-                                    <li class=""><a class="menu-item" href="#">Asus</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-md-5 mt-4 mb-4">
-                                <h6 class="sub-title text-uppercase font-weight-bold blue-text">Sales</h6>
-                                <ul class="caret-style pl-0">
-                                    <li class=""><a class="menu-item" href="#">Laptops Up to 50% Off </a></li>
-                                    <li class=""><a class="menu-item" href="#">Laptops under $399</a></li>
-                                    <li class=""><a class="menu-item" href="#">Laptops Up to 50% Off</a></li>
-                                    <li class=""><a class="menu-item" href="#">Laptops for designers</a></li>
-                                    <li class=""><a class="menu-item" href="#">Laptops for developers</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-4">
+                             @php
+                                $pro = $category->products()->get();
+                            @endphp
+                            @foreach ($pro as $item)
+                            @if ($loop->iteration % 5 ==0)
+                                <div class="col-lg-3 col-xl-3">
+                                    <ul class="caret-style pl-0">
+                                        <li style="list-style:none">
+                                            <a href="{{route('shop.show',$item->slug)}}">
+                                                <img style="
+                                                border-radius: 4px;
+                                                padding: 5px;
+                                                width: 100%;" src="storage/{{$item->image}}" alt="pic">
+                                            </a>
+                                        </li>    
+                                    </ul>
+                                </div> 
+                            @else
+                                <div class="col-lg-3 col-xl-3">
+                                    <ul class="caret-style pl-0">
+                                       <li style="list-style:none">
+                                           <a href="{{route('shop.show',$item->slug)}}">
+                                                <img style="
+                                                border-radius: 4px;
+                                                padding: 2px;
+                                                width: 100%;" src="storage/{{$item->image}}" alt="pic">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            @endif
+                            @endforeach
+                            {{-- <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-4">
                                 <h6 class="sub-title text-uppercase font-weight-bold blue-text">Processor Type</h6>
                                 <ul class="caret-style pl-0">
                                     <li class=""><a class="menu-item" href="#">Intel Core i5 4th Gen.</a></li>
@@ -60,11 +76,13 @@
                                     <li class=""><a class="menu-item" href="#">Nemo enim ipsam</a></li>
                                     <li class=""><a class="menu-item" href="#">Neque porro quisquam est</a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </li>
-                <li class="nav-item dropdown mega-dropdown">
+                @endforeach
+                
+                {{-- <li class="nav-item dropdown mega-dropdown">
                     <a class="nav-link dropdown-toggle no-caret" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cameras</a>
                     <div class="dropdown-menu mega-menu v-2 row z-depth-1 white" aria-labelledby="navbarDropdownMenuLink1">
                         <div class="row mx-md-4 mx-1">
@@ -155,7 +173,7 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
             </ul>
             <!-- Links -->

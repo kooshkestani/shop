@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>E-Commerce</title>
+    <title>Online Shopping</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('font-awesome/4.7.0/css/font-awesome.min.css')}}">
@@ -26,11 +26,10 @@
 <body class="homepage-v3 hidden-sn white-skin animated">
 
 @include('Theme2.partials.nav')
-@include('Theme2.partials.mega-menu')
+@include('Theme2.partials.mega-menu',['allCategory'=>$allCategories])
 <!-- /.Main Container -->
 <div class="container">
     <div class="row pt-4">
-
         <!-- Content -->
         <div class="col-lg-12">
 
@@ -69,9 +68,7 @@
 
                         <!-- Section: Categories -->
                         <section class="section">
-
-
-                            <ul class="list-group z-depth-1">
+                            {{-- <ul class="list-group z-depth-1">
 
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     <a class="dark-grey-text font-small"><i class="fa fa-laptop dark-grey-text mr-2"
@@ -109,7 +106,13 @@
                                                                             aria-hidden="true"></i>TV</a>
                                     <span class="badge badge-danger badge-pill">2</span>
                                 </li>
-                            </ul>
+                            </ul>  --}}
+                            @foreach ($allCategories as $category)
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <a class="dark-grey-text font-small">{{$category->name}}</a>
+                                    <a href="#"></a><span class="badge badge-danger badge-pill">{{$category->products()->get()->count()}}</span></a>
+                                </li>
+                            @endforeach
                         </section>
                         <!-- Section: Categories -->
 
@@ -145,7 +148,7 @@
                                                     <div class="view overlay">
                                                         <img src="/storage/{{$product->image}}"
                                                              class="img-fluid" alt="PIC">
-                                                        <a>
+                                                        <a href="{{route('shop.show',$product->slug)}}">
                                                             <div class="mask rgba-white-slight"></div>
                                                         </a>
                                                     </div>
@@ -286,7 +289,7 @@
                                     <div class="view overlay">
                                         <img src="/storage/{{$product->image}}" class="img-fluid"
                                              alt="">
-                                        <a>
+                                        <a href="{{route('shop.show',$product->slug)}}">
                                             <div class="mask rgba-white-slight"></div>
                                         </a>
                                     </div>
@@ -360,7 +363,10 @@
                                     <div class="col-6">
 
                                         <!-- Title -->
-                                        <a><strong>{{$product->name}}</strong></a>
+                                        <a href="{{route('shop.show',$product->slug)}}"
+                                            style="color:black">
+                                            <strong>{{$product->name}}</strong>
+                                        </a>
 
                                         <!-- Rating -->
                                         <ul class="rating inline-ul">
@@ -406,7 +412,9 @@
                                     <div class="col-6">
 
                                         <!-- Title -->
-                                        <a><strong>{{$product->name}}</strong></a>
+                                        <a href="{{route('shop.show',$product->slug)}}"
+                                            style="color:black">
+                                            <strong>{{$product->name}}</strong></a>
 
                                         <!-- Rating -->
                                         <ul class="rating inline-ul">
@@ -452,7 +460,8 @@
                                     <div class="col-6">
 
                                         <!-- Title -->
-                                        <a><strong>{{$product->name}}</strong></a>
+                                        <a href="{{route('shop.show',$product->slug)}}"
+                                            style="color:black"><strong>{{$product->name}}</strong></a>
 
                                         <!-- Rating -->
                                         <ul class="rating inline-ul">
