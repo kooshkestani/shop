@@ -15,7 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
-    return view('Theme2.cart.cart-v2');
+    return view('Theme2.main.content.cart-v2');
     }
 
     /**

@@ -16,7 +16,7 @@ class CheckoutController extends Controller
     public function index()
     {
 
-        return view('Theme2.checkout.checkout-page');
+        return view('Theme2.main.content.checkout-page');
     }
 
     /**

@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('Theme2.main.index')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="/css/mdb.min.css" rel="stylesheet">
+@section('extra-css')
+
+
+    <link href="{{asset('css/mdb.min.css')}}" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="/css/style.min.css" rel="stylesheet">
-</head>
+    <link href="{{asset('css/style.min.css')}}" rel="stylesheet">
 
-<body class="grey lighten-3">
+@endsection
 
-@include('Theme2.partials.nav')
-<!--Main layout-->
-<main class="mt-5 pt-4">
+
+@section('content')
+
+
     <div class="container wow fadeIn">
 
         <!-- Heading -->
@@ -291,25 +283,44 @@
         <!--Grid row-->
 
     </div>
-</main>
-<!--Main layout-->
+
+@endsection
+
+@section('extra-js')
+
+    <script type="text/javascript">
+
+        function increaseValue() {
+            //var x=document.getElementById('number').innerHTML;
+            var value = parseInt(document.getElementById('number').innerHTML, 10);
+            //console.log(x);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            document.getElementById('number').innerHTML = value;
+            const id = document.getElementById('number').getAttribute('data-id');
+            axios.patch('/cart/${id}', {
+                qty: value
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+        }
+
+        function decreaseValue() {
+            var value = parseInt(document.getElementById('number').innerHTML, 10);
+            value = isNaN(value) ? 0 : value;
+            value < 2 ? value = 2 : '';
+            value--;
+            document.getElementById('number').innerHTML = value;
+        }
+
+    </script>
 
 
-@include('Theme2.partials.footer')
-<!-- SCRIPTS -->
-<!-- JQuery -->
-<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="/js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="/js/mdb.min.js"></script>
-<!-- Initializations -->
-<script type="text/javascript">
-    // Animations initialization
-    new WOW().init();
-</script>
-</body>
+    <!-- SCRIPTS -->
+@endsection
 
-</html>

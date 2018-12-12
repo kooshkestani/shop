@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('Theme2.main.index')
+
+@section('extra-css')
+
+    <link href="{{asset('css/mdb2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/compiled-4.5.15.min.css')}}" rel="stylesheet">
+
+    <!-- Your custom styles (optional) -->
+    <link href="{{asset('css/style.min.css')}}" rel="stylesheet">
 
 
-@include('Theme2.partials.head')
-@include('Theme2.partials.nav')
+    @endsection
 
 
-<!--Main Layout-->
-<main>
+@section('content')
+
 
     <!-- Main Container -->
     <div class="container">
@@ -84,13 +90,16 @@
                                         <td></td>
                                         <td>{{$item->model->price}}</td>
                                         <td class="text-center text-md-left">
-                                            <span class="qty"  id="number"  data-id="{{$item->rowId}}">{{Cart::content()->count('id')}}</span>
+                                            <span class="qty" id="number"
+                                                  data-id="{{$item->rowId}}">{{Cart::content()->count('id')}}</span>
                                             {{--<input type="number" id="number" value="0" />--}}
                                             <div class="btn-group radio-group ml-2" data-toggle="buttons">
-                                                <label class="btn btn-sm btn-primary btn-rounded" id="decrease" onclick="decreaseValue()" value="Decrease Value">
+                                                <label class="btn btn-sm btn-primary btn-rounded" id="decrease"
+                                                       onclick="decreaseValue()" value="Decrease Value">
                                                     <input type="radio" name="options" id="option1">&mdash;
                                                 </label>
-                                                <label class="btn btn-sm btn-primary btn-rounded" id="increase" onclick="increaseValue()" value="Increase Value">
+                                                <label class="btn btn-sm btn-primary btn-rounded" id="increase"
+                                                       onclick="increaseValue()" value="Increase Value">
                                                     <input type="radio" name="options" id="option2">+
                                                 </label>
                                             </div>
@@ -104,10 +113,11 @@
                                             <form action="{{route('cart.destroy',$item->rowId)}}" method="post">
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
-                                            <button type="submit" class="btn btn-sm btn-primary" data-toggle="tooltip"
-                                                    data-placement="top"
-                                                    title="Remove item">X
-                                            </button>
+                                                <button type="submit" class="btn btn-sm btn-primary"
+                                                        data-toggle="tooltip"
+                                                        data-placement="top"
+                                                        title="Remove item">X
+                                                </button>
                                             </form>
                                         </td>
                                     </tr>
@@ -141,9 +151,11 @@
 
                                     <td colspan="3" class="text-right">
                                         <a href="{{route('checkout.index')}}">
-                                        <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light">Complete purchase
-                                            <i class="fa fa-angle-right right"></i>
-                                        </button>
+                                            <button type="button"
+                                                    class="btn btn-primary btn-rounded waves-effect waves-light">
+                                                Complete purchase
+                                                <i class="fa fa-angle-right right"></i>
+                                            </button>
                                         </a>
                                     </td>
                                 </tr>
@@ -773,87 +785,42 @@
     </div>
     <!-- /.Main Container -->
 
-</main>
-<!--Main Layout-->
+@endsection
 
-@include('Theme2.partials.footer')
-@include('Theme2.partials.cart-modal')
+@section('extra-js')
 
+    <script type="text/javascript">
 
-<!-- SCRIPTS -->
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-<script type="text/javascript">
-
-    function increaseValue() {
-        //var x=document.getElementById('number').innerHTML;
-        var value = parseInt(document.getElementById('number').innerHTML, 10);
-        //console.log(x);
-        value = isNaN(value) ? 0 : value;
-        value++;
-        document.getElementById('number').innerHTML = value;
-        const id =document.getElementById('number').getAttribute('data-id');
-        axios.patch('/cart/${id}', {
-            qty:value
-        })
-            .then(function (response) {
-                console.log(response);
+        function increaseValue() {
+            //var x=document.getElementById('number').innerHTML;
+            var value = parseInt(document.getElementById('number').innerHTML, 10);
+            //console.log(x);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            document.getElementById('number').innerHTML = value;
+            const id = document.getElementById('number').getAttribute('data-id');
+            axios.patch('/cart/${id}', {
+                qty: value
             })
-            .catch(function (error) {
-                console.log(error);
-            });
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
 
-    }
+        }
 
-    function decreaseValue() {
-        var value = parseInt(document.getElementById('number').innerHTML, 10);
-        value = isNaN(value) ? 0 : value;
-        value < 2 ? value = 2 : '';
-        value--;
-        document.getElementById('number').innerHTML = value;
-    }
+        function decreaseValue() {
+            var value = parseInt(document.getElementById('number').innerHTML, 10);
+            value = isNaN(value) ? 0 : value;
+            value < 2 ? value = 2 : '';
+            value--;
+            document.getElementById('number').innerHTML = value;
+        }
 
-</script>
-
-
-<!-- JQuery -->
-<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
-
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="../../js/popper.min.js"></script>
-
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="../../js/mdb.min.js"></script>
-<script type="text/javascript">
-    /* WOW.js init */
-    new WOW().init();
-
-    // MDB Lightbox Init
-    $(function () {
-        $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
-    });
-
-    // Tooltips Initialization
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-
-    // SideNav Initialization
-    $(".button-collapse").sideNav();
-
-    // Material Select Initialization
-    $(document).ready(function () {
-        $('.mdb-select').material_select();
-    });
-
-</script>
-<!-- SCRIPTS -->
+    </script>
 
 
-</body>
-
-
-</html>
+    <!-- SCRIPTS -->
+    @endsection
