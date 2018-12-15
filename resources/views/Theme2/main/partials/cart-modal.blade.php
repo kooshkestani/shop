@@ -7,75 +7,52 @@
             <!--Header-->
             <div class="modal-header">
 
-                <h4 class="modal-title font-weight-bold dark-grey-text" id="myModalLabel">Your cart</h4>
+                <h4 class="modal-title font-weight-bold dark-grey-text" id="myModalLabel">سبد خرید</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <!--Body-->
             <div class="modal-body">
-
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Product name</th>
-                        <th>Price</th>
-                        <th>Remove</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Product 1</td>
-                        <td>100$</td>
-                        <td>
-                            <a>
-                                <i class="fa fa-remove"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Product 2</td>
-                        <td>100$</td>
-                        <td>
-                            <a>
-                                <i class="fa fa-remove"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Product 3</td>
-                        <td>100$</td>
-                        <td>
-                            <a>
-                                <i class="fa fa-remove"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Product 4</td>
-                        <td>100$</td>
-                        <td>
-                            <a>
-                                <i class="fa fa-remove"></i>
-                            </a>
-                        </td>
-                    </tr>
-
-                    </tbody>
-                </table>
-
-                <button class="btn btn-primary btn-rounded btn-sm">Checkout</button>
-
+                @if (Cart::content()->count() > 0)
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>نام محصول</th>
+                            <th>قیمت محصول</th>
+                            <th>تعداد</th>
+                            <th>قیمت کل</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Cart::content() as $item)
+                                <tr>
+                                    <td>{{$item->name}}</td>
+                                    <td><label>تومان </label> {{$item->price}}</td>
+                                    <td>{{$item->qty}}</td>
+                                    <td><label>تومان </label> {{$item->qty * $item->price}}</td>
+                                    {{-- <td>
+                                        <a>
+                                            <i class="fa fa-remove"></i>
+                                        </a>
+                                    </td> --}}
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                     <a class="btn btn-primary btn-rounded btn-sm" href="{{route('cart.index')}}" style="font-size:14px">
+                        ویرایش سبد خرید
+                    </a>
+                @else
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-danger text-center">هیچ محصولی در سبد خرید شما وجود ندارد</li>
+                    </ul>
+                @endif
             </div>
             <!--Footer-->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-grey btn-rounded btn-sm" data-dismiss="modal">Close</button>
-            </div>
+            {{-- <div class="modal-footer">
+                <button type="button" class="btn btn-grey btn-rounded btn-sm" data-dismiss="modal"></button>
+            </div> --}}
         </div>
         <!--/.Content-->
     </div>

@@ -19,20 +19,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
                 <ul class="navbar-nav ml-auto">
+                    <!-- All product-->
                     <li class="nav-item ">
                         <a class="nav-link dark-grey-text font-weight-bold" href="{{route('cart.index')}}"
                            data-toggle="modal" data-target="#cart-modal-ex">
                             @if(Cart::instance('default')->count()>0)
-                                <span class="badge danger-color">{{Cart::instance('default')->count()}}</span>
+                                <span class="badge danger-color">{{Cart::count()}}</span>
                             @endif
                             <i class="fa fa-shopping-cart blue-text" aria-hidden="true"></i>
                             <span class="clearfix d-none d-sm-inline-block">Cart</span>
                         </a>
                     </li>
-                    <li class="nav-item ml-3">
-                        <a class="nav-link waves-effect waves-light dark-grey-text font-weight-bold" href="#">
-                            <i class="fa fa-gear blue-text"></i> Settings</a>
-                    </li>
+                    
+                    <!-- Login Section -->
                     <li class="nav-item dropdown ml-3">
                         <a class="nav-link dropdown-toggle waves-effect waves-light dark-grey-text font-weight-bold"
                            id="navbarDropdownMenuLink-4"
