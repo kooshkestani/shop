@@ -15,7 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
-    return view('Theme2.cart.cart-v2');
+        return view('Theme2.cart.cart-v2');
     }
 
     /**
@@ -36,6 +36,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        dd("TEST");
         $requestid=str_replace(",","",$request->price);
         $duplicate=Cart::search(function ($cartItem,$rowId)use($request){
             return $cartItem->id===$request->id;
