@@ -4,6 +4,8 @@
 
 @include('Theme2.partials.head')
 @include('Theme2.partials.nav')
+{{-- @include('Theme2.partials.footer') --}}
+@include('Theme2.partials.cart-modal')
 
 
 <!--Main Layout-->
@@ -43,21 +45,20 @@
                             <tr>
                                 <th></th>
                                 <th class="font-weight-bold">
-                                    <strong>Product</strong>
+                                    <strong>نام محصول</strong>
                                 </th>
-                                <th class="font-weight-bold">
+                                {{-- <th class="font-weight-bold">
                                     <strong>Color</strong>
-                                </th>
+                                </th> --}}
                                 <th></th>
                                 <th class="font-weight-bold">
-                                    <strong>Price</strong>
+                                    <strong>قیمت محصول</strong>
                                 </th>
                                 <th class="font-weight-bold">
-                                    <strong>QTY</strong>
+                                    <strong>تعداد محصول </strong>
                                 </th>
-
                                 <th class="font-weight-bold">
-                                    <strong>Amount</strong>
+                                    <strong>هزینه نهایی محصول</strong>
                                 </th>
                                 <th></th>
                             </tr>
@@ -80,11 +81,11 @@
                                             </h5>
                                             <p class="text-muted">{{$item->model->name}}</p>
                                         </td>
-                                        <td>White</td>
+                                        {{-- <td>White</td> --}}
                                         <td></td>
                                         <td>{{$item->model->price}}</td>
                                         <td class="text-center text-md-left">
-                                            <span class="qty"  id="number"  data-id="{{$item->rowId}}">{{Cart::content()->count('id')}}</span>
+                                            <span class="qty"  id="number"  data-id="{{$item->rowId}}">{{$item->qty}}</span>
                                             {{--<input type="number" id="number" value="0" />--}}
                                             <div class="btn-group radio-group ml-2" data-toggle="buttons">
                                                 <label class="btn btn-sm btn-primary btn-rounded" id="decrease" onclick="decreaseValue()" value="Decrease Value">
@@ -100,7 +101,6 @@
                                             <strong>{{Cart::subtotal()}}</strong>
                                         </td>
                                         <td>
-
                                             <form action="{{route('cart.destroy',$item->rowId)}}" method="post">
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
@@ -118,7 +118,7 @@
 
                                     <td>
                                         <h6 class="mt-2 text-center">
-                                            <strong>Tax</strong>
+                                            <strong>مالیات</strong>
                                         </h6>
                                     </td>
                                     <td class="text-right">
@@ -141,14 +141,13 @@
 
                                     <td colspan="3" class="text-right">
                                         <a href="{{route('checkout.index')}}">
-                                        <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light">Complete purchase
-                                            <i class="fa fa-angle-right right"></i>
+                                        <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light" style="font-size:18px;">تکمیل خرید
                                         </button>
                                         </a>
                                     </td>
                                 </tr>
                             @else
-                                <h3>No Item In cart</h3>
+                                <h3>سبد خرید شما خالیست</h3>
                             @endif
                             </tbody>
                             <!-- /.Table body -->
@@ -166,7 +165,7 @@
         <!-- /Section cart -->
 
         <!-- Section products -->
-        <section>
+        {{-- <section>
             <h4 class="font-weight-bold mt-4 title-1">
                 <strong>YOU MAY BE INTERESTED IN</strong>
             </h4>
@@ -767,7 +766,7 @@
             </div>
             <!--Grid row-->
 
-        </section>
+        </section> --}}
         <!-- Section products -->
 
     </div>
@@ -776,8 +775,7 @@
 </main>
 <!--Main Layout-->
 
-@include('Theme2.partials.footer')
-@include('Theme2.partials.cart-modal')
+
 
 
 <!-- SCRIPTS -->

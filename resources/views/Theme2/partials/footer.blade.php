@@ -2,7 +2,7 @@
 <!--Footer-->
 <footer class="page-footer text-center text-md-left stylish-color-dark pt-0">
 
-    <div style="background-color: #4285f4;">
+    {{-- <div style="background-color: #4285f4;">
         <div class="container">
             <!--Grid row-->
             <div class="row py-4 d-flex align-items-center">
@@ -42,10 +42,10 @@
             <!--Grid row-->
 
         </div>
-    </div>
+    </div> --}}
 
     <!--Footer Links-->
-    <div class="container mt-5 mb-4 text-center text-md-left">
+    <div class="container mt-5 mb-4 text-center text-md-left pt-2">
         <div class="row mt-3">
 
             <!--First column-->

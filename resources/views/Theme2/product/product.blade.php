@@ -168,8 +168,8 @@
                                             <input type="hidden" name="price" value="{{$product->price }}">
                                             <input type="hidden" name="image" value="{{$product->image }}">
 
-                                            <button class="btn btn-primary btn-rounded" type="submit">
-                                                <i class="fa fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart
+                                            <button class="btn btn-primary btn-rounded" type="submit" style="font-size:18px">
+                                                <i class="fa fa-cart-plus mr-2" aria-hidden="true"></i>اضافه به سبد خرید
                                             </button>
                                         </form>
                                     @endif
@@ -186,12 +186,12 @@
     </section>
     <!-- Section: product details -->
 
-    <h4 class="h4-responsive dark-grey-text font-weight-bold mb-5 text-center">
+    {{-- <h4 class="h4-responsive dark-grey-text font-weight-bold mb-5 text-center">
         <strong>Compare iPad models</strong>
-    </h4>
+    </h4> --}}
 
     <!--Table-->
-    <div class="card mb-5">
+    {{-- <div class="card mb-5">
         <div class="card-body">
 
             <table class="table table-responsive-md">
@@ -253,11 +253,11 @@
 
         </div>
 
-    </div>
+    </div> --}}
     <!--Table-->
 
     <!-- Product Reviews -->
-    <section id="reviews" class="pb-5 mt-4">
+    {{-- <section id="reviews" class="pb-5 mt-4">
 
         <hr>
         <h4 class="h4-responsive dark-grey-text font-weight-bold my-5 text-center">
@@ -415,10 +415,10 @@
             <!--/.Third row-->
         </div>
         <!--/.Main wrapper-->
-    </section>
+    </section> --}}
     <!-- /.Product Reviews -->
 
-    <!--Section: Products v.5-->
+    <!--Section:  Related Product -->
     <section id="products" class="pb-5 mt-4">
 
         <hr>

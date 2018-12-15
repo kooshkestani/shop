@@ -63,7 +63,7 @@
                     </div>
                     <!--Grid column-->
 
-                    <!--Grid column-->
+                    <!--Grid Categories-->
                     <div class="col-lg-4 col-md-12 mb-4">
 
                         <!-- Section: Categories -->
@@ -182,8 +182,9 @@
                                                                     <strong> {{$product->price}} </strong>
                                                                 </span>
                                                                 <span class="float-right">
-                                                        <a class="" data-toggle="tooltip" data-placement="top"
-                                                           title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
+                                                        {{-- <a class="" data-toggle="tooltip" data-placement="top"
+                                                           title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i>
+                                                        </a> --}}
                                                         </span>
                                                             </div>
                                                         </div>
@@ -214,7 +215,7 @@
                 <!-- /Section small products -->
 
 
-                <!-- Section advertising 1  -->
+                <!-- Section advertising under the first group products  -->
                 <section>
 
                     <!-- Grid row -->
@@ -274,7 +275,7 @@
 
 
                 <!-- Section products  -->
-                <section>
+                {{-- <section>
 
                     <!-- Grid row -->
                     <div class="row">
@@ -336,18 +337,18 @@
                     </div>
                     <!--Grid row-->
 
-                </section>
+                </section> --}}
                 <!-- /Section products  -->
 
 
-                <!--Section product list-->
+                <!--Section New,Top and Random Product-->
                 <section class="mb-5">
                     <div class="row">
                         <!-- new Products-->
                             <div class="col-lg-4 col-md-12 pt-4">
 
                                 <hr>
-                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>New products</strong>
+                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>محصولات جدید</strong>
                                 </h5>
                                 <hr>
                             @foreach($newproduct as $product)
@@ -378,8 +379,9 @@
                                         </ul>
 
                                         <!-- Price -->
-                                        <h6 class="h6-responsive font-weight-bold dark-grey-text"><strong>$749</strong>
-                                            <span class="grey-text"><small><s>${{$product->price}}</s></small></span>
+                                        <h6 class="h6-responsive font-weight-bold dark-grey-text">
+                                            <label> تومان </label>
+                                            <span>{{$product->price}}</span>
                                         </h6>
 
                                     </div>
@@ -396,7 +398,7 @@
                             <div class="col-lg-4 col-md-12 pt-4">
 
                                 <hr>
-                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>Top Sellers</strong>
+                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>پرفروش ترین ها</strong>
                                 </h5>
                                 <hr>
                             @foreach($topseller as $product)
@@ -426,8 +428,9 @@
                                         </ul>
 
                                         <!-- Price -->
-                                        <h6 class="h6-responsive font-weight-bold dark-grey-text"><strong>$749</strong>
-                                            <span class="grey-text"><small><s>${{$product->price}}</s></small></span>
+                                        <h6 class="h6-responsive font-weight-bold dark-grey-text">
+                                            <label> تومان </label>
+                                            <span>{{$product->price}}</span>
                                         </h6>
 
                                     </div>
@@ -444,7 +447,7 @@
                             <div class="col-lg-4 col-md-12 pt-4">
 
                                 <hr>
-                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>Random products</strong>
+                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>محصولات منتخب</strong>
                                 </h5>
                                 <hr>
                             @foreach($randomproduct as $product)
@@ -473,8 +476,9 @@
                                         </ul>
 
                                         <!-- Price -->
-                                        <h6 class="h6-responsive font-weight-bold dark-grey-text"><strong>$749</strong>
-                                            <span class="grey-text"><small><s>${{$product->price}}</s></small></span>
+                                        <h6 class="h6-responsive font-weight-bold dark-grey-text">
+                                            <label> تومان </label>
+                                            <span>{{$product->price}}</span>
                                         </h6>
 
                                     </div>
@@ -491,8 +495,8 @@
                 </section>
                 <!--Section product list-->
 
-                <!--Grid row-->
-                <div class="row">
+                <!--Grid last advertisment-->
+                {{-- <div class="row">
 
                     <!--Grid column-->
                     <div class="col-12">
@@ -523,14 +527,14 @@
                     </div>
                     <!--Grid column-->
 
-                </div>
+                </div> --}}
                 <!--Grid row-->
 
-                <h4 class="font-weight-bold mt-4 dark-grey-text"><strong>LAST ITEMS</strong></h4>
-                <hr class="mb-5">
+                {{-- <h4 class="font-weight-bold mt-4 dark-grey-text"><strong>آخرین محصولات</strong></h4>
+                <hr class="mb-5"> --}}
 
-                <!-- Grid row -->
-                <div class="row">
+                <!-- Grid Last Products of Site -->
+                {{-- <div class="row">
 
                     <!--Grid column-->
                     <div class="col-lg-3 col-md-6 mb-4">
@@ -569,10 +573,6 @@
                                     <div class="row mb-0">
                                         <span class="float-left"><strong>1439$</strong></span>
                                         <span class="float-right">
-
-                                                <a class="" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                                </span>
                                     </div>
                                 </div>
 
@@ -742,14 +742,14 @@
                     </div>
                     <!--Grid column-->
 
-                </div>
+                </div> --}}
                 <!--Grid row-->
 
-                <!--Grid row-->
+                <!--Grid Pagination-->
                 <div class="row justify-content-center mb-4">
 
                     <!--Pagination -->
-                    <nav class="mb-4">
+                    {{-- <nav class="mb-4">
                         <ul class="pagination pagination-circle pg-blue mb-0">
 
                             <!--First-->
@@ -784,7 +784,7 @@
                                         class="page-link waves-effect waves-effect">Last</a></li>
 
                         </ul>
-                    </nav>
+                    </nav> --}}
                     <!--/Pagination -->
 
                 </div>
