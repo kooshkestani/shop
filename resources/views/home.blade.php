@@ -1,6 +1,6 @@
 {{--@extends('layouts.app')--}}
-@extends('Theme2.main.partials.head')
-@extends('Theme2.main.partials.nav')
+@extends('Theme2.partials.head')
+@extends('Theme2.partials.nav')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

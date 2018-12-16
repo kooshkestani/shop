@@ -71,8 +71,6 @@ Route::middleware('auth')->group(function () {
     Route::prefix('my-profile')->group(function () {
         Route::get('/profile', 'UsersController@edit')->name('users.profile');
         Route::patch('/profile', 'UsersController@update')->name('users.update');
-        Route::post('/upload', 'UsersController@upload')->name('users.upload');
-
 
         Route::get('/my-order', 'UserOrderController@index')->name('order.index');
 

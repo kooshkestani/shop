@@ -41,7 +41,7 @@ class shopController extends Controller
             $products = $products->paginate(9);
 
         }
-        return view('Theme2.main.content.category-v2')->with([
+        return view('Theme2.category.category-v2')->with([
             'products' => $products,
             'categories' => $categories,
             'categoryname' => $categoryname,
@@ -92,7 +92,7 @@ class shopController extends Controller
 
         }
 
-        return view('Theme2.main.content.product')->with([
+        return view('Theme2.product.product')->with([
             'product' => $product,
             'mightAlsoLike' => $mightAlsoLike,
             'stocklevel'=>$stocklevel,
@@ -146,11 +146,11 @@ class shopController extends Controller
             ->orwhere('details', 'like', "%$query%")
             ->orwhere('description', 'like', "%$query%")
             ->paginate(15);
-        return view('Theme2.main.content.search-result')->with('products', $products);
+        return view('Theme2.search-result.search-result')->with('products', $products);
     }
 
     public function searchAlgolia(Request $request)
     {
-        return view('Theme2.main.content.search-algolia');
+        return view('Theme2.search-result.search-algolia');
     }
 }
