@@ -58,14 +58,7 @@ Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
 Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
 
-//TODO route checkout
 
-Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
-Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
-//TODO quest Checkout
-Route::get('/guestCheckout', 'CheckoutController@index')->name('guestCheckout.index');
-
-//TODO route checkout
 
 Route::get('/thankyou', 'ConfirmController@index')->name('Confirm.index');
 
@@ -85,6 +78,14 @@ Route::middleware('auth')->group(function () {
 
 
     });
+    //TODO route checkout
+
+    Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+    Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+//TODO quest Checkout
+    Route::get('/guestCheckout', 'CheckoutController@index')->name('guestCheckout.index');
+
+//TODO route checkout
 });
 
 
