@@ -49,7 +49,7 @@
                              href="{{ route('register') }}">{{ __('Register') }}</a>
                              @endif
                              @else
-                                <a class="dropdown-item waves-effect waves-light" href="#">My account</a>
+                                <a class="dropdown-item waves-effect waves-light" href="{{route('order.index')}}">My account</a>
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>

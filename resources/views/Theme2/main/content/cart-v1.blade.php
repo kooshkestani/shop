@@ -2,8 +2,8 @@
 <html lang="en">
 
 
-@include('Theme2.partials.head')
-@include('Theme2.partials.nav')
+@include('Theme2.main.partials.head')
+@include('Theme2.main.partials.nav')
 
 <!--Main Layout-->
 <main>
@@ -188,8 +188,8 @@
 </main>
 <!--Main Layout-->
 
-@include('Theme2.partials.footer')
-@include('Theme2.partials.cart-modal')
+@include('Theme2.main.partials.footer')
+@include('Theme2.main.partials.cart-modal')
 
 
 <!-- SCRIPTS -->

@@ -1,36 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('Theme2.main.index')
+
+@section('extra-css')
 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="{{asset('css/mdb2.min.css')}}" rel="stylesheet">
 
-    <title>E-Commerce - MDBootstrap</title>
+@endsection
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+@section('content')
 
-    <!-- Material Design Bootstrap -->
-    <link href="/css/mdb2.min.css" rel="stylesheet">
-
-</head>
-
-<body class="hidden-sn white-skin animated">
-
-@include('Theme2.partials.nav')
-<section>
-    <div class="mdb-map">
-        <div id="map-container" class="z-depth-1-half map-container" style="height: 450px;"></div>
-    </div>
-</section>
-
-<!--Main Layout-->
-<main>
 
     <div class="container-fluid mb-5">
 
@@ -194,79 +173,38 @@
 
     </div>
 
-</main>
-<!--Main Layout-->
+@endsection
 
-@include('Theme2.partials.footer')
-@include('Theme2.partials.cart-modal')
+@section('extra-js')
 
+    <script>
+        function init_map() {
 
-<!-- SCRIPTS -->
+            var var_location = new google.maps.LatLng(40.725118, -73.997699);
 
-<!-- JQuery -->
-<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+            var var_mapoptions = {
+                center: var_location,
 
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="/js/popper.min.js"></script>
+                zoom: 14
+            };
 
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+            var var_marker = new google.maps.Marker({
+                position: var_location,
+                map: var_map,
+                title: "New York"
+            });
 
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="/js/mdb.min.js"></script>
+            var var_map = new google.maps.Map(document.getElementById("map-container"),
+                var_mapoptions);
 
-<script src="https://maps.google.com/maps/api/js"></script>
-<script type="text/javascript">
-    /* WOW.js init */
-    new WOW().init();
+            var_marker.setMap(var_map);
 
-    // MDB Lightbox Init
-    $(function () {
-        $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
-    });
+        }
 
-    // Tooltips Initialization
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-</script>
-<script>
-    // Material Select Initialization
-    $(document).ready(function () {
-        $('.mdb-select').material_select();
-    });
-</script>
-<script>
-    function init_map() {
-
-        var var_location = new google.maps.LatLng(40.725118, -73.997699);
-
-        var var_mapoptions = {
-            center: var_location,
-
-            zoom: 14
-        };
-
-        var var_marker = new google.maps.Marker({
-            position: var_location,
-            map: var_map,
-            title: "New York"
-        });
-
-        var var_map = new google.maps.Map(document.getElementById("map-container"),
-            var_mapoptions);
-
-        var_marker.setMap(var_map);
-
-    }
-
-    google.maps.event.addDomListener(window, 'load', init_map);
-</script>
-<script>
-    // SideNav Initialization
-    $(".button-collapse").sideNav();
-</script>
-</body>
+        google.maps.event.addDomListener(window, 'load', init_map);
+    </script>
 
 
-</html>
+@endsection
+
+

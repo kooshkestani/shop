@@ -16,7 +16,17 @@
     padding: 2.5rem; }
     .sidebar-fixed .logo-wrapper img {
       max-height: 50px; }
-
+.file-field input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;}
 @media (min-width: 1200px) {
   .navbar,
   .page-footer,

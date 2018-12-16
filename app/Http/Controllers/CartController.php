@@ -15,8 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        // dd(Cart::content());
-        return view('Theme2.cart.cart-v2');
+    return view('Theme2.main.content.cart-v2');
     }
 
     /**
@@ -41,14 +40,11 @@ class CartController extends Controller
         $duplicate=Cart::search(function ($cartItem,$rowId)use($request){
             return $cartItem->id===$request->id;
         });
-        //if specific item is exist
-        if ($duplicate->count() > 0){
-            Cart::update($duplicate->first()->rowId, $duplicate->first()->qty +1); // Will update the quantity
+        if ($duplicate->isNotEmpty()){
             return redirect()->route('cart.index')->with('sucess message','Item is Added Cart');
-        }else{
-            Cart::add($request->id, $request->name, 1, $requestid)->associate('App\Models\Product');
-            return redirect()->route('cart.index')->with('sucess message', 'Item Add to Cart');
         }
+        Cart::add($request->id, $request->name,1,$requestid)->associate('App\Models\Product');
+        return redirect()->route('cart.index')->with('sucess message','Item Add to Cart');
 
     }
 
