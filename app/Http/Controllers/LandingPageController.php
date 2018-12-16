@@ -22,7 +22,7 @@ class LandingPageController extends Controller
         $categories = Category::all();
         // $countOfProductCategory = $categories->products()->get();
         // dd($categories);
-        return view('Theme2.main.content.homepage')->with([
+        return view('Theme2.homepage.homepage')->with([
             'product'=>$product,
             'allCategories'=> $categories,
             'topseller'=>$topseller,
