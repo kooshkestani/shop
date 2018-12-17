@@ -248,10 +248,10 @@
                         @foreach(Cart::content() as $item)
                             <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
-                                    <h6 class="my-0">{{$item->model->name}}</h6>
+                                    <h6 class="my-0">{{$item->name}}</h6>
                                     {{-- <small class="text-muted">{{$item->model->details}}</small> --}}
                                 </div>
-                                <span class="text-muted">{{$item->model->price}}</span>
+                                <span class="text-muted">{{$item->price}}</span>
                             </li>
 
                         @endforeach
