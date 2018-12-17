@@ -76,8 +76,12 @@ Route::middleware('auth')->group(function () {
 
 
     });
+<<<<<<< HEAD
 
 //TODO route checkout
+=======
+    //TODO route checkout
+>>>>>>> shop/behrouz
 
     Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
     Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
