@@ -19,6 +19,7 @@ class CheckoutController extends Controller
     public function index()
     {
         $userId = Auth::user()->id;
+        //User Informations
         $userInfo = User::find($userId);
         // dd($userInfo->address->addressline);
         return view('Theme2.checkout.checkout-page')->with(['userInfo'=>$userInfo]);
