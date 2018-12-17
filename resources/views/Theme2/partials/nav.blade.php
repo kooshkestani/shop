@@ -11,7 +11,7 @@
                 </a>
             </div>
             <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">
-                <strong>{{ config('app.name', 'Shop') }}</strong>
+                <strong>Online Shopping</strong>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
                     aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">

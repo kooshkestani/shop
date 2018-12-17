@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Models\Address;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 
 class CheckoutController extends Controller
@@ -15,8 +18,10 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-
-        return view('Theme2.main.content.checkout-page');
+        $userId = Auth::user()->id;
+        $userInfo = User::find($userId);
+        // dd($userInfo->address->addressline);
+        return view('Theme2.checkout.checkout-page')->with(['userInfo'=>$userInfo]);
     }
 
     /**

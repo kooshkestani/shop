@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
+    <title>Online Shopping</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -23,23 +23,23 @@
 <main class="mt-5 pt-4">
     <div class="container wow fadeIn">
 
-        <!-- Heading -->
-        <h2 class="my-5 h2 text-center">Checkout form</h2>
-        @if (session()->has('success_message'))
-            <div class="alert alert-success">
-                {{ session()->get('success_message') }}
-            </div>
-        @endif
+    <!-- Heading -->
+            <h3 class="my-5 h2 text-center"> تکمیل اطلاعات خرید</h3>
+            @if (session()->has('success_message'))
+                <div class="alert alert-success">
+                    {{ session()->get('success_message') }}
+                </div>
+            @endif
 
-        @if(count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-    @endif
+            @if(count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
     <!--Grid row-->
         <div class="row">
@@ -54,16 +54,16 @@
                     <form class="card-body" method="post" action="{{route('checkout.store')}}">
                     {{csrf_field()}}
                     <!--Grid row-->
-                        <div class="row">
+                        {{-- <div class="row"> --}}
                             <!--Grid column-->
-                            <div class="col-md-6 mb-2">
+                            {{-- <div class="col-md-6 mb-2"> --}}
                                 <!--firstName-->
-                                <div class="md-form">
-                                    <input type="text" id="firstName" class="form-control">
-                                    <label for="firstName" class="">{{Auth::user()->name}}</label>
+                                <div class="md-form mb-5">
+                                    <input type="text" id="firstName" class="form-control" name="username" value="{{$userInfo->name}}" placeholder="{{$userInfo->name}}">
+                                    <label for="firstName" class="">نام کاربر</label>
                                 </div>
 
-                            </div>
+                            {{-- </div> --}}
                             <!--Grid column-->
 
                             {{-- <!--Grid column-->
@@ -78,7 +78,7 @@
                             </div>
                             <!--Grid column--> --}}
 
-                        </div>
+                        {{-- </div> --}}
                         <!--Grid row-->
 
                         <!--Username-->
@@ -92,27 +92,33 @@
 
                         <!--email-->
                         <div class="md-form mb-5">
-                            <input type="text" id="email" class="form-control" placeholder="youremail@example.com">
-                            <label for="email" class="">Email (optional)</label>
+                            <input type="text" id="email" class="form-control" name="email"  value="{{$userInfo->email}}" placeholder="{{$userInfo->email}}">
+                            <label for="email" class="">ایمیل</label>
                         </div>
 
                         <!--address-->
                         <div class="md-form mb-5">
-                            <input type="text" id="address" class="form-control" placeholder="1234 Main St">
-                            <label for="address" class="">Address</label>
+                        <input type="text" id="address" class="form-control" name="address" value="{{$userInfo->address->addressline}}" placeholder="{{$userInfo->address->addressline}}">
+                            <label for="address" class="">آدرس</label>
+                        </div>
+
+                        <!--Telephone-->
+                        <div class="md-form mb-5">
+                        <input type="text" id="address" class="form-control" name="phone" value="{{$userInfo->address->phone}}" placeholder="{{$userInfo->address->phone}}">
+                            <label for="address" class="">تلفن</label>
                         </div>
 
                         <!--address-2-->
-                        <div class="md-form mb-5">
-                            <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite">
-                            <label for="address-2" class="">Address 2 (optional)</label>
-                        </div>
+                            {{-- <div class="md-form mb-5">
+                                <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite">
+                                <label for="address-2" class="">Address 2 (optional)</label>
+                            </div> --}}
 
                         <!--Grid row-->
-                        <div class="row">
+                        {{-- <div class="row"> --}}
 
-                            <!--Grid column-->
-                            <div class="col-lg-4 col-md-12 mb-4">
+                            <!--Grid column Country-->
+                            {{-- <div class="col-lg-4 col-md-12 mb-4">
 
                                 <label for="country">Country</label>
                                 <select class="custom-select d-block w-100" id="country" required>
@@ -123,11 +129,11 @@
                                     Please select a valid country.
                                 </div>
 
-                            </div>
+                            </div> --}}
                             <!--Grid column-->
 
-                            <!--Grid column-->
-                            <div class="col-lg-4 col-md-6 mb-4">
+                            <!--Grid column STATE code-->
+                            {{-- <div class="col-lg-4 col-md-6 mb-4">
 
                                 <label for="state">State</label>
                                 <select class="custom-select d-block w-100" id="state" required>
@@ -138,11 +144,11 @@
                                     Please provide a valid state.
                                 </div>
 
-                            </div>
+                            </div> --}}
                             <!--Grid column-->
 
-                            <!--Grid column-->
-                            <div class="col-lg-4 col-md-6 mb-4">
+                            <!--Grid column ZIP code-->
+                            {{-- <div class="col-lg-4 col-md-6 mb-4">
 
                                 <label for="zip">Zip</label>
                                 <input type="text" class="form-control" id="zip" placeholder="" required>
@@ -150,15 +156,13 @@
                                     Zip code required.
                                 </div>
 
-                            </div>
+                            </div> --}}
                             <!--Grid column-->
 
-                        </div>
+                        {{-- </div> --}}
                         <!--Grid row-->
 
-                        <hr>
-
-                        <div class="custom-control custom-checkbox">
+                        {{-- <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="same-address">
                             <label class="custom-control-label" for="same-address">Shipping address is the same as my
                                 billing address</label>
@@ -167,11 +171,9 @@
                             <input type="checkbox" class="custom-control-input" id="save-info">
                             <label class="custom-control-label" for="save-info">Save this information for next
                                 time</label>
-                        </div>
+                        </div> --}}
 
-                        <hr>
-
-                        <div class="d-block my-3">
+                        {{-- <div class="d-block my-3">
                             <div class="custom-control custom-radio">
                                 <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
                                        checked required>
@@ -220,9 +222,8 @@
                                     Security code required
                                 </div>
                             </div>
-                        </div>
-                        <hr class="mb-4">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                        </div> --}}
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" style="font-size:18px;">پرداخت آنلاین</button>
 
                     </form>
 
@@ -238,7 +239,7 @@
 
                 <!-- Heading -->
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-muted">Your cart</span>
+                        <span class="text-muted">محصولات سبد خرید شما</span>
                         <span class="badge badge-secondary badge-pill">{{Cart::count()}}</span>
                     </h4>
 
@@ -248,28 +249,29 @@
                             <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
                                     <h6 class="my-0">{{$item->model->name}}</h6>
-                                    <small class="text-muted">{{$item->model->details}}</small>
+                                    {{-- <small class="text-muted">{{$item->model->details}}</small> --}}
                                 </div>
                                 <span class="text-muted">{{$item->model->price}}</span>
                             </li>
 
                         @endforeach
-                        <li class="list-group-item d-flex justify-content-between bg-light">
+                        {{-- <li class="list-group-item d-flex justify-content-between bg-light">
                             <div class="text-success">
                                 <h6 class="my-0">Promo code</h6>
                                 <small>EXAMPLECODE</small>
                             </div>
                             <span class="text-success">-$5</span>
-                        </li>
+                        </li> --}}
                         <li class="list-group-item d-flex justify-content-between">
-                            <span>Total (USD)</span>
-                            <strong>{{Cart::total()}}</strong>
+                            <label>تومان</label>
+                            <strong>{{Cart::total(0, "", "")}}</strong>
+                            <span> هزینه قابل پرداخت</span>
                         </li>
                     </ul>
                     <!-- Cart -->
 
                     <!-- Promo code -->
-                    <form class="card p-2">
+                    {{-- <form class="card p-2">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Promo code"
                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -277,7 +279,7 @@
                                 <button class="btn btn-secondary btn-md waves-effect m-0" type="button">Redeem</button>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
                     <!-- Promo code -->
                 @else
                     <h3>NO item in Cart</h3>
