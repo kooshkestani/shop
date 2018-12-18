@@ -7,7 +7,7 @@
             <div class="card">
 
                 <h5 class="card-header info-color white-text text-center py-4">
-                    <strong>{{ __('Reset Password') }}</strong>
+                    <strong>{{ __('auth.Reset Password') }}</strong>
                 </h5>
 
                 <!--Card content-->
@@ -25,7 +25,7 @@
                             <input type="email" id="materialLoginFormEmail"
                                    class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                    value="{{ old('email') }}" required autofocus>
-                            <label for="materialLoginFormEmail">{{ __('E-Mail Address') }}</label>
+                            <label for="materialLoginFormEmail">{{ __('auth.E-Mail Address') }}</label>
 
                             @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">
@@ -37,7 +37,7 @@
 
                         <!-- Sign in button -->
                         <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
-                                type="submit">                                    {{ __('Send Password Reset Link') }}
+                                type="submit">                                    {{ __('auth.Send Password Reset Link') }}
                         </button>
                     </form>
                     <!-- Form -->

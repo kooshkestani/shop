@@ -20,4 +20,8 @@ class Comment extends Model
     {
         return $this->belongsTo('App\User');
     }
+//    public function products()
+//    {
+//        return $this->belongsTo('App\Models\Product');
+//    }
 }

@@ -97,6 +97,8 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/my-order', 'UserOrderController@index')->name('order.index');
 
+        Route::get('/comment', 'UsersController@index')->name('users.comment');
+        Route::get('/address', 'UsersController@addresindex')->name('users.address');
 
     });
 

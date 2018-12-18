@@ -33,7 +33,12 @@ class User extends \TCG\Voyager\Models\User
         return $this->hasMany('App\Models\Order');
     }
 
-    public function address(){
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+
+    public function addresses(){
         return $this->hasOne('App\Models\Address');
     }
 }

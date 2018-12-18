@@ -1,0 +1,17 @@
+@import url('font.css');
+
+body{
+    font-family: "Open Sans"!important;
+    /*text-align: right;*/
+}
+
+/*.navbar{*/
+/*direction: rtl;*/
+/*}*/
+/*.section-nav{*/
+/*direction: rtl;*/
+/*}*/
+/*h1,h2,h3,h4,h5,h6,p,strong,span,a{*/
+/*direction: rtl;*/
+/*float: right;*/
+/*}*/

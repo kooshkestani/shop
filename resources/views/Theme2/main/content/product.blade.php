@@ -283,7 +283,7 @@
                             <div class="card-data">
                                 <ul class="list-unstyled mb-1">
                                     <li class="comment-date font-small grey-text">
-                                        <i class="fa fa-clock-o"></i>{{$comment->created_at}}
+                                        <i class="fa fa-clock-o"></i>{{jdate($comment->created_at)->format('%B %d، %Y')}}
                                     </li>
                                 </ul>
                             </div>
