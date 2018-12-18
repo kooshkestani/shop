@@ -49,21 +49,21 @@
                              @guest
                              
                              <a class="dropdown-item waves-effect waves-light"
-                             href="{{ route('login') }}">{{ __('Login') }}</a>
+                             href="{{ route('login') }}">{{ __('auth.login') }}</a>
                              
                              @if (Route::has('register'))
                              <a class="dropdown-item waves-effect waves-light"
-                             href="{{ route('register') }}">{{ __('Register') }}</a>
+                             href="{{ route('register') }}">{{ __('auth.register') }}</a>
                              @endif
                              @else
-                                <a class="dropdown-item waves-effect waves-light" href="{{route('order.index')}}">My account</a>
+                                <a class="dropdown-item waves-effect waves-light" href="{{route('order.index')}}">{{__('auth.account')}}</a>
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <a class="dropdown-item waves-effect waves-light" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('auth.logout') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
