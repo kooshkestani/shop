@@ -7,10 +7,10 @@
             <!--Header-->
             <div class="modal-header">
 
-                <h4 class="modal-title font-weight-bold dark-grey-text" id="myModalLabel">سبد خرید</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+                <h4 class="modal-title font-weight-bold dark-grey-text" id="myModalLabel">سبد خرید</h4>
             </div>
             <!--Body-->
             <div class="modal-body">
@@ -28,9 +28,13 @@
                             @foreach (Cart::content() as $item)
                                 <tr>
                                     <td>{{$item->name}}</td>
-                                    <td><label>تومان </label> {{$item->price}}</td>
+                                    <td>
+                                        {{$item->price}} <label>تومان </label> 
+                                    </td>
                                     <td>{{$item->qty}}</td>
-                                    <td><label>تومان </label> {{$item->qty * $item->price}}</td>
+                                    <td>
+                                        {{$item->qty * $item->price}} <label>تومان </label> 
+                                    </td>
                                     {{-- <td>
                                         <a>
                                             <i class="fa fa-remove"></i>

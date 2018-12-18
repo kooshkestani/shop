@@ -45,28 +45,31 @@
                         <table class="table product-table">
 
                             <!-- Table head -->
-                            <thead class="mdb-color lighten-5">
+                             <thead class="mdb-color lighten-5">
                             <tr>
                                 <th></th>
                                 <th class="font-weight-bold">
-                                    <strong>محصول</strong>
+                                    <strong>نام محصول</strong>
                                 </th>
+                                <th></th>
+                                {{-- <th class="font-weight-bold">
+                                    <strong>Color</strong>
+                                </th> --}}
+                                <th></th>
+                                <th></th>
                                 <th class="font-weight-bold">
-                                    <strong>رنگ</strong>
+                                    <strong>قیمت محصول</strong>
                                 </th>
                                 <th></th>
                                 <th class="font-weight-bold">
-                                    <strong>قیمت</strong>
+                                    <strong>تعداد محصول </strong>
                                 </th>
                                 <th class="font-weight-bold">
-                                    <strong>تعداد</strong>
-                                </th>
-
-                                <th class="font-weight-bold">
-                                    <strong>قیمت </strong>
+                                    <strong>هزینه نهایی محصول</strong>
                                 </th>
                                 <th></th>
                             </tr>
+                            </thead>
                             </thead>
                             <!-- /.Table head -->
 
@@ -86,34 +89,40 @@
                                             </h5>
                                             <p class="text-muted">{{$item->model->name}}</p>
                                         </td>
-                                        <td>سفید</td>
                                         <td></td>
-                                        <td>{{$item->model->price}}</td>
+                                        <td></td>
+                                        {{-- <td>White</td> --}}
+                                        <td></td>
+                                        <td>
+                                            <strong>{{$item->price}}</strong>
+                                            <label style="font-weight:bold">تومان</label>
+                                        </td>
+                                        <td></td>
                                         <td class="text-center text-md-left">
                                             <span class="qty"  id="number"  data-id="{{$item->rowId}}">{{$item->qty}}</span>
-                                            {{--<input type="number" id="number" value="0" />--}}
-                                            <div class="btn-group radio-group ml-2" data-toggle="buttons" style="direction: ltr">
+                                            {{-- <input type="number" id="number" value="0" /> --}}
+                                            {{-- <div class="btn-group radio-group ml-2" data-toggle="buttons">
                                                 <label class="btn btn-sm btn-primary btn-rounded" id="decrease" onclick="decreaseValue()" value="Decrease Value">
-                                                <input type="radio" name="options" id="option1">&mdash;
+                                                    <input type="radio" name="options" id="option1">&mdash;
                                                 </label>
                                                 <label class="btn btn-sm btn-primary btn-rounded" id="increase" onclick="increaseValue()" value="Increase Value">
-                                                <input type="radio" name="options" id="option2">+
+                                                    <input type="radio" name="options" id="option2">+
                                                 </label>
-                                            </div>
+                                            </div> --}}
                                         </td>
 
                                         <td class="font-weight-bold">
-                                            <strong>{{Cart::subtotal()}}</strong>
+                                            <strong>{{$item->price * $item->qty}}</strong>
+                                            <label>تومان</label>
                                         </td>
                                         <td>
-
                                             <form action="{{route('cart.destroy',$item->rowId)}}" method="post">
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
-                                                <button type="submit" class="btn btn-sm btn-primary" data-toggle="tooltip"
-                                                        data-placement="top"
-                                                        title="Remove item">X
-                                                </button>
+                                            <button type="submit" class="btn btn-sm btn-primary" data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Remove item">X
+                                            </button>
                                             </form>
                                         </td>
                                     </tr>
@@ -129,34 +138,32 @@
                                     </td>
                                     <td class="text-right">
                                         <h6 class="mt-2 float-left">
-                                            <strong>{{Cart::tax()}}</strong>
+                                            <strong>{{Cart::tax(0, "", "")}}</strong>
+                                            <label>تومان</label>
                                         </h6>
                                     </td>
                                     <td colspan="2"></td>
 
                                     <td>
-                                        <h4 class="mt-2">
-                                            <strong>مجموع</strong>
-                                        </h4>
+                                        <h6 class="mt-2">
+                                            <strong>جمع کل</strong>
+                                        </h6>
                                     </td>
                                     <td class="text-right">
-                                        <h4 class="mt-2">
-                                            <strong>{{Cart::total()}}</strong>
-                                        </h4>
+                                        <h6 class="mt-2">
+                                            <strong>{{Cart::subtotal(0, "", "") + Cart::tax(0, "", "")}}</strong>
+                                            <label>تومان</label>
+                                        </h6>
                                     </td>
-
                                     <td colspan="3" class="text-right">
                                         <a href="{{route('checkout.index')}}">
-                                            <button type="button"
-                                                    class="btn btn-primary btn-rounded waves-effect waves-light">
-                                                تکمیل سبد خرید
-                                                <i class="fa fa-angle-left left"></i>
-                                            </button>
+                                        <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light" style="font-size:18px;">ادامه و تکمیل سبد خرید
+                                        </button>
                                         </a>
                                     </td>
                                 </tr>
                             @else
-                                <h3 class="text-right">سبد خرید خالی هست</h3>
+                                <h3>سبد خرید شما خالیست</h3>
                             @endif
                             </tbody>
                             <!-- /.Table body -->
