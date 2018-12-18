@@ -14,44 +14,49 @@
             </div>
             <!--Body-->
             <div class="modal-body">
-                @if (Cart::content()->count() > 0)
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>نام محصول</th>
-                            <th>قیمت محصول</th>
-                            <th>تعداد</th>
-                            <th>قیمت کل</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (Cart::content() as $item)
-                                <tr>
-                                    <td>{{$item->name}}</td>
-                                    <td>
-                                        {{$item->price}} <label>تومان </label> 
-                                    </td>
-                                    <td>{{$item->qty}}</td>
-                                    <td>
-                                        {{$item->qty * $item->price}} <label>تومان </label> 
-                                    </td>
-                                    {{-- <td>
-                                        <a>
-                                            <i class="fa fa-remove"></i>
-                                        </a>
-                                    </td> --}}
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                     <a class="btn btn-primary btn-rounded btn-sm" href="{{route('cart.index')}}" style="font-size:14px">
-                        ویرایش سبد خرید
-                    </a>
-                @else
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-danger text-center">هیچ محصولی در سبد خرید شما وجود ندارد</li>
-                    </ul>
-                @endif
+                @guest
+                    @if (Cart::content()->count() > 0)
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>نام محصول</th>
+                                <th>قیمت محصول</th>
+                                <th>تعداد</th>
+                                <th>قیمت کل</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (Cart::content() as $item)
+                                    <tr>
+                                        <td>{{$item->name}}</td>
+                                        <td>
+                                            {{$item->price}} <label>تومان </label> 
+                                        </td>
+                                        <td>{{$item->qty}}</td>
+                                        <td>
+                                            {{$item->qty * $item->price}} <label>تومان </label> 
+                                        </td>
+                                        {{-- <td>
+                                            <a>
+                                                <i class="fa fa-remove"></i>
+                                            </a>
+                                        </td> --}}
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        <a class="btn btn-primary btn-rounded btn-sm" href="{{route('cart.index')}}" style="font-size:14px">
+                            ویرایش سبد خرید
+                        </a>
+                    @else
+                        <ul class="list-group">
+                                <li class="list-group-item list-group-item-danger text-center">هیچ محصولی در سبد خرید شما وجود ندارد</li>
+                        </ul>
+                    @endif  
+                @endguest
+                @auth
+                    {{"da"}}
+                @endauth
             </div>
             <!--Footer-->
             {{-- <div class="modal-footer">

@@ -207,11 +207,12 @@
 
             </div>
             <!--Grid column-->
-
+            <!-- TEST -->
+            {{-- <div class="col-md-4 mb-4">
+            </div> --}}
             <!--Grid column-->
             <div class="col-md-4 mb-4">
             @if(Cart::count()>0)
-
                 <!-- Heading -->
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-muted">سبد خرید</span>
@@ -241,7 +242,7 @@
                         {{--</li>--}}
                         <li class="list-group-item d-flex justify-content-between">
                             <span>مجموع (تومان)</span>
-                            <strong>{{Cart::total()}}</strong>
+                            <strong>{{Cart::total(0,"",",")}}</strong>
                         </li>
                     </ul>
                     <!-- Cart -->
@@ -257,9 +258,9 @@
                         {{--</div>--}}
                     {{--</form>--}}
                     <!-- Promo code -->
-                @else
+            @else
                     <h3>سبد خرید خالی هست</h3>
-                @endif
+            @endif
             </div>
             <!--Grid column-->
 
