@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Address;
 use App\User;
+use App\Models\Category;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -18,11 +20,16 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+        $categories = Category::all();
+
         $userId = Auth::user()->id;
         //User Informations
         $userInfo = User::find($userId);
         // dd($userInfo->address->addressline);
-        return view('Theme2.checkout.checkout-page')->with(['userInfo'=>$userInfo]);
+        return view('Theme2.main.content.checkout-page')->with([
+            'userInfo'=>$userInfo,
+            'allCategories'=> $categories,
+        ]);
     }
 
     /**

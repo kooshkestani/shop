@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
@@ -15,6 +16,7 @@ class shopController extends Controller
      */
     public function index()
     {
+
         if (request()->category) {
             $products = Product::with('categories')->whereHas('categories', function ($query) {
                 $query->where('slug', request()->category);
@@ -41,10 +43,13 @@ class shopController extends Controller
             $products = $products->paginate(9);
 
         }
-        return view('Theme2.category.category-v2')->with([
+        return view('Theme2.main.content.category-v2')->with([
             'products' => $products,
             'categories' => $categories,
             'categoryname' => $categoryname,
+            'allCategories'=> $categories,
+
+
 
 
         ]);
@@ -79,23 +84,33 @@ class shopController extends Controller
      */
     public function show($slug)
     {
+        $categories = Category::all();
         $product = Product::where('slug', $slug)->firstOrFail();
+
+        $comments = Comment::where('product_id', $product->id)->get();
         $mightAlsoLike = Product::where('slug', '!=', $slug)->inRandomOrder()->take(3)->get();
+
+        $query_RelatedProduct=substr($product->name,0,3);
+        $RelatedProduct = Product::where('name', 'like', "%$query_RelatedProduct%")->inRandomOrder()->paginate(3);
         if ($product->quantity>setting('site.stock_Threshold')){
-            $stocklevel='<span class="badge badge-success product mb-4 ml-2">In stock</span>';
+            $stocklevel='<span class="badge badge-success product mb-4 mr-2">موجود است</span>';
 
         }elseif($product->quantity<=setting('site.stock_Threshold')&&$product->quantity>0){
-            $stocklevel='<span class="badge badge-warning product mb-4 ml-2">Low Stock </span>';
+            $stocklevel='<span class="badge badge-warning product mb-4 mr-2">موجودی محدود</span>';
 
         }else{
-            $stocklevel='<span class="badge badge-danger product mb-4 ml-2">Not Available</span>';
+            $stocklevel='<span class="badge badge-danger product mb-4 mr-2">موجود نیست</span>';
 
         }
 
-        return view('Theme2.product.product')->with([
+        return view('Theme2.main.content.product')->with([
+            'comments'=>$comments,
             'product' => $product,
             'mightAlsoLike' => $mightAlsoLike,
+            'RelatedProduct' => $RelatedProduct,
             'stocklevel'=>$stocklevel,
+            'allCategories'=> $categories,
+
             'title' =>$slug
 
 
@@ -146,11 +161,11 @@ class shopController extends Controller
             ->orwhere('details', 'like', "%$query%")
             ->orwhere('description', 'like', "%$query%")
             ->paginate(15);
-        return view('Theme2.search-result.search-result')->with('products', $products);
+        return view('Theme2.main.content.search-result')->with('products', $products);
     }
 
     public function searchAlgolia(Request $request)
     {
-        return view('Theme2.search-result.search-algolia');
+        return view('Theme2.main.content.search-algolia');
     }
 }

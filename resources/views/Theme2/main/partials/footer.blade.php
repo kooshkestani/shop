@@ -49,35 +49,27 @@
         <div class="row mt-3">
 
             <!--First column-->
-            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+            <div class="col-md-3 col-lg-4 col-xl-3 mb-4 text-right">
                 <h6 class="text-uppercase font-weight-bold">
-                    <strong>Online Shopping</strong>
+                    <strong>دیجی کالا</strong>
                 </h6>
                 <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet,
-                    consectetur
-                    adipisicing elit.</p>
+                <p>دیجی‌کالا به عنوان یکی از قدیمی‌ترین فروشگاه های اینترنتی با بیش از یک دهه تجربه، با پایبندی به سه اصل کلیدی، پرداخت در محل، 7 روز ضمانت بازگشت کالا و تضمین اصل‌بودن کالا، موفق شده تا همگام با فروشگاه‌های معتبر جهان، به بزرگ‌ترین فروشگاه اینترنتی ایران تبدیل شود. به محض ورود به دیجی‌کالا با یک سایت پر از کالا رو به رو می‌شوید! هر آنچه که نیاز دارید و به ذهن شما خطور می‌کند در اینجا پیدا خواهید کرد.</p>
             </div>
             <!--/.First column-->
 
             <!--Second column-->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 text-right">
                 <h6 class="text-uppercase font-weight-bold">
-                    <strong>Products</strong>
+                    <strong>محصولات</strong>
                 </h6>
                 <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                @foreach ($allCategories as $category)
+
                 <p>
-                    <a href="#!">Laptops</a>
+                    <a href="{{route('shop.index')}}">{{$category->name}}</a>
                 </p>
-                <p>
-                    <a href="#!">Desktops</a>
-                </p>
-                <p>
-                    <a href="#!">Mobile Phones</a>
-                </p>
-                <p>
-                    <a href="#!">Tablets</a>
-                </p>
+                    @endforeach
             </div>
             <!--/.Second column-->
 
@@ -103,19 +95,19 @@
             <!--/.Third column-->
 
             <!--Fourth column-->
-            <div class="col-md-4 col-lg-3 col-xl-3">
+            <div class="col-md-4 col-lg-3 col-xl-3 text-right">
                 <h6 class="text-uppercase font-weight-bold">
-                    <strong>Contact</strong>
+                    <strong>ارتباط با ما</strong>
                 </h6>
                 <hr class="blue mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+                    <i class="fa fa-home ml-3"></i> خیابان آزادی،  دانشگاه شریف۷</p>
                 <p>
-                    <i class="fa fa-envelope mr-3"></i> info@example.com</p>
+                    <i class="fa fa-envelope ml-3"></i> info@example.com</p>
                 <p>
-                    <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+                    <i class="fa fa-phone ml-3"></i> + 01 234 567 88</p>
                 <p>
-                    <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+                    <i class="fa fa-print ml-3"></i> + 01 234 567 89</p>
             </div>
             <!--/.Fourth column-->
 
@@ -126,7 +118,7 @@
     <!-- Copyright-->
     <div class="footer-copyright py-3 text-center">
         <div class="container-fluid">
-            © 2018 Copyright: <a href="https://github.com/kooshkestani/shop" target="_blank"> Online Store Site With Laravel & Vue.js  </a>
+            © 1397 کليه حقوق اين سايت متعلق به  <a href="https://github.com/kooshkestani/shop" target="_blank"><i class="fa fa-heart"></i></a> می باشد
         </div>
     </div>
     <!--/.Copyright -->

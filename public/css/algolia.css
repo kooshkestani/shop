@@ -1,20 +1,25 @@
-@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+/*@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';*/
+@import 'font.css';
 .aa-input-container {
+
     display: inline-block;
     position: relative; }
 .aa-input-search {
+    background: aliceblue;
+text-align: right;
     width: 300px;
+    margin-right: 10px;
     padding: 12px 28px 12px 12px;
     border: 1px solid #e4e4e4;
     border-radius: 4px;
     -webkit-transition: .2s;
     transition: .2s;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Open Sans", sans-serif;
     box-shadow: 2px 2px 0 rgba(241, 241, 241, 0.35);
-    background-color:transparent;
+    /*background-color:transparent;*/
     font-size: 13px;
     box-sizing: border-box;
-    color: #fff;
+    color: #0d0d0d;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none; }
@@ -39,7 +44,7 @@
     background-color: #fff;
     border: 2px solid rgba(228, 228, 228, 0.6);
     border-top-width: 1px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Open Sans", sans-serif;
     width: 300px;
     margin-top: 10px;
     box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);

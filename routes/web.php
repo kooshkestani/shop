@@ -47,9 +47,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //TODO route basic
 Route::get('/', 'LandingPageController@index')->name('landing-page');
+
+
+
+
+
 //TODO route shop and product
 Route::get('/shop', 'shopController@index')->name('shop.index');
 Route::get('/shop/{product}', 'shopController@show')->name('shop.show');
+
+
+
+
 
 //TODO route cart
 Route::get('/cart', 'CartController@index')->name('cart.index');
@@ -60,11 +69,25 @@ Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
 
 
 
+
+//TODO route comment
+Route::post('/shop/{product}/comment', 'CommentController@store')->name('comment.store');
+
+
 Route::get('/thankyou', 'ConfirmController@index')->name('Confirm.index');
+
+
+
+
+
 
 //TODO route search
 Route::get('/search', 'shopController@search')->name('search');
 Route::get('/search-algolia', 'shopController@searchAlgolia')->name('search-algolia');
+
+
+
+
 
 //TODO route my-profile
 Route::middleware('auth')->group(function () {
@@ -76,10 +99,19 @@ Route::middleware('auth')->group(function () {
 
 
     });
-    //TODO route checkout
+
+
+
+
+
+//TODO route checkout
 
     Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
     Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+
+
+
+
 //TODO quest Checkout
     Route::get('/guestCheckout', 'CheckoutController@index')->name('guestCheckout.index');
 

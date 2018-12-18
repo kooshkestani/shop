@@ -13,13 +13,13 @@
 @endsection
 @section('content')
     <!-- Main Container -->
-    <div class="container mt-5 pt-3">
+    <div class="container mt-1 pt-3">
 
         <!--Navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark primary-color mt-5 mb-5">
 
             <!-- Navbar brand -->
-            <a class="font-weight-bold white-text mr-4" href="#">Categories</a>
+            <a class="font-weight-bold white-text mr-4" href="#">دسته بندی ها</a>
 
             <!-- Collapse button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
@@ -212,7 +212,7 @@
         <!--/.Navbar-->
 
 
-        <div class="row pt-4">
+        <div class="row pt-4" style="direction: ltr" >
 
 
             <!-- Content -->
@@ -221,28 +221,28 @@
                 <!-- Filter Area -->
                 <div class="row">
 
-                    <div class="col-md-4 mt-3">
+                    {{--<div class="col-md-4 mt-3">--}}
 
-                        <!-- Sort by -->
-                        <select class="mdb-select grey-text md-form" multiple>
-                            <option value="" disabled selected>Choose your option</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </select>
-                        <label>{{$categoryname}}</label>
-                        <button class="btn-save btn btn-primary btn-sm">Save</button>
-                        <!-- /.Sort by -->
+                        {{--<!-- Sort by -->--}}
+                        {{--<select class="mdb-select grey-text md-form" multiple>--}}
+                            {{--<option value="" disabled selected>Choose your option</option>--}}
+                            {{--<option value="1">Option 1</option>--}}
+                            {{--<option value="2">Option 2</option>--}}
+                            {{--<option value="3">Option 3</option>--}}
+                        {{--</select>--}}
+                        {{--<label>{{$categoryname}}</label>--}}
+                        {{--<button class="btn-save btn btn-primary btn-sm">Save</button>--}}
+                        {{--<!-- /.Sort by -->--}}
 
-                    </div>
+                    {{--</div>--}}
                     <div class="col-8 col-md-8 text-right">
 
                         <!-- View Switcher -->
                         <a class="btn btn-blue-grey btn-sm"><i class="fa fa-th mr-2" aria-hidden="true"></i><strong>
-                                Grid</strong></a>
+                                مربعی</strong></a>
                         <a class="btn btn-blue-grey btn-sm"><i class="fa fa-th-list mr-2"
                                                                aria-hidden="true"></i><strong>
-                                List</strong></a>
+                                لیست</strong></a>
                         <!-- /.View Switcher -->
 
                     </div>
@@ -323,7 +323,7 @@
 
                                 <!--First-->
                                 <li class="page-item disabled clearfix d-none d-md-block"><a
-                                            class="page-link waves-effect waves-effect">First</a></li>
+                                            class="page-link waves-effect waves-effect">قبلی</a></li>
 
                                 <!--Arrow left-->
                             {{--<li class="page-item disabled">--}}
@@ -353,7 +353,7 @@
 
                             <!--First-->
                                 <li class="page-item clearfix d-none d-md-block"><a
-                                            class="page-link waves-effect waves-effect">Last</a></li>
+                                            class="page-link waves-effect waves-effect">بعدی</a></li>
 
                             </ul>
                         </nav>
@@ -373,31 +373,28 @@
                 <div class="">
                     <!-- Grid row -->
                     <div class="row">
-                        <div class="col-md-6 col-lg-12 mb-5">
+                        <div class="col-md-6 col-lg-12 mb-5" style="direction: rtl">
                             <!-- Panel -->
-                            <h3 class="font-weight-bold dark-grey-text"><strong>Order By</strong></h3>
+                            <h3 class="font-weight-bold dark-grey-text"><strong>مرتب کردن</strong></h3>
                             <div class="divider"></div>
 
                             <p class="blue-text"><a
-                                        href="{{route('shop.index',['category'=>request()->category,'sort'=>'low_high'])}}">Default</a>
+                                        href="{{route('shop.index',['category'=>request()->category,'sort'=>'low_high'])}}">پیش فرض</a>
                             </p>
                             <p class="dark-grey-text"><a
-                                        href="{{route('shop.index',['category'=>request()->category,'sort'=>'popularity'])}}">Popularity</a>
+                                        href="{{route('shop.index',['category'=>request()->category,'sort'=>'popularity'])}}">محبوبیت</a>
                             </p>
                             <p class="dark-grey-text"><a
-                                        href="{{route('shop.index',['category'=>request()->category,'sort'=>'avg'])}}">Average
-                                    rating</a></p>
+                                        href="{{route('shop.index',['category'=>request()->category,'sort'=>'avg'])}}">بیشترین امتیاز</a></p>
                             <p class="dark-grey-text"><a
-                                        href="{{route('shop.index',['category'=>request()->category,'sort'=>'low_high'])}}">Price:
-                                    low to high</a></p>
+                                        href="{{route('shop.index',['category'=>request()->category,'sort'=>'low_high'])}}">قیمت : کم به زیاد</a></p>
                             <p class="dark-grey-text"><a
-                                        href="{{route('shop.index',['category'=>request()->category,'sort'=>'high_low'])}}">Price:
-                                    high to low</a></p>
+                                        href="{{route('shop.index',['category'=>request()->category,'sort'=>'high_low'])}}">قیمت : زیاد به کم</a></p>
                         </div>
 
                         <!-- Filter by category-->
-                        <div class="col-md-6 col-lg-12 mb-5">
-                            <h3 class="font-weight-bold dark-grey-text"><strong>Category</strong></h3>
+                        <div class="col-md-6 col-lg-12 mb-5" style="direction: rtl">
+                            <h3 class="font-weight-bold dark-grey-text"><strong>دسته بندی</strong></h3>
                             <div class="divider"></div>
 
                             <!--Radio group-->
@@ -419,8 +416,8 @@
                     <!-- Grid row -->
                     <div class="row">
                         <!-- Filter by price  -->
-                        <div class="col-md-6 col-lg-12 mb-5">
-                            <h3 class="font-weight-bold dark-grey-text"><strong>Price</strong></h3>
+                        <div class="col-md-6 col-lg-12 mb-5" style="direction: rtl">
+                            <h3 class="font-weight-bold dark-grey-text"><strong>قیمت</strong></h3>
                             <div class="divider"></div>
 
                             <form class="range-field mt-3">
@@ -448,10 +445,10 @@
                         <!-- /Filter by price -->
 
                         <!-- Filter by rating -->
-                        <div class="col-md-6 col-lg-12 mb-5">
-                            <h3 class="font-weight-bold dark-grey-text"><strong>Rating</strong></h3>
+                        <div class="col-md-6 col-lg-12 mb-5" style="direction: rtl">
+                            <h3 class="font-weight-bold dark-grey-text"><strong>امتیاز</strong></h3>
                             <div class="divider"></div>
-                            <div class="row ml-1">
+                            <div class="row mr-1">
                                 <!-- Rating -->
                                 <ul class="rating mb-0">
                                     <li><i class="fa fa-star blue-text"></i></li>
@@ -460,13 +457,13 @@
                                     <li><i class="fa fa-star blue-text"></i></li>
                                     <li><i class="fa fa-star blue-text"></i></li>
                                     <li>
-                                        <p class="ml-3 dark-grey-text"><a>4 and more</a></p>
+                                        <p class="mr-3 dark-grey-text"><a>4 ستاره و بیشتر</a></p>
                                     </li>
                                 </ul>
 
                             </div>
 
-                            <div class="row ml-1">
+                            <div class="row mr-1">
                                 <!-- Rating -->
                                 <ul class="rating mb-0">
                                     <li><i class="fa fa-star blue-text"></i></li>
@@ -475,13 +472,13 @@
                                     <li><i class="fa fa-star blue-text"></i></li>
                                     <li><i class="fa fa-star grey-text"></i></li>
                                     <li>
-                                        <p class="ml-3 dark-grey-text"><a>3 - 3,99</a></p>
+                                        <p class="mr-3 dark-grey-text"><a>3 - 3,99</a></p>
                                     </li>
                                 </ul>
 
                             </div>
 
-                            <div class="row ml-1">
+                            <div class="row mr-1">
                                 <!-- Rating -->
                                 <ul class="rating">
                                     <li><i class="fa fa-star blue-text"></i></li>
@@ -490,7 +487,7 @@
                                     <li><i class="fa fa-star grey-text"></i></li>
                                     <li><i class="fa fa-star grey-text"></i></li>
                                     <li>
-                                        <p class="ml-3 dark-grey-text"><a>3.00 and less</a></p>
+                                        <p class="mr-3 dark-grey-text"><a>3 ستاره و کمتر</a></p>
                                     </li>
                                 </ul>
 

@@ -1,0 +1,22 @@
+
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src:url("../font/IRANSans4/eot/IRANSansWeb(FaNum).eot");
+    src:url("../font/IRANSans4/eot/IRANSansWeb(FaNum).eot?#iefix") format("embedded-opentype"),
+    url("../font/IRANSans4/woff/IRANSansWeb(FaNum).woff") format("woff"),
+    url("../font/IRANSans4/woff2/IRANSansWeb(FaNum).woff2") format("woff2"),
+    url("../font/IRANSans4/ttf/IRANSansWeb(FaNum).ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src:url("../font/IRANSans4/eot/IRANSansWeb(FaNum).eot");
+    src:url("../font/IRANSans4/eot/IRANSansWeb(FaNum).eot?#iefix") format("embedded-opentype"),
+    url("../font/IRANSans4/woff/IRANSansWeb(FaNum).woff") format("woff"),
+    url("../font/IRANSans4/woff2/IRANSansWeb(FaNum).woff2") format("woff2"),
+    url("../font/IRANSans4/ttf/IRANSansWeb(FaNum).ttf") format("truetype");
+}

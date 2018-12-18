@@ -16,7 +16,7 @@
     <div class="container wow fadeIn">
 
         <!-- Heading -->
-        <h2 class="my-5 h2 text-center">Checkout form</h2>
+        <h2 class="my-5 h2 text-center">اطلاعات خریدار</h2>
         @if (session()->has('success_message'))
             <div class="alert alert-success">
                 {{ session()->get('success_message') }}
@@ -40,7 +40,7 @@
             <div class="col-md-8 mb-4">
 
                 <!--Card-->
-                <div class="card">
+                <div class="card text-right" style="direction: rtl">
 
                     <!--Card content-->
                     <form class="card-body" method="post" action="{{route('checkout.store')}}">
@@ -216,7 +216,7 @@
                             </div>
                         </div>
                         <hr class="mb-4">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">پرداخت نهایی</button>
 
                     </form>
 
@@ -232,7 +232,7 @@
 
                 <!-- Heading -->
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-muted">Your cart</span>
+                        <span class="text-muted">سبد خرید</span>
                         <span class="badge badge-secondary badge-pill">{{Cart::count()}}</span>
                     </h4>
 
@@ -242,39 +242,41 @@
                             <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
                                     <h6 class="my-0">{{$item->model->name}}</h6>
-                                    <small class="text-muted">{{$item->model->details}}</small>
+                                    <h6 class="my-0">{{$item->name}}</h6>
+                                    {{-- <small class="text-muted">{{$item->model->details}}</small> --}}
                                 </div>
                                 <span class="text-muted">{{$item->model->price}}</span>
+                                <span class="text-muted">{{$item->price}}</span>
                             </li>
 
                         @endforeach
-                        <li class="list-group-item d-flex justify-content-between bg-light">
-                            <div class="text-success">
-                                <h6 class="my-0">Promo code</h6>
-                                <small>EXAMPLECODE</small>
-                            </div>
-                            <span class="text-success">-$5</span>
-                        </li>
+                        {{--<li class="list-group-item d-flex justify-content-between bg-light">--}}
+                            {{--<div class="text-success">--}}
+                                {{--<h6 class="my-0">Promo code</h6>--}}
+                                {{--<small>EXAMPLECODE</small>--}}
+                            {{--</div>--}}
+                            {{--<span class="text-success">-$5</span>--}}
+                        {{--</li>--}}
                         <li class="list-group-item d-flex justify-content-between">
-                            <span>Total (USD)</span>
+                            <span>مجموع (تومان)</span>
                             <strong>{{Cart::total()}}</strong>
                         </li>
                     </ul>
                     <!-- Cart -->
 
                     <!-- Promo code -->
-                    <form class="card p-2">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Promo code"
-                                   aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-secondary btn-md waves-effect m-0" type="button">Redeem</button>
-                            </div>
-                        </div>
-                    </form>
+                    {{--<form class="card p-2">--}}
+                        {{--<div class="input-group">--}}
+                            {{--<input type="text" class="form-control" placeholder="Promo code"--}}
+                                   {{--aria-label="Recipient's username" aria-describedby="basic-addon2">--}}
+                            {{--<div class="input-group-append">--}}
+                                {{--<button class="btn btn-secondary btn-md waves-effect m-0" type="button">Redeem</button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
                     <!-- Promo code -->
                 @else
-                    <h3>NO item in Cart</h3>
+                    <h3>سبد خرید خالی هست</h3>
                 @endif
             </div>
             <!--Grid column-->

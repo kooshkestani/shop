@@ -32,14 +32,13 @@
 
                                 <img src="/storage/Photos/Others/product1.jpg" class="img-fluid" alt="sample image">
                                 <div class="mask rgba-white-light">
-                                    <div class="dark-grey-text d-flex align-items-center pt-4 ml-3 pl-3">
+                                    <div class="dark-grey-text d-flex align-items-center pt-4 mr-3 pr-3">
                                         <div>
-                                            <a><span class="badge badge-danger">bestseller</span></a>
-                                            <h2 class="card-title font-weight-bold pt-2"><strong>This is news title</strong>
+                                            <a><span class="badge badge-danger">فروش ویژه</span></a>
+                                            <h2 class="card-title font-weight-bold pt-2"><strong>یلدای شگفت انگیز</strong>
                                             </h2>
-                                            <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                                            <a class="btn btn-danger btn-sm btn-rounded clearfix d-none d-md-inline-block">Read
-                                                more</a>
+                                            <p class="">فروش بهترین محصولات جانبی در دیجی کالا. </p>
+                                            <a class="btn btn-danger btn-sm btn-rounded clearfix d-none d-md-inline-block">بیشتر بدانید</a>
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +52,7 @@
                         <div class="col-lg-4 col-md-12 mb-4">
 
                             <!-- Section: Categories -->
-                            <section class="section">
+                            <section class="section section-nav">
                                 {{-- <ul class="list-group z-depth-1">
 
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -143,7 +142,7 @@
                                                     </div>
 
                                                     <!--Grid column-->
-                                                    <div class="col-6 pl-0">
+                                                    <div class="col-6 pr-0">
                                                         <!--Card content-->
                                                         <div class="card-body">
                                                             <!--Category & Title-->
@@ -152,7 +151,7 @@
                                                                             href="{{route('shop.show',$product->slug)}}"
                                                                             class="dark-grey-text">{{$product->name}}</a></strong>
                                                             </h5>
-                                                            <span class="badge badge-danger mb-2">bestseller</span>
+                                                            <span class="badge badge-danger mb-2">فروش ویژه</span>
                                                             <!-- Rating -->
                                                             <ul class="rating">
                                                                 <li><i class="fa fa-star blue-text"></i></li>
@@ -164,13 +163,15 @@
                                                             <!--Card footer-->
                                                             <div class="card-footer pb-0">
                                                                 <div class="row mb-0">
-                                                                    <strong> تومان </strong>
-                                                                    <span class="float-right" style="margin-left:5px;">
+                                                                    <span class="float-left" style="margin-left:5px;">
                                                                     <strong> {{$product->price}} </strong>
+
                                                                 </span>
-                                                                    <span class="float-right">
+                                                                    <strong> تومان </strong>
+
+                                                                    <span class="float-left">
                                                         <a class="" data-toggle="tooltip" data-placement="top"
-                                                           title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
+                                                           title="Add to Cart"><i class="fa fa-shopping-cart mr-3"></i></a>
                                                         </span>
                                                                 </div>
                                                             </div>
@@ -213,14 +214,12 @@
                                 <div class="view zoom z-depth-1">
                                     <img src="/storage/Photos/Others/product2.jpg" class="img-fluid" alt="sample image">
                                     <div class="mask rgba-white-light">
-                                        <div class="dark-grey-text d-flex align-items-center pt-4 ml-lg-3 ml-3 pl-lg-3 pl-md-5 pl-3">
+                                        <div class="dark-grey-text d-flex align-items-center pt-4 mr-lg-3 mr-3 pr-lg-3 pr-md-5 pr-3">
                                             <div>
-                                                <a><span class="badge badge-danger">bestseller</span></a>
-                                                <h2 class="card-title font-weight-bold pt-2"><strong>This is news
-                                                        title</strong></h2>
-                                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                                                <a class="btn btn-danger btn-sm btn-rounded clearfix d-none d-md-inline-block">Read
-                                                    more</a>
+                                                <a><span class="badge badge-danger">فروش ویژه</span></a>
+                                                <h2 class="card-title font-weight-bold pt-2"><strong>محصولات اپل</strong></h2>
+                                                <p class="">بررسی . انتخاب . خرید آنلاین محصولات اپل </p>
+                                                <a class="btn btn-danger btn-sm btn-rounded clearfix d-none d-md-inline-block" href="{{route('shop.index')}}">بیشتر بدانید</a>
                                             </div>
                                         </div>
                                     </div>
@@ -238,11 +237,10 @@
                                     <div class="mask rgba-stylish-strong">
                                         <div class="white-text flex-center text-center">
                                             <div class="">
-                                                <a><span class="badge badge-info">NEW</span></a>
-                                                <h2 class="card-title font-weight-bold pt-2"><strong>This is news
-                                                        title</strong></h2>
-                                                <p class="">Lorem ipsum dolor sit amet, consectetur. </p>
-                                                <a class="btn btn-info btn-sm btn-rounded"></i> Read more</a>
+                                                <a><span class="badge badge-info">جدید</span></a>
+                                                <h2 class="card-title font-weight-bold pt-2"><strong>بهترین لوازم جانبی</strong></h2>
+                                                <p class="">متنوع ترین و بروزترین محصولات دیجیتالی. </p>
+                                                <a href="{{route('shop.index')}}" class="btn btn-info btn-sm btn-rounded"></i> بیشتر بدانید</a>
                                             </div>
                                         </div>
                                     </div>
@@ -289,7 +287,7 @@
                                             <h5 class="card-title mb-1"><strong><a
                                                             href="{{route('shop.show',$product->slug)}}"
                                                             class="dark-grey-text">{{$product->name}}</a></strong></h5>
-                                            <span class="badge grey white-text mb-2">best rated</span>
+                                            <span class="badge grey white-text mb-2">بیشترین امتیاز</span>
                                             <!-- Rating -->
                                             <ul class="rating">
                                                 <li><i class="fa fa-star blue-text"></i></li>
@@ -302,8 +300,9 @@
                                             <!--Card footer-->
                                             <div class="card-footer pb-0">
                                                 <div class="row mb-0">
-                                                    <span class="float-left"><strong>{{$product->price}}$</strong></span>
-                                                    <span class="float-right">
+                                                    <span class="float-left ml-1"><strong>{{$product->price}}</strong></span>
+                                                    <strong> تومان </strong>
+                                                    <span class="float-left mr-2">
                                                     <a class="" data-toggle="tooltip" data-placement="top"
                                                        title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
                                                     </span>
@@ -334,7 +333,7 @@
                             <div class="col-lg-4 col-md-12 pt-4">
 
                                 <hr>
-                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>New products</strong>
+                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>جدیدترین محصولات</strong>
                                 </h5>
                                 <hr>
                             @foreach($newproduct as $product)
@@ -365,8 +364,9 @@
                                             </ul>
 
                                             <!-- Price -->
-                                            <h6 class="h6-responsive font-weight-bold dark-grey-text"><strong>$749</strong>
-                                                <span class="grey-text"><small><s>${{$product->price}}</s></small></span>
+                                            <h6 class="h6-responsive font-weight-bold dark-grey-text"><strong>{{$product->price}}</strong>
+                                                <span>تومان</span>
+                                                <span class="grey-text"><small><s>{{$product->price}}</s></small></span>
                                             </h6>
 
                                         </div>
@@ -383,7 +383,7 @@
                             <div class="col-lg-4 col-md-12 pt-4">
 
                                 <hr>
-                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>Top Sellers</strong>
+                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>پرفروشترین محصولات</strong>
                                 </h5>
                                 <hr>
                             @foreach($topseller as $product)
@@ -413,8 +413,9 @@
                                             </ul>
 
                                             <!-- Price -->
-                                            <h6 class="h6-responsive font-weight-bold dark-grey-text"><strong>$749</strong>
-                                                <span class="grey-text"><small><s>${{$product->price}}</s></small></span>
+                                            <h6 class="h6-responsive font-weight-bold dark-grey-text"><strong>{{$product->price}}</strong>
+                                                <span>تومان</span>
+                                                <span class="grey-text"><small><s>{{$product->price}}</s></small></span>
                                             </h6>
 
                                         </div>
@@ -431,7 +432,7 @@
                             <div class="col-lg-4 col-md-12 pt-4">
 
                                 <hr>
-                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>Random products</strong>
+                                <h5 class="text-center font-weight-bold dark-grey-text"><strong>محصولات تصادفی</strong>
                                 </h5>
                                 <hr>
                             @foreach($randomproduct as $product)
@@ -460,8 +461,9 @@
                                             </ul>
 
                                             <!-- Price -->
-                                            <h6 class="h6-responsive font-weight-bold dark-grey-text"><strong>$749</strong>
-                                                <span class="grey-text"><small><s>${{$product->price}}</s></small></span>
+                                            <h6 class="h6-responsive font-weight-bold dark-grey-text"><strong>{{$product->price}}</strong>
+                                                <span>تومان</span>
+                                                <span class="grey-text"><small><s>{{$product->price}}</s></small></span>
                                             </h6>
 
                                         </div>
@@ -491,16 +493,14 @@
                                     <div class="dark-grey-text text-right pt-lg-5 pt-md-1 mr-5 pr-md-4 pr-0">
                                         <div>
                                             <a>
-                                                <span class="badge badge-primary">SALE</span>
+                                                <span class="badge badge-primary">فروش</span>
                                             </a>
                                             <h2 class="card-title font-weight-bold pt-md-3 pt-1">
-                                                <strong>Sale from 20% to 50% on every tablet!
+                                                <strong>تخفیف یلدایی 20% تا 50% درصد برای تبلت !
                                                 </strong>
                                             </h2>
-                                            <p class="pb-lg-3 pb-md-1 clearfix d-none d-md-block">Lorem ipsum dolor sit
-                                                amet, consectetur adipisicing elit. </p>
-                                            <a class="btn mr-0 btn-primary btn-rounded clearfix d-none d-md-inline-block">Read
-                                                more</a>
+                                            <p class="pb-lg-3 pb-md-1 clearfix d-none d-md-block">به مدت محدود. </p>
+                                            <a class="btn mr-0 btn-primary btn-rounded clearfix d-none d-md-inline-block">اطلاعات بیشتر</a>
                                         </div>
                                     </div>
                                 </div>
@@ -513,12 +513,12 @@
                     </div>
                     <!--Grid row-->
 
-                    <h4 class="font-weight-bold mt-4 dark-grey-text"><strong>LAST ITEMS</strong></h4>
+                    <h4 class="font-weight-bold mt-4 dark-grey-text"><strong>جدیترین محصولات </strong></h4>
                     <hr class="mb-5">
 
                     <!-- Grid row -->
                     <div class="row">
-
+@foreach($newproduct as $product)
                         <!--Grid column-->
                         <div class="col-lg-3 col-md-6 mb-4">
 
@@ -527,9 +527,9 @@
 
                                 <!--Card image-->
                                 <div class="view overlay">
-                                    <img src="/storage/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid"
+                                    <img src="/storage/{{$product->image}}" class="img-fluid"
                                          alt="">
-                                    <a>
+                                    <a href="{{route('shop.show',$product->slug)}}">
                                         <div class="mask rgba-white-slight"></div>
                                     </a>
                                 </div>
@@ -539,9 +539,9 @@
                                 <div class="card-body">
                                     <!--Category & Title-->
 
-                                    <h5 class="card-title mb-1"><strong><a href="#"
-                                                                           class="dark-grey-text">Headphones</a></strong>
-                                    </h5><span class="badge badge-danger mb-2">bestseller</span>
+                                    <h5 class="card-title mb-1"><strong><a href="{{route('shop.show',$product->slug)}}"
+                                                                           class="dark-grey-text">{{$product->name}}</a></strong>
+                                    </h5><span class="badge badge-success mb-2">جدید</span>
                                     <!-- Rating -->
                                     <ul class="rating">
                                         <li><i class="fa fa-star blue-text"></i></li>
@@ -554,7 +554,8 @@
                                     <!--Card footer-->
                                     <div class="card-footer pb-0">
                                         <div class="row mb-0">
-                                            <span class="float-left"><strong>1439$</strong></span>
+                                            <span class="float-left"><strong>{{$product->price}}</strong></span>
+                                            <span>تومان</span>
                                             <span class="float-right">
 
                                                 <a class="" data-toggle="tooltip" data-placement="top"
@@ -572,163 +573,7 @@
                         </div>
                         <!--Grid column-->
 
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4">
-
-                            <!--Card-->
-                            <div class="card card-ecommerce">
-
-                                <!--Card image-->
-                                <div class="view overlay">
-                                    <img src="/storage/Photos/Horizontal/E-commerce/Products/16.jpg" class="img-fluid"
-                                         alt="">
-                                    <a>
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
-                                </div>
-                                <!--Card image-->
-
-                                <!--Card content-->
-                                <div class="card-body">
-                                    <!--Category & Title-->
-
-                                    <h5 class="card-title mb-1"><strong><a href="#"
-                                                                           class="dark-grey-text">Headphones</a></strong>
-                                    </h5><span class="badge badge-danger mb-2">bestseller</span>
-                                    <!-- Rating -->
-                                    <ul class="rating">
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                    </ul>
-
-                                    <!--Card footer-->
-                                    <div class="card-footer pb-0">
-                                        <div class="row mb-0">
-                                            <span class="float-left"><strong>1439$</strong></span>
-                                            <span class="float-right">
-
-                                                <a class="" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                                </span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!--Card content-->
-
-                            </div>
-                            <!--Card-->
-
-                        </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <!--Card-->
-                            <div class="card card-ecommerce">
-
-                                <!--Card image-->
-                                <div class="view overlay">
-                                    <img src="/storage/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid"
-                                         alt="">
-                                    <a>
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
-                                </div>
-                                <!--Card image-->
-
-                                <!--Card content-->
-                                <div class="card-body">
-                                    <!--Category & Title-->
-
-                                    <h5 class="card-title mb-1"><strong><a href="#"
-                                                                           class="dark-grey-text">iPhone</a></strong></h5>
-                                    <span class="badge badge-info mb-2">new</span>
-                                    <!-- Rating -->
-                                    <ul class="rating">
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                    </ul>
-
-                                    <!--Card footer-->
-                                    <div class="card-footer pb-0">
-                                        <div class="row mb-0">
-                                            <span class="float-left"><strong>1439$</strong></span>
-                                            <span class="float-right">
-
-                                                <a class="" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                                </span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!--Card content-->
-
-                            </div>
-                            <!--Card-->
-
-                        </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4">
-
-                            <!--Card-->
-                            <div class="card card-ecommerce">
-
-                                <!--Card image-->
-                                <div class="view overlay">
-                                    <img src="/storage/Photos/Horizontal/E-commerce/Products/3.jpg" class="img-fluid"
-                                         alt="">
-                                    <a>
-                                        <div class="mask rgba-white-slight"></div>
-                                    </a>
-                                </div>
-                                <!--Card image-->
-
-                                <!--Card content-->
-                                <div class="card-body">
-                                    <!--Category & Title-->
-
-                                    <h5 class="card-title mb-1"><strong><a href="#" class="dark-grey-text">iMac</a></strong>
-                                    </h5><span class="badge badge-danger mb-2">bestseller</span>
-                                    <!-- Rating -->
-                                    <ul class="rating">
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star blue-text"></i></li>
-                                        <li><i class="fa fa-star grey-text"></i></li>
-                                    </ul>
-
-                                    <!--Card footer-->
-                                    <div class="card-footer pb-0">
-                                        <div class="row mb-0">
-                                            <span class="float-left"><strong>1439$</strong></span>
-                                            <span class="float-right">
-
-                                                <a class="" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to Cart"><i class="fa fa-shopping-cart ml-3"></i></a>
-                                                </span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!--Card content-->
-
-                            </div>
-                            <!--Card-->
-
-                        </div>
-                        <!--Grid column-->
-
+@endforeach
                     </div>
                     <!--Grid row-->
 

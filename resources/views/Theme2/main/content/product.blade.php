@@ -33,7 +33,7 @@
                                     </div>
                                     @foreach (json_decode($product->images) as $image)
                                         <div class="carousel-item">
-                                            <img src="\storage\{{$image}}" alt="slide<?Php $count=1;$count++;?>"
+                                            <img src="\storage\{{$image}}" alt="slide<?Php $count = 1;$count++;?>"
                                                  class="img-fluid">
                                         </div>
                                     @endforeach
@@ -63,7 +63,8 @@
                                     @foreach (json_decode($product->images , true) as $image)
                                         <figure class="col-md-4">
                                             <a href="\storage\{{$image}}">
-                                                <img src="\storage\{{$image}}" alt="PIC" class="img-fluid img-thumbnail">
+                                                <img src="\storage\{{$image}}" alt="PIC"
+                                                     class="img-fluid img-thumbnail">
                                             </a>
                                         </figure>
                                 @endforeach
@@ -73,63 +74,64 @@
                         </div>
                         <!--Grid row-->
                     </div>
-                    <div class="col-lg-5 mr-3 text-center text-md-left">
-                        <h2 class="h2-responsive text-center text-md-left product-name font-weight-bold dark-grey-text mb-1 ml-xl-0 ml-4">
+                    <div class="col-lg-5 ml-3 text-center text-md-right">
+                        <h2 class="h2-responsive text-center text-md-right product-name font-weight-bold dark-grey-text mb-1 ml-xl-0 ml-4">
                             <strong>{{$product->name}}</strong>
                         </h2>
-                        <span class="badge badge-danger product mb-4 ml-xl-0 ml-4">bestseller</span>
+                        <span class="badge badge-danger product mb-4 mr-xl-0 mr-4">فروش ویژه</span>
                         </strong>
                         </h2>
-                        <span class="badge badge-success product mb-4 ml-2">SALE</span>
-                        <h3 class="h3-responsive text-center text-md-left mb-5 ml-xl-0 ml-4">
+                        <span class="badge badge-success product mb-4 mr-2">آماده فروش</span>
+                        <h3 class="h3-responsive text-center text-md-right mb-5 mr-xl-0 mr-4">
                             <span class="red-text font-weight-bold">
-                                <strong>${{$product->price}}</strong>
+                                <strong>{{$product->price}}</strong>
                             </span>
+                            <span>تومان</span>
                             <span class="grey-text">
                                 <small>
-                                    <s>$1789</s>
+                                    <s>{{$product->price}}</s>
                                 </small>
                             </span>
                         </h3>
 
-                        <p class="ml-xl-0 ml-4">
+                        <p class="mr-xl-0 mr-4">
                             {{$product->details}}
                         </p>
-                        <p class="ml-xl-0 ml-4">
-                            <strong>Storage: </strong>64GB</p>
-                        <p class="ml-xl-0 ml-4">
-                            <strong>Size: </strong>9.6-inch</p>
-                        <p class="ml-xl-0 ml-4">
-                            <strong>Resolution: </strong>2048 x 1536</p>
-                        <p class="ml-xl-0 ml-4">
-                            <strong>Availability: </strong>{!!$stocklevel!!}</p>
+                        <p class="mr-xl-0 mr-4">
+                            <strong>حافظه: </strong>64GB</p>
+                        <p class="mr-xl-0 mr-4">
+                            <strong>اندازه: </strong>9.6-inch</p>
+                        <p class="mr-xl-0 mr-4">
+                            <strong>نسبت تصویر: </strong>2048 x 1536</p>
+                        <p class="mr-xl-0 mr-4">
+                            <strong>در انبار: </strong>{!!$stocklevel!!}</p>
 
                         <!-- Add to Cart -->
                         <section class="color">
                             <div class="mt-5">
-                                <p class="grey-text">Choose your color</p>
-                                <div class="row text-center text-md-left">
+                                <p class="grey-text">انتخاب رنگ</p>
+                                <div class="row text-center text-md-right">
 
                                     <div class="col-md-4 col-12 ">
                                         <!--Radio group-->
                                         <div class="form-group">
                                             <input class="form-check-input" name="group100" type="radio" id="radio100"
                                                    checked="checked">
-                                            <label for="radio100" class="form-check-label dark-grey-text">White</label>
+                                            <label for="radio100" class="form-check-label dark-grey-text">سفید</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <!--Radio group-->
                                         <div class="form-group">
                                             <input class="form-check-input" name="group100" type="radio" id="radio101">
-                                            <label for="radio101" class="form-check-label dark-grey-text">Silver</label>
+                                            <label for="radio101" class="form-check-label dark-grey-text">نقره ایی</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <!--Radio group-->
                                         <div class="form-group">
                                             <input class="form-check-input" name="group100" type="radio" id="radio102">
-                                            <label for="radio102" class="form-check-label dark-grey-text">Gold</label>
+                                            <label for="radio102" class="form-check-label dark-grey-text">طلایی</label>
                                         </div>
                                     </div>
                                 </div>
@@ -146,7 +148,7 @@
                                                 <input type="hidden" name="image" value="{{$product->image }}">
 
                                                 <button class="btn btn-primary btn-rounded" type="submit">
-                                                    <i class="fa fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart
+                                                    <i class="fa fa-cart-plus ml-2" aria-hidden="true"></i>اضافه به سبد خرید
                                                 </button>
                                             </form>
                                         @endif
@@ -163,233 +165,149 @@
         </section>
         <!-- Section: product details -->
 
-        <h4 class="h4-responsive dark-grey-text font-weight-bold mb-5 text-center">
-            <strong>Compare iPad models</strong>
-        </h4>
+        {{--<h4 class="h4-responsive dark-grey-text font-weight-bold mb-5 text-center">--}}
+            {{--<strong>Compare iPad models</strong>--}}
+        {{--</h4>--}}
 
-        <!--Table-->
-        <div class="card mb-5">
-            <div class="card-body">
+        {{--<!--Table-->--}}
+        {{--<div class="card mb-5">--}}
+            {{--<div class="card-body">--}}
 
-                <table class="table table-responsive-md">
-                    <thead>
-                    <tr>
-                        <th>
-                            <strong>Feature</strong>
-                        </th>
-                        <th>
-                            <strong>12.9-inch iPad Pro</strong>
-                        </th>
-                        <th>
-                            <strong>10.5-inch iPad Pro</strong>
-                        </th>
-                        <th>
-                            <strong>iPad mini 4</strong>
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">Storage</th>
-                        <td>64GB</td>
-                        <td>64GB</td>
-                        <td>32GB</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Weight</th>
-                        <td>1.49 pounds (677 grams)</td>
-                        <td>1.03 pounds (469 grams)</td>
-                        <td>0.65 pound (298.8 grams)</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Width</th>
-                        <td>8.68 inches (220.6 mm)</td>
-                        <td>6.8 inches (174.1 mm)</td>
-                        <td>5.3 inches (134.8 mm)</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Depth</th>
-                        <td>0.27 inch (6.9 mm)</td>
-                        <td>0.24 inch (6.1 mm)</td>
-                        <td>0.24 inch (6.1 mm)</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Camera</th>
-                        <td>12-megapixel</td>
-                        <td>12-megapixel</td>
-                        <td>8-megapixel</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Video</th>
-                        <td>4K HD video recording</td>
-                        <td>4K HD video recording</td>
-                        <td>1080p HD video recording</td>
-                    </tr>
-                    </tbody>
-                </table>
+                {{--<table class="table table-responsive-md">--}}
+                    {{--<thead>--}}
+                    {{--<tr>--}}
+                        {{--<th>--}}
+                            {{--<strong>Feature</strong>--}}
+                        {{--</th>--}}
+                        {{--<th>--}}
+                            {{--<strong>12.9-inch iPad Pro</strong>--}}
+                        {{--</th>--}}
+                        {{--<th>--}}
+                            {{--<strong>10.5-inch iPad Pro</strong>--}}
+                        {{--</th>--}}
+                        {{--<th>--}}
+                            {{--<strong>iPad mini 4</strong>--}}
+                        {{--</th>--}}
+                    {{--</tr>--}}
+                    {{--</thead>--}}
+                    {{--<tbody>--}}
+                    {{--<tr>--}}
+                        {{--<th scope="row">Storage</th>--}}
+                        {{--<td>64GB</td>--}}
+                        {{--<td>64GB</td>--}}
+                        {{--<td>32GB</td>--}}
+                    {{--</tr>--}}
+                    {{--<tr>--}}
+                        {{--<th scope="row">Weight</th>--}}
+                        {{--<td>1.49 pounds (677 grams)</td>--}}
+                        {{--<td>1.03 pounds (469 grams)</td>--}}
+                        {{--<td>0.65 pound (298.8 grams)</td>--}}
+                    {{--</tr>--}}
+                    {{--<tr>--}}
+                        {{--<th scope="row">Width</th>--}}
+                        {{--<td>8.68 inches (220.6 mm)</td>--}}
+                        {{--<td>6.8 inches (174.1 mm)</td>--}}
+                        {{--<td>5.3 inches (134.8 mm)</td>--}}
+                    {{--</tr>--}}
+                    {{--<tr>--}}
+                        {{--<th scope="row">Depth</th>--}}
+                        {{--<td>0.27 inch (6.9 mm)</td>--}}
+                        {{--<td>0.24 inch (6.1 mm)</td>--}}
+                        {{--<td>0.24 inch (6.1 mm)</td>--}}
+                    {{--</tr>--}}
+                    {{--<tr>--}}
+                        {{--<th scope="row">Camera</th>--}}
+                        {{--<td>12-megapixel</td>--}}
+                        {{--<td>12-megapixel</td>--}}
+                        {{--<td>8-megapixel</td>--}}
+                    {{--</tr>--}}
+                    {{--<tr>--}}
+                        {{--<th scope="row">Video</th>--}}
+                        {{--<td>4K HD video recording</td>--}}
+                        {{--<td>4K HD video recording</td>--}}
+                        {{--<td>1080p HD video recording</td>--}}
+                    {{--</tr>--}}
+                    {{--</tbody>--}}
+                {{--</table>--}}
 
-            </div>
+            {{--</div>--}}
 
-        </div>
-        <!--Table-->
+        {{--</div>--}}
+        {{--<!--Table-->--}}
 
         <!-- Product Reviews -->
         <section id="reviews" class="pb-5 mt-4">
 
             <hr>
             <h4 class="h4-responsive dark-grey-text font-weight-bold my-5 text-center">
-                <strong>Product Reviews</strong>
+                <strong>نظرات کاربران</strong>
             </h4>
             <hr class="mb-5">
 
             <!--Main wrapper-->
-            <div class="comments-list text-center text-md-left">
+            <div class="comments-list text-center text-md-right">
 
+            @foreach($comments as $comment)
                 <!--First row-->
-                <div class="row mb-5">
-                    <!--Image column-->
-                    <div class="col-sm-2 col-12 mb-3">
-                        <img src="/storage/Photos/Avatars/img%20(8).jpg" alt="sample image"
-                             class="avatar rounded-circle z-depth-1-half">
-                    </div>
-                    <!--/.Image column-->
+                    <div class="row mb-5">
+                        <!--Image column-->
+                        <div class="col-sm-2 col-12 mb-3">
+                            <img src="/storage/{{$comment->user->avatar}}" alt="sample image"
+                                 class="avatar rounded-circle z-depth-1-half">
+                        </div>
+                        <!--/.Image column-->
 
-                    <!--Content column-->
-                    <div class="col-sm-10 col-12">
-                        <a>
-                            <h5 class="user-name font-weight-bold">John Doe</h5>
-                        </a>
-                        <!-- Rating -->
-                        <ul class="rating">
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                        </ul>
-                        <div class="card-data">
-                            <ul class="list-unstyled mb-1">
-                                <li class="comment-date font-small grey-text">
-                                    <i class="fa fa-clock-o"></i> 05/10/2015
+                        <!--Content column-->
+                        <div class="col-sm-10 col-12">
+                            <a>
+                                <h5 class="user-name font-weight-bold">{{$comment->user->name}}</h5>
+                            </a>
+                            <!-- Rating -->
+                            <ul class="rating">
+                                <li>
+                                    <i class="fa fa-star blue-text"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star blue-text"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star blue-text"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star blue-text"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star blue-text"></i>
                                 </li>
                             </ul>
+                            <div class="card-data">
+                                <ul class="list-unstyled mb-1">
+                                    <li class="comment-date font-small grey-text">
+                                        <i class="fa fa-clock-o"></i>{{$comment->created_at}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="dark-grey-text article">{{$comment->body}}.</p>
                         </div>
-                        <p class="dark-grey-text article">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat
-                            nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                        <!--/.Content column-->
                     </div>
-                    <!--/.Content column-->
-                </div>
-                <!--/.First row-->
+                    <!--/.First row-->
+            @endforeach
 
-                <!--Second row-->
-                <div class="row mb-5">
-                    <!--Image column-->
-                    <div class="col-sm-2 col-12 mb-3">
-                        <img src="/storage/Photos/Avatars/img%20(30).jpg" alt="sample image"
-                             class="avatar rounded-circle z-depth-1-half">
+                <form action="{{route('comment.store' , ['product' => $product->id ])}}" method="post"
+                      class="form-horizontal">
+                {{csrf_field()}}
+                <!--Textarea with icon prefix-->
+                    <div class="rtl-form md-form amber-textarea active-amber-textarea-2 text-right">
+                        <i class="fa fa-pencil prefix"></i>
+                        <textarea type="text" id="form24" class="md-textarea form-control" name="body"
+                                  rows="3"></textarea>
+                        <label for="form24" class="text-right">نظر خود را اینجا بنویسید</label>
+                        <button class="btn btn-primary btn-rounded waves-effect waves-light" type="submit">
+                            <i class="fa fa-pencil ml-2" aria-hidden="true"></i>ثبت نظر
+                        </button>
                     </div>
-                    <!--/.Image column-->
-
-                    <!--Content column-->
-                    <div class="col-sm-10 col-12">
-                        <a>
-                            <h5 class="user-name font-weight-bold">Lily Brown</h5>
-                        </a>
-                        <!-- Rating -->
-                        <ul class="rating">
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                        </ul>
-                        <div class="card-data">
-                            <ul class="list-unstyled mb-1">
-                                <li class="comment-date font-small grey-text">
-                                    <i class="fa fa-clock-o"></i> 05/10/2015
-                                </li>
-                            </ul>
-                        </div>
-                        <p class="dark-grey-text article">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat
-                            nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                    </div>
-                    <!--/.Content column-->
-                </div>
-                <!--/.Second row-->
-
-                <!--Third row-->
-                <div class="row mb-5">
-                    <!--Image column-->
-                    <div class="col-sm-2 col-12 mb-3">
-                        <img src="/storage/Photos/Avatars/img%20(28).jpg" alt="sample image"
-                             class="avatar rounded-circle z-depth-1-half">
-                    </div>
-                    <!--/.Image column-->
-                    <!--Content column-->
-                    <div class="col-sm-10 col-12">
-                        <a>
-                            <h5 class="user-name font-weight-bold">Martha Smith</h5>
-                        </a>
-                        <!-- Rating -->
-                        <ul class="rating">
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star blue-text"></i>
-                            </li>
-                        </ul>
-                        <div class="card-data">
-                            <ul class="list-unstyled mb-1">
-                                <li class="comment-date font-small grey-text">
-                                    <i class="fa fa-clock-o"></i> 05/10/2015
-                                </li>
-                            </ul>
-                        </div>
-                        <p class="dark-grey-text article">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat
-                            nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                    </div>
-                    <!--/.Content column-->
-                </div>
-                <!--/.Third row-->
+                </form>
             </div>
             <!--/.Main wrapper-->
         </section>
@@ -400,13 +318,11 @@
 
             <hr>
             <h4 class="h4-responsive dark-grey-text font-weight-bold my-5 text-center">
-                <strong>Related Products</strong>
+                <strong>محصولات مرتبط</strong>
             </h4>
             <hr class="mb-5">
 
-            <p class="text-center w-responsive mx-auto mb-5 dark-grey-text">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Fugit, error amet numquam iure provident voluptate
-                esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+            <p class="text-center w-responsive mx-auto mb-5 dark-grey-text">میتوانید محصولات مرتبط با این محصول را در اینجا مشاهده نمایید</p>
 
             <!--Carousel Wrapper-->
             <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
@@ -434,7 +350,7 @@
                 <div class="carousel-inner" role="listbox">
                     <!--First slide-->
                     <div class="carousel-item active">
-                        @foreach($mightAlsoLike as $mightAlsoLike)
+                        @foreach($RelatedProduct as $Related)
 
                             <div class="col-md-4 mb-4">
 
@@ -443,7 +359,7 @@
 
                                     <!--Card image-->
                                     <div class="view overlay">
-                                        <img src="/storage/{{$mightAlsoLike->image}}" class="img-fluid"
+                                        <img src="/storage/{{$Related->image}}" class="img-fluid"
                                              alt="">
                                         <a>
                                             <div class="mask rgba-white-slight"></div>
@@ -457,11 +373,11 @@
 
                                         <h5 class="card-title mb-1">
                                             <strong>
-                                                <a href="{{route('shop.show',$mightAlsoLike->slug)}}"
-                                                   class="dark-grey-text">{{$mightAlsoLike->name}}</a>
+                                                <a href="{{route('shop.show',$Related->slug)}}"
+                                                   class="dark-grey-text">{{$Related->name}}</a>
                                             </strong>
                                         </h5>
-                                        <span class="badge badge-danger mb-2">bestseller</span>
+                                        <span class="badge badge-danger mb-2">پرفروشترین</span>
                                         <!-- Rating -->
                                         <ul class="rating">
                                             <li>
@@ -485,13 +401,14 @@
                                         <div class="card-footer pb-0">
                                             <div class="row mb-0">
                                             <span class="float-left">
-                                                <strong>{{$mightAlsoLike->price}}$</strong>
+                                                <strong>{{$Related->price}}</strong>
                                             </span>
+                                                <span>تومان</span>
                                                 <span class="float-right">
 
                                                 <a class="" type="submit" data-toggle="tooltip" data-placement="top"
                                                    title="Add to Cart">
-                                                    <i class="fa fa-shopping-cart ml-3"></i>
+                                                    <i class="fa fa-shopping-cart mr-3"></i>
                                                 </a>
 
                                             </span>
@@ -509,7 +426,9 @@
                         @endforeach
 
                     </div>
-                    <!--First slide-->
+                {{--{{ $RelatedProduct->appends(request()->input())->links() }}--}}
+
+                <!--First slide-->
                     <!--Second slide-->
                     <div class="carousel-item">
 
