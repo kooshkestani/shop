@@ -90,17 +90,14 @@
                                         <td></td>
                                         <td>{{$item->model->price}}</td>
                                         <td class="text-center text-md-left">
-                                            <span class="qty" id="number"
-                                                  data-id="{{$item->rowId}}">{{Cart::content()->count('id')}}</span>
+                                            <span class="qty"  id="number"  data-id="{{$item->rowId}}">{{$item->qty}}</span>
                                             {{--<input type="number" id="number" value="0" />--}}
                                             <div class="btn-group radio-group ml-2" data-toggle="buttons" style="direction: ltr">
-                                                <label class="btn btn-sm btn-primary btn-rounded" id="decrease"
-                                                       onclick="decreaseValue()" value="Decrease Value">
-                                                    <input type="radio" name="options" id="option1">&mdash;
+                                                <label class="btn btn-sm btn-primary btn-rounded" id="decrease" onclick="decreaseValue()" value="Decrease Value">
+                                                <input type="radio" name="options" id="option1">&mdash;
                                                 </label>
-                                                <label class="btn btn-sm btn-primary btn-rounded" id="increase"
-                                                       onclick="increaseValue()" value="Increase Value">
-                                                    <input type="radio" name="options" id="option2">+
+                                                <label class="btn btn-sm btn-primary btn-rounded" id="increase" onclick="increaseValue()" value="Increase Value">
+                                                <input type="radio" name="options" id="option2">+
                                                 </label>
                                             </div>
                                         </td>
@@ -113,8 +110,7 @@
                                             <form action="{{route('cart.destroy',$item->rowId)}}" method="post">
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
-                                                <button type="submit" class="btn btn-sm btn-primary"
-                                                        data-toggle="tooltip"
+                                                <button type="submit" class="btn btn-sm btn-primary" data-toggle="tooltip"
                                                         data-placement="top"
                                                         title="Remove item">X
                                                 </button>
