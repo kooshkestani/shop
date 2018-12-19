@@ -133,14 +133,14 @@
                                                             </script>
 
                                                                 <tr>
-                                                                    <td class="pt-3-half" contenteditable="true">{{$addresses->id}}</td>
-                                                                    <td class="pt-3-half" contenteditable="true">{{$addresses->addressline}}</td>
-                                                                    <td class="pt-3-half" contenteditable="true">{{$addresses->city}}</td>
-                                                                    <td class="pt-3-half" contenteditable="true">{{$addresses->state}}</td>
-                                                                    <td class="pt-3-half" contenteditable="true">{{$addresses->zip}}</td>
-                                                                    <td class="pt-3-half" contenteditable="true">{{$addresses->country}}</td>
-                                                                    <td class="pt-3-half" contenteditable="true">{{$addresses->phone}}</td>
-                                                                    <td class="pt-3-half" contenteditable="true">{{jdate($addresses->updated_at)->format('%B %d، %Y')}}</td>
+                                                                    <td class="pt-3-half" contenteditable="true">{{$address->id}}</td>
+                                                                    <td class="pt-3-half" contenteditable="true">{{$address->addressline}}</td>
+                                                                    <td class="pt-3-half" contenteditable="true">{{$address->city}}</td>
+                                                                    <td class="pt-3-half" contenteditable="true">{{$address->state}}</td>
+                                                                    <td class="pt-3-half" contenteditable="true">{{$address->zip}}</td>
+                                                                    <td class="pt-3-half" contenteditable="true">{{$address->country}}</td>
+                                                                    <td class="pt-3-half" contenteditable="true">{{$address->phone}}</td>
+                                                                    <td class="pt-3-half" contenteditable="true">{{jdate($address->updated_at)->format('%B %d، %Y')}}</td>
 
 
                                                                     <td>

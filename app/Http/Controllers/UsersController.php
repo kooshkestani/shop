@@ -21,10 +21,10 @@ class UsersController extends Controller
 
     public function addresindex()
     {
-        $addresses = auth()->user()->addresses;
+        $address = auth()->user()->address;
 //        return dd($addresses);
 
-        return view('Theme2.my-profile.content.addresses')->with('addresses', $addresses);
+        return view('Theme2.my-profile.content.addresses')->with('address', $address);
     }
 
     /**
