@@ -1,0 +1,30 @@
+@import url('font.css');
+
+body{
+    font-family: "Open Sans"!important;
+    direction: rtl;
+    text-align: right;
+}
+.navbar-nav{
+    padding-right: 0!important;
+
+}
+p{
+    text-align: right;!important;
+}
+.controls-top{
+    direction: ltr;!important;
+}
+.divider{
+    width: 100% !important;
+}
+/*.navbar{*/
+    /*direction: rtl;*/
+/*}*/
+/*.section-nav{*/
+    /*direction: rtl;*/
+/*}*/
+/*h1,h2,h3,h4,h5,h6,p,strong,span,a{*/
+    /*direction: rtl;*/
+    /*float: right;*/
+/*}*/

@@ -15,7 +15,7 @@ class Category extends Model
 
     protected $translatable = ['slug', 'name'];
 
-    protected $table = 'Category';
+    protected $table = 'category';
 
     protected $fillable = ['slug', 'name'];
 

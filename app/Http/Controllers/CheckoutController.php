@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Models\Address;
+use App\User;
+use App\Models\Category;
+
+use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
+use Illuminate\Support\Facades\Redirect;
 
 
 class CheckoutController extends Controller
@@ -15,8 +22,47 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+        $categories = Category::all();
+        $allProductOfUser = Cart::content();  
+         //Check if Basket is Empty
+        if ($allProductOfUser->count() == 0) {
+            return redirect('/shop');
+        }      
+        $userLoggedId = Auth::user()->id;
+        //User Informations
+        $userInfo = User::find($userLoggedId);
+        //Check if User unPaid order
+        $checkBasketUnpaid = Order::where([
+            ['user_id', '=', $userLoggedId],
+            ['status', '=' , 2 ],
 
-        return view('Theme2.checkout.checkout-page');
+        ])->count();
+        
+        //Insert New Order Of User if Basket is empty
+        
+            $orderInsert = Order::create([
+                'user_id' => $userLoggedId,
+                'total' => Cart::total(0, "", ""),
+                'status' => 2
+            ]);
+            foreach ($allProductOfUser as $product) {
+                $orderInsert->products()->attach(
+                    $orderInsert,
+                    [
+                        'product_id' => $product->id,
+                        'quantity' => $product->qty,
+                        'total' => $product->qty * $product->price
+                    ]
+                );
+            }
+        
+        
+        
+
+        return view('Theme2.main.content.checkout-page')->with([
+            'userInfo'=>$userInfo,
+            'allCategories'=> $categories,
+        ]);
     }
 
     /**

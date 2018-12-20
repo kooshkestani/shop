@@ -24,12 +24,12 @@
 </head>
 <body>
     <div id="app">
-@include('Theme2.partials.nav')
+@include('Theme2.main.partials.nav')
         <main class="py-4 mt-5">
             @yield('content')
         </main>
     </div>
-@include('Theme2.partials.cart-modal')
+@include('Theme2.main.partials.cart-modal')
 </body>
 <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

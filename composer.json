@@ -17,9 +17,11 @@
         "laravel/scout": "^6.1",
         "laravel/tinker": "^1.0",
         "tcg/voyager": "^1.1",
+        "twbs/bootstrap": "4.0.0",
         "voyager-themes": "^0.15.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.2",
         "beyondcode/laravel-dump-server": "^1.0",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
