@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}  </title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
@@ -28,12 +28,13 @@
 
 @include('Theme2.my-profile.partials.nav')
 <!--Main layout-->
-<main class="pt-5 mx-lg-5">
+<main class="pt-5 mx-5">
 @yield('content')
 </main>
 <!--Main layout-->
 
 @include('Theme2.my-profile.partials.footer')
+@yield('modal')
 <!-- SCRIPTS -->
 <!-- JQuery -->
 <script type="text/javascript" src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
@@ -48,7 +49,28 @@
     // Animations initialization
     new WOW().init();
 </script>
+<script>
+    jQuery(document).ready(function(){
+        jQuery('button:button').click(function(e){
+            e.preventDefault();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+            jQuery.ajax({
+                url: "{{ url('/my-order/post') }}",
+                method: 'post',
+                data: {
+                    id: jQuery('button:button').val(),
 
+                },
+                success: function(result){
+                    console.log(result);
+                }});
+        });
+    });
+</script>
 <!-- Charts -->
 <script>
     // Line

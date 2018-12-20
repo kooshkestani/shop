@@ -6,7 +6,7 @@
         <div class="card mb-4 wow fadeIn">
 
             <!--Card content-->
-            <div class="card-body d-sm-flex justify-content-between">
+            <div class="card-body d-sm-flex justify-content-between" style="direction: rtl">
 
                 <h4 class="mb-2 mb-sm-0 pt-1">
                     <a href="{{route('users.profile')}}" target="_blank">صفحه اصلی</a>
@@ -57,16 +57,18 @@
 
                                             <!-- Editable table -->
                                             <div class="card">
-                                                <h3 class="card-header text-center font-weight-bold text-uppercase py-4">نظرات</h3>
+                                                <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+                                                    نظرات</h3>
                                                 <div class="card-body">
                                                     <div id="table" class="table-editable">
                                                         <table class="table table-bordered table-responsive-md table-striped text-center">
                                                             <tr>
-                                                                <th class="text-center">شماره</th>
                                                                 <th class="text-center">محصول</th>
                                                                 <th class="text-center">تاریخ</th>
                                                                 <th class="text-center">نظر</th>
-                                                                <th class="text-center">حذف</th>
+                                                                <th class="text-center">وضعیت</th>
+                                                                {{--<th class="text-center">ویرایش</th>--}}
+                                                                <th class="text-center">لینک</th>
 
                                                             </tr>
 
@@ -130,13 +132,43 @@
                                                             @foreach($comments as $comment)
 
                                                                 <tr>
-                                                                    <td class="pt-3-half" contenteditable="true">{{$comment->id}}</td>
-                                                                    <td class="pt-3-half" contenteditable="true">{{$comment->product_id}}</td>
-                                                                    <td class="pt-3-half" contenteditable="true">{{jdate($comment->created_at)->format('%B %d، %Y')}}</td>
-                                                                    <td class="pt-3-half" contenteditable="true">{{$comment->body}}</td>
+                                                                    <td class="pt-3-half"
+                                                                        contenteditable="true">{{$comment->product->name}}</td>
+                                                                    <td class="pt-3-half"
+                                                                        contenteditable="true">{{jdate($comment->created_at)->format('%B %d، %Y')}}</td>
+                                                                    <td class="pt-3-half" contenteditable="true"><p
+                                                                                class="text-truncate"
+                                                                                style="max-width: 150px">{{$comment->body}}</p>
+                                                                    </td>
 
                                                                     <td>
-                                                                        <span class="table-remove"><button style="border-radius:1.125rem;" type="button" class="btn btn-danger btn-rounded btn-sm my-0">حذف</button></span>
+                                                                        @if($comment->status_comment==0)
+
+                                                                            <span class="table-remove"><button
+                                                                                        style="border-radius:1.125rem;"
+                                                                                        type="button"
+                                                                                        class="btn btn-danger btn-rounded btn-sm my-0">در انتظار تایید</button></span>
+
+                                                                        @elseif($comment->status_comment==1)
+                                                                            <span class="table-remove"><button
+                                                                                        style="border-radius:1.125rem;"
+                                                                                        type="button"
+                                                                                        class="btn btn-success btn-rounded btn-sm my-0">تایید شده</button></span>
+                                                                        @endif
+                                                                    </td>
+                                                                    {{--<td>--}}
+                                                                        {{--<span class="table-remove"><button--}}
+                                                                                    {{--style="border-radius:1.125rem;"--}}
+                                                                                    {{--type="button"--}}
+                                                                                    {{--class="btn btn-primary btn-rounded btn-sm my-0"--}}
+                                                                                    {{--data-toggle="modal"--}}
+                                                                                    {{--data-target="#cart-modal-ex2">ویرایش</button></span>--}}
+                                                                    {{--</td>--}}
+
+                                                                    <td>
+                                                                        <a href="{{route('shop.show',$comment->product->slug)}}"
+                                                                           class="btn btn-warning rounded btn-sm my-0"
+                                                                           role="button">لینک محصول</a>
                                                                     </td>
                                                                 </tr>
                                                             @endforeach

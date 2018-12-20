@@ -19,12 +19,24 @@ class UsersController extends Controller
         return view('Theme2.my-profile.content.comment')->with('comments', $comments);
     }
 
-    public function addresindex()
+    public function addressindex()
     {
         $address = auth()->user()->address;
 //        return dd($addresses);
 
         return view('Theme2.my-profile.content.addresses')->with('address', $address);
+    }
+    public function addressupdate(Request $request)
+    {
+        $address = auth()->user()->address;
+        $input = $request->except('');
+
+     //   dd($request);
+
+
+        $address->fill($input)->save();
+
+        return back()->with('success_message', 'تغییرات آدرس با موفقیت انجام شد');
     }
 
     /**

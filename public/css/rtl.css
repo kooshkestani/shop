@@ -9,6 +9,10 @@ body{
     padding-right: 0!important;
 
 }
+label{
+    left: initial !important;
+    right: 0 !important;
+}
 p{
     text-align: right;!important;
 }

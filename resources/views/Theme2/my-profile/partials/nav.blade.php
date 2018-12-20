@@ -68,7 +68,7 @@
     <!-- Navbar -->
 
     <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
+    <div class="sidebar-fixed position-fixed text-right "style="right: 0; direction: rtl" >
 
         <a class="logo-wrapper waves-effect">
             <img src="/storage/logo/DKLogo.svg" class="img-fluid" alt="">
@@ -77,22 +77,22 @@
         <div class="list-group list-group-flush">
 
             <a href="{{route('users.profile')}}" class="list-group-item active waves-effect">
-                <i class="fa fa-chart-pie mr-3"></i>داشبورد
+                <i class="fa fa-chart-pie ml-3"></i>داشبورد
             </a>
             <a href="{{route('users.profile')}}" class="list-group-item list-group-item-action waves-effect">
-                <i class="fa fa-user mr-3"></i>پروفایل</a>
+                <i class="fa fa-user ml-3"></i>پروفایل</a>
 
             <a href="{{route('order.index')}}" class="list-group-item list-group-item-action waves-effect">
-                <i class="fa fa-box-open mr-3"></i>سفارشات</a>
+                <i class="fa fa-box-open ml-3"></i>سفارشات</a>
             <a href="" class="list-group-item list-group-item-action waves-effect">
-                <i class="fa fa-tags mr-3"></i>کوپن</a>
+                <i class="fa fa-tags ml-3"></i>کوپن</a>
             <a href="{{route('users.address')}}" class="list-group-item list-group-item-action waves-effect">
-                <i class="fa fa-map-marked-alt mr-3"></i>آدرس ها</a>
+                <i class="fa fa-map-marked-alt ml-3"></i>آدرس ها</a>
             <a href="{{route('users.comment')}}" class="list-group-item list-group-item-action waves-effect">
-                <i class="fa fa-comments mr-3"></i>نظرات</a>
+                <i class="fa fa-comments ml-3"></i>نظرات</a>
             <a href="{{ route('logout') }}" class="list-group-item list-group-item-action waves-effect"onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
-                <i class="fa fa-sign-out-alt mr-3"></i>خروج</a>
+                <i class="fa fa-sign-out-alt ml-3"></i>خروج</a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

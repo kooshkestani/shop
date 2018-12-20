@@ -96,9 +96,11 @@ Route::middleware('auth')->group(function () {
         Route::patch('/profile', 'UsersController@update')->name('users.update');
 
         Route::get('/my-order', 'UserOrderController@index')->name('order.index');
+        Route::get('/my-order/post', 'UserOrderController@show')->name('order.show');
 
         Route::get('/comment', 'UsersController@index')->name('users.comment');
-        Route::get('/address', 'UsersController@addresindex')->name('users.address');
+        Route::get('/address', 'UsersController@addressindex')->name('users.address');
+        Route::patch('/address', 'UsersController@addressupdate')->name('address.update');
 
     });
 

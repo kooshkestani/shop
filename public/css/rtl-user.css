@@ -2,16 +2,16 @@
 
 body{
     font-family: "Open Sans"!important;
-    /*text-align: right;*/
+    text-align: right;
+}
+table , input,textarea{
+    direction: rtl;
+}
+label{
+    left: initial !important;
+    right: 0 !important;
 }
 
-/*.navbar{*/
-/*direction: rtl;*/
-/*}*/
-/*.section-nav{*/
-/*direction: rtl;*/
-/*}*/
-/*h1,h2,h3,h4,h5,h6,p,strong,span,a{*/
-/*direction: rtl;*/
-/*float: right;*/
+/*i{*/
+    /*text-align: right !important;*/
 /*}*/

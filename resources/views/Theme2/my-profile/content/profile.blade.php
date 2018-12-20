@@ -6,7 +6,7 @@
         <div class="card mb-4 wow fadeIn">
 
             <!--Card content-->
-            <div class="card-body d-sm-flex justify-content-between">
+            <div class="card-body d-sm-flex justify-content-between" style="direction: rtl">
 
                 <h4 class="mb-2 mb-sm-0 pt-1">
                     <a href="{{route('users.profile')}}" target="_blank">صفحه اصلی</a>
@@ -70,7 +70,7 @@
                                     <div class="card">
 
                                         <!--Card content-->
-                                        <form class="card-body" enctype="multipart/form-data" method="post" action="{{route('users.profile')}}">
+                                        <form class="card-body" enctype="multipart/form-data" method="post" action="{{route('users.update')}}">
                                         @method('patch')
                                         {{csrf_field()}}
                                         <!--Grid row-->

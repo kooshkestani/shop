@@ -10,7 +10,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title font-weight-bold dark-grey-text" id="myModalLabel">سبد خرید</h4>
+                <h4 class="modal-title font-weight-bold dark-grey-text" id="myModalLabel">نمایش</h4>
             </div>
             <!--Body-->
             <div class="modal-body">
@@ -51,7 +51,9 @@
                         <ul class="list-group">
                                 <li class="list-group-item list-group-item-danger text-center">هیچ محصولی در سبد خرید شما وجود ندارد</li>
                         </ul>
-                    @endif  
+                    @endif
+
+
             </div>
             <!--Footer-->
             {{-- <div class="modal-footer">
@@ -63,3 +65,34 @@
 </div>
 
 <!-- /.Cart Modal -->
+
+<!-- Comment edit Modal -->
+{{--<div class="modal fade" id="cart-modal-ex2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"--}}
+     {{--aria-hidden="true">--}}
+    {{--<div class="modal-dialog" role="document">--}}
+        {{--<div class="modal-content">--}}
+            {{--<div class="modal-header text-center">--}}
+                {{--<h4 class="modal-title w-100 font-weight-bold">ویرایش نظر</h4>--}}
+
+            {{--</div>--}}
+            {{--<div class="modal-body mx-3">--}}
+                {{--<div class="md-form mb-5">--}}
+                    {{--<i class="fas fa-pencil prefix grey-text"></i>--}}
+                    {{--<textarea type="text" id="form10" class="md-textarea form-control" rows="3" >{{$comment->body}}</textarea>--}}
+                    {{--<label class="m-1 p-1" data-error="wrong" data-success="right" for="defaultForm-email">متن</label>--}}
+                {{--</div>--}}
+
+
+            {{--</div>--}}
+            {{--<div class="modal-footer d-flex justify-content-center">--}}
+                {{--<button style="border-radius:1.125rem;" type="button"  data-dismiss="modal" aria-label="Close" class="btn btn-danger btn-rounded btn-sm my-0 waves-effect waves-light">انصراف</button>--}}
+                {{--<button style="border-radius:1.125rem;" type="button" class="btn btn-primary btn-rounded btn-sm my-0 waves-effect waves-light">ویرایش</button>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</div>--}}
+
+
+<!-- /.Comment edit Modal -->
+
+

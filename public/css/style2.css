@@ -21,7 +21,7 @@
   .navbar,
   .page-footer,
   main {
-    padding-left: 270px; } }
+    padding-right: 270px; } }
 
 @media (max-width: 1199.98px) {
   .sidebar-fixed {

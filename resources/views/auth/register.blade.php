@@ -67,12 +67,12 @@
                         </div>
 
                         <!-- Phone number -->
-                        <div class="md-form">
-                            <input type="password" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
-                            <label for="materialRegisterFormPhone">تلفن</label>
-                            <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-اختیاری                            </small>
-                        </div>
+                        {{--<div class="md-form">--}}
+                            {{--<input type="password" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">--}}
+                            {{--<label for="materialRegisterFormPhone">تلفن</label>--}}
+                            {{--<small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">--}}
+{{--اختیاری                            </small>--}}
+                        {{--</div>--}}
 
                         <!-- Newsletter -->
                         <div class="form-check">
