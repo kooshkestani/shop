@@ -18,6 +18,8 @@
 
     <link href="{{asset('css/compiled-4.5.15.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/mdb2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/rtl.css')}}" rel="stylesheet">
+
 
     <!-- Styles -->
     {{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}

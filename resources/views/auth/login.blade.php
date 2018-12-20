@@ -10,7 +10,7 @@
                 <div class="card">
 
                     <h5 class="card-header info-color white-text text-center py-4">
-                        <strong>{{ __('Login') }}</strong>
+                        <strong>{{ __('auth.login') }}</strong>
                     </h5>
 
                     <!--Card content-->
@@ -24,7 +24,7 @@
                                 <input type="email"  name="email" id="materialLoginFormEmail"
                                        class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                        value="{{ old('email') }}" required autofocus>
-                                <label for="materialLoginFormEmail">{{ __('E-Mail Address') }}</label>
+                                <label for="materialLoginFormEmail">{{ __('auth.E-Mail Address') }}</label>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
                                 <input type="password"  name="password" id="materialLoginFormPassword"
                                        class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
                                         required>
-                                <label for="materialLoginFormPassword">{{ __('Password') }}</label>
+                                <label for="materialLoginFormPassword">{{ __('auth.password') }}</label>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -53,22 +53,22 @@
                                         <input type="checkbox" class="form-check-input"
                                                id="materialLoginFormRemember" {{ old('remember') ? 'checked' : '' }}>
                                         <label class="form-check-label"
-                                               for="materialLoginFormRemember">{{ __('Remember Me') }}</label>
+                                               for="materialLoginFormRemember">{{ __('auth.Remember Me') }}</label>
                                     </div>
                                 </div>
                                 <div>
                                     <!-- Forgot password -->
-                                    <a href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
+                                    <a href="{{ route('password.request') }}">{{ __('auth.Forgot Your Password?') }}</a>
                                 </div>
                             </div>
 
                             <!-- Sign in button -->
                             <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
-                                    type="submit">{{ __('Login') }}</button>
+                                    type="submit">{{ __('auth.login') }}</button>
 
                             <!-- Register -->
                             <p>Not a member?
-                                <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a href="{{ route('register') }}">{{ __('auth.register') }}</a>
                             </p>
 
                             <!-- Social login -->

@@ -13,7 +13,18 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+
+        $comments = auth()->user()->comments;
+
+        return view('Theme2.my-profile.content.comment')->with('comments', $comments);
+    }
+
+    public function addresindex()
+    {
+        $address = auth()->user()->address;
+//        return dd($addresses);
+
+        return view('Theme2.my-profile.content.addresses')->with('address', $address);
     }
 
     /**
@@ -72,15 +83,15 @@ class UsersController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . auth()->id()],
             'password' => ['sometimes', 'nullable', 'string', 'min:6', 'confirmed'],
         ]);
-        $user=auth()->user();
-        $input=$request->except('password','password_confirmation');
+        $user = auth()->user();
+        $input = $request->except('password', 'password_confirmation');
         if (!$request->filled('password')) {
             $user->fill($input)->save();
-            return back()->with('success_message','Profile updated');
+            return back()->with('success_message', 'Profile updated');
         }
-        $user->password=bcrypt($request->password);
+        $user->password = bcrypt($request->password);
         $user->fill($input)->save();
-        return back()->with('success_message','Profile and password updated');
+        return back()->with('success_message', 'Profile and password updated');
 
     }
 

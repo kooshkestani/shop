@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="{{asset('font-awesome/4.7.0/css/font-awesome.min.css')}}">
 
 
-    {{--<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">--}}
-    <link href="{{asset('css/bootstrap-rtl.css')}}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    {{--<link href="{{asset('css/bootstrap-rtl.css')}}" rel="stylesheet">--}}
     <link href="{{asset('css/rtl.css')}}" rel="stylesheet">
 
 
