@@ -14,7 +14,6 @@
             </div>
             <!--Body-->
             <div class="modal-body">
-                @guest
                     @if (Cart::content()->count() > 0)
                         <table class="table table-hover">
                             <thead>
@@ -53,10 +52,6 @@
                                 <li class="list-group-item list-group-item-danger text-center">هیچ محصولی در سبد خرید شما وجود ندارد</li>
                         </ul>
                     @endif  
-                @endguest
-                @auth
-                    {{"da"}}
-                @endauth
             </div>
             <!--Footer-->
             {{-- <div class="modal-footer">

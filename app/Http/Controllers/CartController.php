@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Models\Category;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
 
 class CartController extends Controller
 {
@@ -19,7 +21,6 @@ class CartController extends Controller
     {
         $categories = Category::all();
         $newproduct=Product::orderBy('created_at', 'desc')->take(4)->get();
-
         // dd(Cart::content());
         return view('Theme2.main.content.cart-v2')->with([
             'allCategories'=> $categories,
