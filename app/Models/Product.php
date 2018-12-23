@@ -25,6 +25,6 @@ class Product extends Model
        return $this->hasMany('App\Models\Comment');
    }
    public function order(){
-       return $this->belongsToMany('App\Models\Order','order_product', 'order_id' ,'product_id');
+       return $this->belongsToMany('App\Models\Order','order_product', 'order_id' ,'product_id')->withPivot('total', 'quantity');
    }
 }
