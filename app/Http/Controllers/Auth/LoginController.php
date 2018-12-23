@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
+use App\User;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class LoginController extends Controller
 {
@@ -49,7 +53,25 @@ class LoginController extends Controller
     }
 
     public function redirectTo(){
-        // dd(session()->get('previousUrl'));
+
+        $userLoggedId = Auth::user()->id;
+        //User Informations
+        $userInfo = User::find($userLoggedId);
+        $checkBasketUnpaid = Order::where([
+            ['user_id', '=', $userLoggedId],
+            ['status', '=', 2]
+        ]);
+        //Check if user unpaid basket
+        if ($checkBasketUnpaid->count() != 0) {
+            $orderId = $checkBasketUnpaid->first();
+            $allProductsOfOrder = $checkBasketUnpaid->first()->products()->where('order_id', $orderId->id)->get();
+
+            foreach ($allProductsOfOrder as $productItem) {
+                $price = str_replace(",", "", $productItem->price);
+                Cart::add($productItem->id,$productItem->name, $productItem->pivot->quantity, $price)->associate('App\Models\Product');
+            }
+        }
+        // dd(Cart::content());
         return str_replace(url('/'),'', session()->get('previousUrl'));
     }
 }

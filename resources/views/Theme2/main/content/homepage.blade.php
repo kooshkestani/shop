@@ -12,7 +12,6 @@
 @endsection
 
 @section('content')
-
     <!-- /.Main Container -->
     <div class="container">
         <div class="row pt-4">

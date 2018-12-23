@@ -12,7 +12,6 @@
 
 @section('content')
 
-
     <div class="container wow fadeIn">
 
         <!-- Heading -->
@@ -64,8 +63,6 @@
 
                         {{--</div>--}}
                         <!--Grid row-->
-
-
                         <!--email-->
                         <div class="md-form mb-5">
                             <input type="text" id="email" class="form-control" name="email"  value="{{$userInfo->email}}" placeholder="{{$userInfo->email}}">
@@ -242,7 +239,7 @@
                         {{--</li>--}}
                         <li class="list-group-item d-flex justify-content-between">
                             <span>مجموع (تومان)</span>
-                            <strong>{{Cart::total(0,"",",")}}</strong>
+                            <strong>{{Cart::total(0,"","")}}</strong>
                         </li>
                     </ul>
                     <!-- Cart -->
