@@ -13,6 +13,19 @@ label{
     left: initial !important;
     right: 0 !important;
 }
+
+.custom-control-label::before ,.custom-control-label::after{
+    left: initial !important;
+    right: -1.5rem !important;
+
+
+}
+
+
+.custom-control{
+    padding-left:initial !important;
+    padding-right: 1.5rem !important;
+}
 p{
     text-align: right;!important;
 }

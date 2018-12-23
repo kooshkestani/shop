@@ -302,7 +302,7 @@
                         <i class="fa fa-pencil prefix"></i>
                         <textarea type="text" id="form24" class="md-textarea form-control" name="body"
                                   rows="3"></textarea>
-                        <label for="form24" class="text-right">نظر خود را اینجا بنویسید</label>
+                        <label for="form24" class="text-right pr-5">نظر خود را اینجا بنویسید</label>
                         <button class="btn btn-primary btn-rounded waves-effect waves-light" type="submit">
                             <i class="fa fa-pencil ml-2" aria-hidden="true"></i>ثبت نظر
                         </button>
