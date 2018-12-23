@@ -105,12 +105,21 @@ Route::middleware('auth')->group(function () {
         Route::patch('/address', 'UsersController@addressupdate')->name('address.update');
 
     });
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+//TODO route checkout
+=======
+    //TODO route checkout
+>>>>>>> shop/behrouz
+=======
 
 
 
 
 
 //TODO route checkout
+>>>>>>> shop/behrouz
 
     Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
     Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
