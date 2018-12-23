@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use DB;
 
 class shopController extends Controller
 {
@@ -16,6 +17,8 @@ class shopController extends Controller
      */
     public function index()
     {
+//        $categories  = Category:: paginate(10);
+//        return view('Categories.index')->with('categories',$categories);
 
         if (request()->category) {
             $products = Product::with('categories')->whereHas('categories', function ($query) {
@@ -47,13 +50,132 @@ class shopController extends Controller
             'products' => $products,
             'categories' => $categories,
             'categoryname' => $categoryname,
-            'allCategories'=> $categories,
-
-
+            'allCategories' => $categories,
 
 
         ]);
     }
+
+
+    public function action(Request $request)
+    {
+//        if ($request->ajax()) {
+//            $output = '';
+//            $query = $request->get('query');
+//            if ($query != '') {
+//                $data = DB::table('products')
+//                    ->where('name', 'like', '%' . $query . '%')
+//                    ->orWhere('details', 'like', '%' . $query . '%')
+//                    ->orWhere('description', 'like', '%' . $query . '%')
+//                    ->orWhere('slug', 'like', '%' . $query . '%')
+//                    ->orderBy('id', 'desc')
+//                    ->get();
+//
+//            } else {
+//                $data = DB::table('products')
+//                    ->orderBy('id', 'desc')
+//                    ->get();
+//            }
+//            $total_row = $data->count();
+//            if ($total_row > 0) {
+//                foreach ($data as $row) {
+//                    $output .= '
+//
+//                        <!--Grid column-->
+//                            <div class="col-lg-4 col-md-12 mb-4">
+//                                <!--Card-->
+//                                <div class="card card-ecommerce">
+//
+//                                    <!--Card image-->
+//                                    <div class="view overlay">
+//                                        <img src="/storage/'.{{$row->image}}.'" class="img-fluid"
+//                                             alt="">
+//                                        <a>
+//                                            <div class="mask rgba-white-slight"></div>
+//                                        </a>
+//                                    </div>
+//                                    <!--Card image-->
+//
+//                                    <!--Card content-->
+//                                    <div class="card-body">
+//                                        <!--Category & Title-->
+//
+//                                        <h5 class="card-title mb-1"><strong><a
+//                                                        href="{{route(\'shop.show\',$row->slug)}}"
+//                                                        class="dark-grey-text">{{$row->name}}</a></strong>
+//                                        </h5><span class="badge badge-danger mb-2">bestseller</span>
+//                                        <!-- Rating -->
+//                                        <ul class="rating">
+//                                            <li><i class="fa fa-star blue-text"></i></li>
+//                                            <li><i class="fa fa-star blue-text"></i></li>
+//                                            <li><i class="fa fa-star blue-text"></i></li>
+//                                            <li><i class="fa fa-star blue-text"></i></li>
+//                                            <li><i class="fa fa-star blue-text"></i></li>
+//                                        </ul>
+//
+//                                        <!--Card footer-->
+//                                        <div class="card-footer pb-0">
+//                                            <div class="row mb-0">
+//                                                <span class="float-left"><strong>{{$row->price}}<span class="p-2">تومان</span></strong></span>
+//                                                <span class="float-right">
+//
+//                                        <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i
+//                                                    class="fa fa-shopping-cart ml-3"></i></a>
+//                                        </span>
+//                                            </div>
+//                                        </div>
+//
+//                                    </div>
+//                                    <!--Card content-->
+//
+//                                </div>
+//                                <!--Card-->
+//                            </div>
+//                            <!--Grid column-->
+//
+//
+//                    ';
+//
+//                }
+//            }
+//            else{
+//                    $output = '
+//
+//        <h1 align="center">محصولی پیدا نشد</h1>
+//
+//       ';
+//                }
+//
+////                foreach($data as $row)
+////                {
+////                    $output .= '
+////        <tr>
+////         <td>'.$row->CustomerName.'</td>
+////         <td>'.$row->Address.'</td>
+////         <td>'.$row->City.'</td>
+////         <td>'.$row->PostalCode.'</td>
+////         <td>'.$row->Country.'</td>
+////        </tr>
+////        ';
+////                }
+////            }
+////            else
+////            {
+////                $output = '
+////       <tr>
+////        <td align="center" colspan="5">No Data Found</td>
+////       </tr>
+////       ';
+////            }
+//                $data = array(
+//                    'table_data' => $output,
+//                    'total_data' => $total_row
+//                );
+//
+//                echo json_encode($data);
+//            }
+        }
+
 
     /**
      * Show the form for creating a new resource.
@@ -90,28 +212,28 @@ class shopController extends Controller
         $comments = Comment::where('product_id', $product->id)->get();
         $mightAlsoLike = Product::where('slug', '!=', $slug)->inRandomOrder()->take(3)->get();
 
-        $query_RelatedProduct=substr($product->name,0,3);
+        $query_RelatedProduct = substr($product->name, 0, 3);
         $RelatedProduct = Product::where('name', 'like', "%$query_RelatedProduct%")->inRandomOrder()->paginate(3);
-        if ($product->quantity>setting('site.stock_Threshold')){
-            $stocklevel='<span class="badge badge-success product mb-4 mr-2">موجود است</span>';
+        if ($product->quantity > setting('site.stock_Threshold')) {
+            $stocklevel = '<span class="badge badge-success product mb-4 mr-2">موجود است</span>';
 
-        }elseif($product->quantity<=setting('site.stock_Threshold')&&$product->quantity>0){
-            $stocklevel='<span class="badge badge-warning product mb-4 mr-2">موجودی محدود</span>';
+        } elseif ($product->quantity <= setting('site.stock_Threshold') && $product->quantity > 0) {
+            $stocklevel = '<span class="badge badge-warning product mb-4 mr-2">موجودی محدود</span>';
 
-        }else{
-            $stocklevel='<span class="badge badge-danger product mb-4 mr-2">موجود نیست</span>';
+        } else {
+            $stocklevel = '<span class="badge badge-danger product mb-4 mr-2">موجود نیست</span>';
 
         }
 
         return view('Theme2.main.content.product')->with([
-            'comments'=>$comments,
+            'comments' => $comments,
             'product' => $product,
             'mightAlsoLike' => $mightAlsoLike,
             'RelatedProduct' => $RelatedProduct,
-            'stocklevel'=>$stocklevel,
-            'allCategories'=> $categories,
+            'stocklevel' => $stocklevel,
+            'allCategories' => $categories,
 
-            'title' =>$slug
+            'title' => $slug
 
 
         ]);

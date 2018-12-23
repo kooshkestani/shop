@@ -38,7 +38,8 @@ div.dataTables_wrapper div.dataTables_length.d-flex.flex-row .select-wrapper.mdb
 
 div.dataTables_wrapper div.dataTables_length label,
 div.dataTables_wrapper div.dataTables_filter label {
-    text-align: left;
+    text-align: right;
+    direction: rtl;
     font-weight: normal;
     padding-top: .5rem;
     padding-bottom: .5rem;
@@ -129,7 +130,8 @@ div.dataTables_wrapper div.dataTables_length.d-flex.flex-row .select-wrapper.mdb
 
 div.dataTables_wrapper div.dataTables_length label,
 div.dataTables_wrapper div.dataTables_filter label {
-    text-align: left;
+    text-align: right;
+    direction: rtl;
     font-weight: normal;
     padding-top: .5rem;
     padding-bottom: .5rem;

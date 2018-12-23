@@ -1,4 +1,23 @@
 @extends('Theme2.my-profile.my-profile')
+@section('css-extra')
+    <link href="{{asset('css/addons/datatables.min.css')}}" rel="stylesheet">
+
+    <style>
+        table.dataTable thead .sorting:after,
+        table.dataTable thead .sorting:before,
+        table.dataTable thead .sorting_asc:after,
+        table.dataTable thead .sorting_asc:before,
+        table.dataTable thead .sorting_asc_disabled:after,
+        table.dataTable thead .sorting_asc_disabled:before,
+        table.dataTable thead .sorting_desc:after,
+        table.dataTable thead .sorting_desc:before,
+        table.dataTable thead .sorting_desc_disabled:after,
+        table.dataTable thead .sorting_desc_disabled:before {
+            bottom: .5em;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="container-fluid">
 
@@ -61,7 +80,8 @@
                                                     نظرات</h3>
                                                 <div class="card-body">
                                                     <div id="table" class="table-editable">
-                                                        <table class="table table-bordered table-responsive-md table-striped text-center">
+                                                        <table id="dtBasicExample" class="table table-bordered table-responsive-md table-striped text-center">
+                                                            <thead>
                                                             <tr>
                                                                 <th class="text-center">محصول</th>
                                                                 <th class="text-center">تاریخ</th>
@@ -71,64 +91,8 @@
                                                                 <th class="text-center">لینک</th>
 
                                                             </tr>
-
-
-                                                            <script>
-                                                                var $TABLE = $('#table');
-                                                                var $BTN = $('#export-btn');
-                                                                var $EXPORT = $('#export');
-
-                                                                $('.table-add').click(function () {
-                                                                    var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');
-                                                                    $TABLE.find('table').append($clone);
-                                                                });
-
-                                                                $('.table-remove').click(function () {
-                                                                    $(this).parents('tr').detach();
-                                                                });
-
-                                                                $('.table-up').click(function () {
-                                                                    var $row = $(this).parents('tr');
-                                                                    if ($row.index() === 1) return; // Don't go above the header
-                                                                    $row.prev().before($row.get(0));
-                                                                });
-
-                                                                $('.table-down').click(function () {
-                                                                    var $row = $(this).parents('tr');
-                                                                    $row.next().after($row.get(0));
-                                                                });
-
-                                                                // A few jQuery helpers for exporting only
-                                                                jQuery.fn.pop = [].pop;
-                                                                jQuery.fn.shift = [].shift;
-
-                                                                $BTN.click(function () {
-                                                                    var $rows = $TABLE.find('tr:not(:hidden)');
-                                                                    var headers = [];
-                                                                    var data = [];
-
-// Get the headers (add special header logic here)
-                                                                    $($rows.shift()).find('th:not(:empty)').each(function () {
-                                                                        headers.push($(this).text().toLowerCase());
-                                                                    });
-
-// Turn all existing rows into a loopable array
-                                                                    $rows.each(function () {
-                                                                        var $td = $(this).find('td');
-                                                                        var h = {};
-
-// Use the headers from earlier to name our hash keys
-                                                                        headers.forEach(function (header, i) {
-                                                                            h[header] = $td.eq(i).text();
-                                                                        });
-
-                                                                        data.push(h);
-                                                                    });
-
-// Output the result
-                                                                    $EXPORT.text(JSON.stringify(data));
-                                                                });
-                                                            </script>
+                                                            </thead>
+<tbody>
                                                             @foreach($comments as $comment)
 
                                                                 <tr>
@@ -172,7 +136,7 @@
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
-
+</tbody>
                                                         </table>
                                                     </div>
                                                 </div>
@@ -208,4 +172,13 @@
 
     </div>
 
+@endsection
+@section('extra-js')
+    <script type="text/javascript" src="{{asset('js/addons/datatables.min.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#dtBasicExample').DataTable();
+            $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
 @endsection

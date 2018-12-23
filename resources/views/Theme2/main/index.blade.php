@@ -36,7 +36,6 @@
 </body>
 <!-- Scripts -->
 
-@yield('extra-js')
 
 <!-- JQuery -->
 <script type="text/javascript" src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
@@ -49,5 +48,6 @@
 
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{{asset('js/mdb.min.js')}}"></script>
+@yield('extra-js')
 
 </html>

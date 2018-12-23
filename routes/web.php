@@ -55,6 +55,8 @@ Route::get('/', 'LandingPageController@index')->name('landing-page');
 //TODO route shop and product
 Route::get('/shop', 'shopController@index')->name('shop.index');
 Route::get('/shop/{product}', 'shopController@show')->name('shop.show');
+Route::get('/shop/action', 'shopController@action')->name('shop.action');
+
 
 
 

@@ -1,4 +1,22 @@
 @extends('Theme2.my-profile.my-profile')
+@section('css-extra')
+    <link href="{{asset('css/addons/datatables.min.css')}}" rel="stylesheet">
+
+    <style>
+        table.dataTable thead .sorting:after,
+        table.dataTable thead .sorting:before,
+        table.dataTable thead .sorting_asc:after,
+        table.dataTable thead .sorting_asc:before,
+        table.dataTable thead .sorting_asc_disabled:after,
+        table.dataTable thead .sorting_asc_disabled:before,
+        table.dataTable thead .sorting_desc:after,
+        table.dataTable thead .sorting_desc:before,
+        table.dataTable thead .sorting_desc_disabled:after,
+        table.dataTable thead .sorting_desc_disabled:before {
+            bottom: .5em;
+        }
+    </style>
+@endsection
 @section('content')
     <div class="container-fluid">
 
@@ -28,6 +46,7 @@
         </div>
         <!-- Heading -->
 
+
         <!--Grid row-->
         <div class="row wow fadeIn">
 
@@ -45,74 +64,18 @@
                             <h3 class="card-header text-center font-weight-bold text-uppercase py-4">سفارشات کاربر</h3>
                             <div class="card-body">
                                 <div id="table" class="table-editable">
-                                    <table style="direction: rtl"
+                                    <table id="dtBasicExample" style="direction: rtl"
                                            class="table table-bordered table-responsive-md table-striped text-center">
+                                        <thead>
                                         <tr>
-                                            <th class="text-center">شماره سفارش</th>
-                                            <th class="text-center">مبلغ پرداختی</th>
-                                            <th class="text-center">ثبت سفارش</th>
-                                            <th class="text-center">وضعیت</th>
-                                            <th class="text-center">مرتب کردن</th>
-                                            <th class="text-center">اطلاعات</th>
+                                            <th class="text-center sorting" >شماره سفارش</th>
+                                            <th class="text-center sorting" >مبلغ پرداختی</th>
+                                            <th class="text-center sorting" >ثبت سفارش</th>
+                                            <th class="text-center sorting" >وضعیت</th>
+                                            <th class="text-center sorting" >اطلاعات</th>
                                         </tr>
-
-
-                                        {{--<script>--}}
-                                            {{--var $TABLE = $('#table');--}}
-                                            {{--var $BTN = $('#export-btn');--}}
-                                            {{--var $EXPORT = $('#export');--}}
-
-                                            {{--$('.table-add').click(function () {--}}
-                                                {{--var $clone = $TABLE.find('tr.hide').clone(true).removeClass('hide table-line');--}}
-                                                {{--$TABLE.find('table').append($clone);--}}
-                                            {{--});--}}
-
-                                            {{--$('.table-remove').click(function () {--}}
-                                                {{--$(this).parents('tr').detach();--}}
-                                            {{--});--}}
-
-                                            {{--$('.table-up').click(function () {--}}
-                                                {{--var $row = $(this).parents('tr');--}}
-                                                {{--if ($row.index() === 1) return; // Don't go above the header--}}
-                                                {{--$row.prev().before($row.get(0));--}}
-                                            {{--});--}}
-
-                                            {{--$('.table-down').click(function () {--}}
-                                                {{--var $row = $(this).parents('tr');--}}
-                                                {{--$row.next().after($row.get(0));--}}
-                                            {{--});--}}
-
-                                            {{--// A few jQuery helpers for exporting only--}}
-                                            {{--jQuery.fn.pop = [].pop;--}}
-                                            {{--jQuery.fn.shift = [].shift;--}}
-
-                                            {{--$BTN.click(function () {--}}
-                                                {{--var $rows = $TABLE.find('tr:not(:hidden)');--}}
-                                                {{--var headers = [];--}}
-                                                {{--var data = [];--}}
-
-{{--// Get the headers (add special header logic here)--}}
-                                                {{--$($rows.shift()).find('th:not(:empty)').each(function () {--}}
-                                                    {{--headers.push($(this).text().toLowerCase());--}}
-                                                {{--});--}}
-
-{{--// Turn all existing rows into a loopable array--}}
-                                                {{--$rows.each(function () {--}}
-                                                    {{--var $td = $(this).find('td');--}}
-                                                    {{--var h = {};--}}
-
-{{--// Use the headers from earlier to name our hash keys--}}
-                                                    {{--headers.forEach(function (header, i) {--}}
-                                                        {{--h[header] = $td.eq(i).text();--}}
-                                                    {{--});--}}
-
-                                                    {{--data.push(h);--}}
-                                                {{--});--}}
-
-{{--// Output the result--}}
-                                                {{--$EXPORT.text(JSON.stringify(data));--}}
-                                            {{--});--}}
-                                        {{--</script>--}}
+                                        </thead>
+<tbody>
                                         @foreach($orders as $order)
 
                                             <tr>
@@ -146,14 +109,7 @@
                                                                     class="btn btn-primary btn-rounded btn-sm my-0">تحویل داده شده</button></span>
                                                     @endif
                                                 </td>
-                                                <td class="pt-3-half">
-                                                    <span class="table-up"><a href="#!" class="indigo-text"><i
-                                                                    class="fa fa-long-arrow-alt-up"
-                                                                    aria-hidden="true"></i></a></span>
-                                                    <span class="table-down"><a href="#!" class="indigo-text"><i
-                                                                    class="fa fa-long-arrow-alt-down"
-                                                                    aria-hidden="true"></i></a></span>
-                                                </td>
+
                                                 <td>
                                                     <span class="table-remove">
                                                         <button style="border-radius:1.125rem;"
@@ -167,13 +123,12 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-
+</tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                         <!-- Editable table -->
-
                     </div>
 
                 </div>
@@ -207,41 +162,40 @@
                 </div>
                 <!--Body-->
                 <div class="modal-body">
-                        <table class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th>نام محصول</th>
-                                <th>قیمت محصول</th>
-                                <th>تعداد</th>
-                                <th>قیمت کل</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>نام محصول</th>
+                            <th>قیمت محصول</th>
+                            <th>تعداد</th>
+                            <th>قیمت کل</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-                            {{--@foreach (Cart::content() as $item)--}}
-                                {{--<tr>--}}
-                                    {{--<td>{{$item->name}}</td>--}}
-                                    {{--<td>--}}
-                                        {{--{{$item->price}} <label>تومان </label>--}}
-                                    {{--</td>--}}
-                                    {{--<td>{{$item->qty}}</td>--}}
-                                    {{--<td>--}}
-                                        {{--{{$item->qty * $item->price}} <label>تومان </label>--}}
-                                    {{--</td>--}}
-                                    {{-- <td>--}}
-                                        {{--<a>--}}
-                                            {{--<i class="fa fa-remove"></i>--}}
-                                        {{--</a>--}}
-                                    {{--</td> --}}
-                                {{--</tr>--}}
-                            {{--@endforeach--}}
-                            </tbody>
-                        </table>
-                        <a class="btn btn-primary btn-rounded btn-sm" href="{{route('cart.index')}}"
-                           style="font-size:14px">
-                            ویرایش سبد خرید
-                        </a>
-
+                        {{--@foreach (Cart::content() as $item)--}}
+                        {{--<tr>--}}
+                        {{--<td>{{$item->name}}</td>--}}
+                        {{--<td>--}}
+                        {{--{{$item->price}} <label>تومان </label>--}}
+                        {{--</td>--}}
+                        {{--<td>{{$item->qty}}</td>--}}
+                        {{--<td>--}}
+                        {{--{{$item->qty * $item->price}} <label>تومان </label>--}}
+                        {{--</td>--}}
+                        {{-- <td>--}}
+                        {{--<a>--}}
+                        {{--<i class="fa fa-remove"></i>--}}
+                        {{--</a>--}}
+                        {{--</td> --}}
+                        {{--</tr>--}}
+                        {{--@endforeach--}}
+                        </tbody>
+                    </table>
+                    <a class="btn btn-primary btn-rounded btn-sm" href="{{route('cart.index')}}"
+                       style="font-size:14px">
+                        ویرایش سبد خرید
+                    </a>
 
 
                 </div>
@@ -255,3 +209,12 @@
     </div>
 
 @endsection
+@section('extra-js')
+    <script type="text/javascript" src="{{asset('js/addons/datatables.min.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#dtBasicExample').DataTable();
+            $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
+    @endsection
