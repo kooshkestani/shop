@@ -15,3 +15,6 @@ label{
 /*i{*/
     /*text-align: right !important;*/
 /*}*/
+#dtBasicExample_length,#dtBasicExample_info{
+    float: left;    
+}

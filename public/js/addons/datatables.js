@@ -11359,7 +11359,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "First",
+				"sFirst": "اولین",
 	
 	
 				/**
@@ -11382,7 +11382,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Last",
+				"sLast": "قبلی",
 	
 	
 				/**
@@ -11405,7 +11405,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "بعدی",
 	
 	
 				/**
@@ -11428,7 +11428,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "آخرین"
 			},
 	
 			/**
@@ -11451,7 +11451,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "رکوردی در این جدول نیست",
 	
 	
 			/**
@@ -11483,7 +11483,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "نمایش _شروع_ تا _پایان_ از _تمام_ رکورد",
 	
 	
 			/**
@@ -11504,7 +11504,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "نمایش 0 تا 0 از 0 رکورد",
 	
 	
 			/**
@@ -11526,7 +11526,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(فیلتر از _MAX_ تمام رکورد)",
 	
 	
 			/**
@@ -11644,7 +11644,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "نمایش _MENU_ رکورد",
 	
 	
 			/**
@@ -11668,7 +11668,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLoadingRecords": "Loading...",
+			"sLoadingRecords": "صبرکنید...",
 	
 	
 			/**
@@ -11689,7 +11689,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sProcessing": "Processing...",
+			"sProcessing": "درحال پردازش...",
 	
 	
 			/**
@@ -11724,7 +11724,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "جستجو:",
 	
 	
 			/**
@@ -11782,7 +11782,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "رکوردی یافت نشد"
 		},
 	
 	

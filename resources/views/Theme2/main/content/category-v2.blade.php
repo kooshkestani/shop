@@ -98,8 +98,7 @@
 
                 <!-- Products Grid -->
 
-                <h1>{{time()}}</h1>
-                <section class="section pt-4 container"  id="pjaxproduct" data-pjax-container="" data-pjax-push-state data-pjax-timeout="1000">
+                <section class="section pt-4 container"  id="pjax-container">
 
                     <!-- Grid row -->
                     <div class="row">
@@ -427,34 +426,5 @@
         })
     </script>
     <script type="text/javascript">$(document).pjax('.pagination li a', '#pjax-container');</script>
-    {{--<script type="text/javascript">jQuery(function ($) {--}}
-            jQuery(document).pjax("#pjaxproduct a", {"push":true,"replace":false,"timeout":1000,"scrollTo":false,"container":"#pjaxproduct"});
-            jQuery(document).on("submit", "#pjaxproduct form[data-pjax]", function (event) {jQuery.pjax.submit(event, {"push":true,"replace":false,"timeout":1000,"scrollTo":false,"container":"#pjaxproduct"});});</script>
-    {{--<script>--}}
-        {{--$(document).ready(function(){--}}
-
-            {{--fetch_customer_data();--}}
-
-            {{--function fetch_customer_data(query = '')--}}
-            {{--{--}}
-                {{--$.ajax({--}}
-                    {{--url:"{{ route('shop.action') }}",--}}
-                    {{--method:'GET',--}}
-                    {{--data:{query:query},--}}
-                    {{--dataType:'json',--}}
-                    {{--success:function(data)--}}
-                    {{--{--}}
-                        {{--$('.section').html(data.table_data);--}}
-                        {{--$('#total_records').text(data.total_data);--}}
-                    {{--}--}}
-                {{--})--}}
-            {{--}--}}
-
-            {{--$(document).on('keyup', '#search', function(){--}}
-                {{--var query = $(this).val();--}}
-                {{--fetch_customer_data(query);--}}
-            {{--});--}}
-        {{--});--}}
-    {{--</script>--}}
 
 @endsection

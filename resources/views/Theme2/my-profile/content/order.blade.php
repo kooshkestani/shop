@@ -32,14 +32,7 @@
                     <span>سفارشات</span>
                 </h4>
 
-                <form class="d-flex justify-content-center">
-                    <!-- Default input -->
-                    <input type="search" placeholder="جستجو" aria-label="Search" class="form-control">
-                    <button class="btn btn-primary btn-sm my-0 p" type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
 
-                </form>
 
             </div>
 
