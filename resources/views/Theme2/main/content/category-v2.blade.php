@@ -126,7 +126,7 @@
                                         <h5 class="card-title mb-1"><strong><a
                                                         href="{{route('shop.show',$product->slug)}}"
                                                         class="dark-grey-text">{{$product->name}}</a></strong>
-                                        </h5><span class="badge badge-danger mb-2">bestseller</span>
+                                        </h5><span class="badge badge-danger mb-2">پرفروشترین</span>
                                         <!-- Rating -->
                                         <ul class="rating">
                                             <li><i class="fa fa-star blue-text"></i></li>
@@ -138,8 +138,11 @@
 
                                         <!--Card footer-->
                                         <div class="card-footer pb-0">
-                                            <div class="row mb-0">
-                                                <span class="float-left"><strong>{{$product->price}}$</strong></span>
+                                            <div class="row mb-0" style="direction: rtl">
+                                                <span class="float-left"><strong>{{$product->price}}</strong>
+                                                <span class="p-2">
+                                                    تومان
+                                                </span></span>
                                                 <span class="float-right">
 
                                         <a class="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><i
@@ -167,39 +170,13 @@
                         <nav class="mb-4">
                             <ul class="pagination pagination-circle pg-blue mb-0">
 
-                                <!--First-->
-                                <li class="page-item disabled clearfix d-none d-md-block"><a
-                                            class="page-link waves-effect waves-effect">قبلی</a></li>
-
-                                <!--Arrow left-->
-                            {{--<li class="page-item disabled">--}}
-                            {{--<a class="page-link waves-effect waves-effect" aria-label="Previous">--}}
-                            {{--<span aria-hidden="true">«</span>--}}
-                            {{--<span class="sr-only">Previous</span>--}}
-                            {{--</a>--}}
-                            {{--</li>--}}
-
-                            <!--Numbers-->
-
+                                {{--<li class="page-item disabled clearfix d-none d-md-block"><a--}}
+                                            {{--class="page-link waves-effect waves-effect">قبلی</a></li>--}}
 
                             {{ $products->appends(request()->input())->links() }}
-                            {{--<li class="page-item active"><a class="page-link waves-effect waves-effect">1</a></li>--}}
-                            {{--<li class="page-item"><a class="page-link waves-effect waves-effect">2</a></li>--}}
-                            {{--<li class="page-item"><a class="page-link waves-effect waves-effect">3</a></li>--}}
-                            {{--<li class="page-item"><a class="page-link waves-effect waves-effect">4</a></li>--}}
-                            {{--<li class="page-item"><a class="page-link waves-effect waves-effect">5</a></li>--}}
 
-                            <!--Arrow right-->
-                            {{--<li class="page-item">--}}
-                            {{--<a class="page-link waves-effect waves-effect" aria-label="Next">--}}
-                            {{--<span aria-hidden="true">»</span>--}}
-                            {{--<span class="sr-only">Next</span>--}}
-                            {{--</a>--}}
-                            {{--</li>--}}
-
-                            <!--First-->
-                                <li class="page-item clearfix d-none d-md-block"><a
-                                            class="page-link waves-effect waves-effect">بعدی</a></li>
+                                {{--<li class="page-item clearfix d-none d-md-block"><a--}}
+                                            {{--class="page-link waves-effect waves-effect">بعدی</a></li>--}}
 
                             </ul>
                         </nav>
@@ -208,6 +185,7 @@
                     </div>
                     <!--Grid row-->
                 </section>
+
                 <!-- /.Products Grid -->
 
             </div>
@@ -274,14 +252,14 @@
                             <div class="row justify-content-center">
 
                                 <!-- Grid column -->
-                                <div class="col-md-6 text-left">
-                                    <p class="dark-grey-text"><strong id="resellerEarnings">0$</strong></p>
+                                <div class="col-md-6 text-right">
+                                    <p class="dark-grey-text"><strong id="resellerEarnings">{{$minPrice}}</strong><span class="p-2">تومان</span></p>
                                 </div>
                                 <!-- Grid column -->
 
                                 <!-- Grid column -->
-                                <div class="col-md-6 text-right">
-                                    <p class="dark-grey-text"><strong id="clientPrice">319$</strong></p>
+                                <div class="col-md-6 text-left">
+                                    <p class="dark-grey-text text-left"><strong id="clientPrice">{{$maxPrice}}</strong><span class="p-2">تومان</span></p>
                                 </div>
                                 <!-- Grid column -->
                             </div>

@@ -166,23 +166,24 @@
                         </thead>
                         <tbody>
 
-                        {{--@foreach (Cart::content() as $item)--}}
-                        {{--<tr>--}}
-                        {{--<td>{{$item->name}}</td>--}}
-                        {{--<td>--}}
-                        {{--{{$item->price}} <label>تومان </label>--}}
-                        {{--</td>--}}
-                        {{--<td>{{$item->qty}}</td>--}}
-                        {{--<td>--}}
-                        {{--{{$item->qty * $item->price}} <label>تومان </label>--}}
-                        {{--</td>--}}
-                        {{-- <td>--}}
-                        {{--<a>--}}
-                        {{--<i class="fa fa-remove"></i>--}}
-                        {{--</a>--}}
-                        {{--</td> --}}
-                        {{--</tr>--}}
-                        {{--@endforeach--}}
+                        @foreach ($OrderProduct as $items)
+
+                        <tr>
+                        <td>{{$item}}</td>
+                        <td>
+                        {{$item}} <label>تومان </label>
+                        </td>
+                        <td>{{$item}}</td>
+                        <td>
+                        {{$item}} <label>تومان </label>
+                        </td>
+                         <td>
+                        <a>
+                        <i class="fa fa-remove"></i>
+                        </a>
+                        </td>
+                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                     <a class="btn btn-primary btn-rounded btn-sm" href="{{route('cart.index')}}"

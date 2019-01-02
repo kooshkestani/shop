@@ -5,11 +5,9 @@
         <!--Content-->
         <div class="modal-content">
             <!--Header-->
-            <div class="modal-header" style="direction: ltr">
+            <div class="modal-header" >
 
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+
                 <h4 class="modal-title font-weight-bold dark-grey-text" id="myModalLabel">سبد خرید</h4>
             </div>
             <!--Body-->

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\OrderProduct;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use DB;
+
 
 class UserOrderController extends Controller
 {
@@ -16,7 +19,19 @@ class UserOrderController extends Controller
     public function index()
     {
         $orders=auth()->user()->orders;
-        return view('Theme2.my-profile.content.order')->with('orders',$orders);
+        $Order_Product=Order::with('products')->get();
+
+        //$product=Product::with('order')->get();
+//$product->pivot->quantity;
+//        $products = Product::with('orders')->get();
+
+      //  dd($Order_Product[0]->products[0]->name);
+      //  return view('Theme2.my-profile.content.order')->with('orders',$orders);
+        return view('Theme2.my-profile.content.order')->with([
+
+            'OrderProduct' => $Order_Product,
+            'orders'=>$orders
+        ]);
     }
 
     /**

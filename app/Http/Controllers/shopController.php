@@ -19,6 +19,9 @@ class shopController extends Controller
     {
 //        $categories  = Category:: paginate(10);
 //        return view('Categories.index')->with('categories',$categories);
+        $maxPrice = DB::table('products')->orderBy('price', 'desc')->value('price');
+        $minPrice = DB::table('products')->orderBy('price')->value('price');
+
 
         if (request()->category) {
             $products = Product::with('categories')->whereHas('categories', function ($query) {
@@ -51,6 +54,8 @@ class shopController extends Controller
             'categories' => $categories,
             'categoryname' => $categoryname,
             'allCategories' => $categories,
+            'maxPrice' => $maxPrice,
+            'minPrice' => $minPrice,
 
 
         ]);
