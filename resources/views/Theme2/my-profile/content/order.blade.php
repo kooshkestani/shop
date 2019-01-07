@@ -169,13 +169,13 @@
                         @foreach ($OrderProduct as $items)
 
                         <tr>
-                        <td>{{$item}}</td>
+                        <td></td>
                         <td>
-                        {{$item}} <label>تومان </label>
+                        <label>تومان </label>
                         </td>
-                        <td>{{$item}}</td>
+                        <td></td>
                         <td>
-                        {{$item}} <label>تومان </label>
+                         <label>تومان </label>
                         </td>
                          <td>
                         <a>
