@@ -21,7 +21,9 @@ class CartController extends Controller
     {
         $categories = Category::all();
         $newproduct=Product::orderBy('created_at', 'desc')->take(4)->get();
+
         // dd(Cart::content());
+
         return view('Theme2.main.content.cart-v2')->with([
             'allCategories'=> $categories,
             'newproduct'=>$newproduct,
